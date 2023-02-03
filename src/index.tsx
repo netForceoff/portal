@@ -1,11 +1,13 @@
-import App from "./components/App";
-import {BrowserRouter} from "react-router-dom";
-import {render} from "react-dom";
-import './index.scss';
+import App from './App'
+import { BrowserRouter } from 'react-router-dom'
+import { render } from 'react-dom'
+import Provider from './theme/Provider'
 
 render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,
-    document.getElementById('root')
+	<BrowserRouter>
+		<Provider>
+			<App />
+		</Provider>
+	</BrowserRouter>,
+	document.getElementById('root')
 )
