@@ -1,6 +1,6 @@
-import {FC } from "react"
-import { Context, THEME, THEME_KEY } from "./Context"
-import { useTheme } from "./useTheme"
+import {FC} from "react"
+import {useTheme} from "../lib/useTheme"
+import Context from "./context"
 
 const Provider: FC = ({children}) => {
     const {theme, toggle} = useTheme()

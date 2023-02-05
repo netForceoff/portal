@@ -1,19 +1,17 @@
 import { useContext } from "react";
-import {Link, Route, Routes} from "react-router-dom";
-import About from "./components/About";
+import {Link} from "react-router-dom";
 import './styles/index.scss';
-import { Context } from "./theme/Context";
+import { ThemeContext } from "./providers/theme";
+import AppRouter from "./providers/router";
 
 export const App = () => {
-    const {theme, setTheme} = useContext(Context)
+    const {theme, setTheme} = useContext(ThemeContext)
 
     return (
         <div className={`app ${theme}`}>
             <button onClick={setTheme}>Click</button>
             <Link to="/about">About</Link>
-        <Routes>
-            <Route path="/about" element={<About />} />
-        </Routes>
+            <AppRouter />
         </div>
 
     )

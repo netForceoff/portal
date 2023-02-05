@@ -1,14 +1,11 @@
-import { THEME, THEME_KEY } from "./Context";
 import { useState } from 'react';
-
-interface UseThemeResult {
-    toggle: () => void,
-    theme: THEME
-}
+import {IUseThemeResult} from '../types/types';
+import {THEME} from '../types/enums';
+import { THEME_KEY } from 'shared/config/localStorage/keys';
 
 const defaultTheme = localStorage.getItem(THEME_KEY) as THEME || THEME.LIGHT;
 
-export const useTheme = (): UseThemeResult => {
+export const useTheme = (): IUseThemeResult => {
     const [theme, setTheme] = useState<THEME>(defaultTheme);
 
     const toggle = () => {

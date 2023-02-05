@@ -1,13 +1,13 @@
-import App from './App'
+import App from './app'
 import { BrowserRouter } from 'react-router-dom'
 import { render } from 'react-dom'
-import Provider from './theme/Provider'
+import {ThemeProvider} from './app/providers/theme'
 
 render(
 	<BrowserRouter>
-		<Provider>
+		<ThemeProvider>
 			<App />
-		</Provider>
+		</ThemeProvider>
 	</BrowserRouter>,
 	document.getElementById('root')
 )

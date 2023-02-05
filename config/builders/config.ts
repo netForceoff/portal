@@ -20,7 +20,7 @@ const config = (options: BuildOptions): Configuration => {
         module: {
             rules: loaders(options),
         },
-        resolve: resolvers(),
+        resolve: resolvers(options),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: server(options)
     }
