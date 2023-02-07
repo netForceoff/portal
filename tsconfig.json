@@ -31,9 +31,9 @@
     "paths": {
       "*": ["./src/*"]
     },
-    "plugins": [{
-      "name": "typescript-plugin-css-modules"
-    }]
+    // "plugins": [{
+    //   "name": "typescript-plugin-css-modules"
+    // }]
   },
   "ts-node": {
     "compilerOptions": {
