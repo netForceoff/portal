@@ -3,7 +3,7 @@ import styles from './AppLink.module.scss';
 import clsx from 'clsx'
 import { FC } from 'react';
 
-export enum AppLinkTheme {
+export enum AppLinkVariant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary'
 }
@@ -11,7 +11,7 @@ export enum AppLinkTheme {
 
 interface IProps extends LinkProps {
     className?: string;
-    theme?: AppLinkTheme;
+    variant?: AppLinkVariant;
 }
 
 const AppLink: FC<IProps> = (props) => {
@@ -19,7 +19,7 @@ const AppLink: FC<IProps> = (props) => {
         to,
         className,
         children,
-        theme = AppLinkTheme.PRIMARY,
+        variant = AppLinkVariant.PRIMARY,
         ...otherProps
     } = props;
     
@@ -27,7 +27,7 @@ const AppLink: FC<IProps> = (props) => {
         <Link
             {...otherProps}
             to={to}
-            className={clsx([styles.link, styles[theme], className])}
+            className={clsx([styles.link, styles[variant], className])}
         >
             {children}
         </Link>

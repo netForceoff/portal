@@ -4,6 +4,9 @@ export enum Mode {
 }
 
 export interface Paths {
+    assets: {
+        svg: string
+    };
     entry: string;
     build: string;
     html: string;

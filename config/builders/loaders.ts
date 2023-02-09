@@ -24,6 +24,14 @@ const loaders = (options: BuildOptions): RuleSetRule[] => ([
             "sass-loader"
         ],
     },
+    {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+    },
+    {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+    }
 ])
 
 export default loaders;

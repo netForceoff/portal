@@ -1,14 +1,16 @@
-import {FC} from "react"
-import {useTheme} from "../lib/useTheme"
-import Context from "./context"
+import {FC, useState} from "react"
+import {Context, THEME} from "entities/theme"
+import {THEME_KEY} from 'shared/config/localStorage/keys';
+
+const defaultTheme = localStorage.getItem(THEME_KEY) as THEME || THEME.LIGHT;
 
 const Provider: FC = ({children}) => {
-    const {theme, toggle} = useTheme()
-
+    const [theme, setTheme] = useState<THEME>(defaultTheme);
+    
     return (
         <Context.Provider value={{
             theme,
-            setTheme: toggle
+            setTheme
         }}>
             {children}
         </Context.Provider>
