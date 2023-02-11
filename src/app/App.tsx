@@ -3,6 +3,7 @@ import AppRouter from "./providers/router";
 import clsx from 'clsx';
 import { Navbar } from "widgets/Navbar";
 import { useTheme } from 'entities/theme';
+import { Sidebar } from 'widgets/Sidebar/ui';
 
 export const App = () => {
     const {theme} = useTheme();
@@ -10,7 +11,10 @@ export const App = () => {
     return (
         <div className={clsx(['app', theme])}>
             <Navbar />
-            <AppRouter />
+            <div className="content">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
 
     )

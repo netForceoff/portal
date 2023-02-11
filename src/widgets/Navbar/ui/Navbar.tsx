@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { FC } from 'react';
 import styles from './Navbar.module.scss';
 import {AppLink, AppLinkVariant} from "shared/ui";
-import { ThemeSwitcher } from "features/ThemeSwitcher";
+import { useTranslation } from "react-i18next";
 
 
 interface IProps {
@@ -12,11 +12,12 @@ interface IProps {
 
 
 const Navbar: FC<IProps> = ({className}) => {
+    const {t} = useTranslation();
+
     return (
         <div className={clsx(styles.navbar, className)}>
-            <ThemeSwitcher />
             <div className={styles.links}>
-                <AppLink variant={AppLinkVariant.SECONDARY} className={styles.link} to="/about">About</AppLink>
+                <AppLink variant={AppLinkVariant.SECONDARY} className={styles.link} to="/about">{t('links.about')}</AppLink>
             </div>
 
         </div>

@@ -1,0 +1,22 @@
+@import '../../../../app/styles/variables/global.scss';
+
+.sidebar {
+    height: calc(100vh - $navbar-height);
+    width: 300px;
+    background: var(--inverted-bg-color);
+    position: relative;
+
+    transition: width ease-in-out .3s;
+}
+
+.collapsed {
+    width: 80px;
+}
+
+.switchers {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+
+}

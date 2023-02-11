@@ -17,7 +17,7 @@ const loaders = (options: BuildOptions): RuleSetRule[] => ([
                 options: {
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                        localIdentName: options.isDev ? '[path][name]__[local]' : '[hash:base64:8]'
+                        localIdentName: options.isDev ? '[name]__[local]' : '[hash:base64:8]'
                     }
                 }
             },

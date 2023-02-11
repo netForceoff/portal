@@ -6,6 +6,16 @@
 .app {
     background: var(--bg-color);
     color: var(--primary-color);
-    font: var(--font-m);
+    font: $font-m;
     min-height: 100vh;
+    font-size: $font-size-m;
+}
+
+.content {
+    display: flex;
+}
+
+.wrapper {
+    flex-grow: 1;
+    padding: 20px;
 }

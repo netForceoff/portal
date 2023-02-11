@@ -9,3 +9,12 @@
     background: none;
     outline: none;
 }
+
+.primary {
+    color: red;
+}
+
+.secondary {
+    color: var(--inverted-secondary-color);
+
+}

@@ -3,8 +3,10 @@ import {ButtonHTMLAttributes, FC} from 'react';
 import style from './Button.module.scss';
 
 
-enum ButtonVariant {
+export enum ButtonVariant {
     CLEAR = 'clear',
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary'
 }
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
