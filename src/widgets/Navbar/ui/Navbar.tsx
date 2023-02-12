@@ -16,7 +16,6 @@ const Navbar: FC<IProps> = ({ className }) => {
             <div className={styles.links}>
                 <AppLink
                     variant={AppLinkVariant.SECONDARY}
-                    className={styles.link}
                     to="/about"
                 >
                     {t('links.about')}

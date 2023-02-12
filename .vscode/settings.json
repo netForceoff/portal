@@ -24,9 +24,19 @@
 		"editor.parameterHints.enabled": true,
 		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
 	},
+	"stylelint.enable": true,
+	"css.validate": true,
+	"scss.validate": true,
+	"stylelint.validate": [
+		"css",
+		"scss"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true
+	},
 	"workbench.colorCustomizations": {
 		"activityBar.background": "#302B38",
 		"titleBar.activeBackground": "#433D4E",
 		"titleBar.activeForeground": "#FAFAFB"
-	},
+	}
 }

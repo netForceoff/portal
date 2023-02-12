@@ -9,6 +9,8 @@
     "dev": "webpack serve --config config/config.ts --env mode=development port=5000",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx -c .eslintrc.js ./src",
     "lint:fix": "npm run lint -- --fix",
+    "lint:css": "stylelint '**/*.scss'",
+    "lint:css:fix": "npm run lint:css -- --fix",
     "types": "tsc --noEmit"
   },
   "keywords": [],
@@ -43,6 +45,8 @@
     "react-i18next": "^11.15.5",
     "react-router-dom": "^6.2.1",
     "sass": "^1.49.9",
+    "stylelint": "^14.5.3",
+    "stylelint-config-standard-scss": "^3.0.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.6",

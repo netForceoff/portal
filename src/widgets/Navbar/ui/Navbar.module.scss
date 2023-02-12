@@ -1,18 +1,14 @@
-@import '../../../app/styles/variables/global.scss';
-
+@import "../../../app/styles/variables/global.scss";
 
 .navbar {
-    width: 100%;
-    height: $navbar-height;
-    background: var(--inverted-bg-color);
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-.link {
+  width: 100%;
+  height: $navbar-height;
+  background: var(--inverted-bg-color);
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
 .links {
-    margin-left: auto;
+  margin-left: auto;
 }
