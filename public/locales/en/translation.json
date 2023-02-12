@@ -2,5 +2,8 @@
   "changeLanguage": "Change language",
   "links": {
     "about": "About"
+  },
+  "page": {
+    "notFound": "Page not found"
   }
 }

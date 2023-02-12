@@ -2,5 +2,8 @@
   "changeLanguage": "Сменить язык",
   "links": {
     "about": "Об этом"
+  },
+  "page": {
+    "notFound": "Страница не найдена"
   }
 }
