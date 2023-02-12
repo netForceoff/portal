@@ -1,6 +1,6 @@
-import { lazy } from "react";
-import { withSuspense } from "shared/lib";
+import { lazy } from 'react'
+import { withSuspense } from 'shared/lib'
 
-const About = lazy(() => import('./ui/About'));
+const About = lazy(async () => await import('./ui/About'))
 
-export default withSuspense(About);
+export default withSuspense(About)

@@ -1,29 +1,27 @@
-import clsx from "clsx";
-import {LanguageSwitcher} from "features/LanguageSwitcher";
-import { ThemeSwitcher } from "features/ThemeSwitcher";
-import { useState, FC } from "react";
-import { Button } from "shared/ui";
-import styles from './Sidebar.module.scss';
+import clsx from 'clsx'
+import { LanguageSwitcher } from 'features/LanguageSwitcher'
+import { ThemeSwitcher } from 'features/ThemeSwitcher'
+import { useState, type FC } from 'react'
+import { Button } from 'shared/ui'
+import styles from './Sidebar.module.scss'
 
 interface IProps {
-    className?: string
+  className?: string
 }
 
-
 export const Sidebar: FC<IProps> = (props) => {
-    const {className} = props;
-    const [collapsed, setCollapsed] = useState(false);
+  const { className } = props
+  const [collapsed, setCollapsed] = useState(false)
 
+  const toggle = (): void => {
+    setCollapsed(prev => !prev)
+  }
 
-    const toggle = () => {
-        setCollapsed(prev => !prev);
-    }
-    
-    const CN = clsx(styles.sidebar, className, {
-        [styles.collapsed]: collapsed
-    });
-    
-    return (
+  const CN = clsx(styles.sidebar, className, {
+    [styles.collapsed]: collapsed
+  })
+
+  return (
         <div className={CN}>
             <Button onClick={toggle}>Toggle</Button>
             <div className={styles.switchers}>
@@ -31,5 +29,5 @@ export const Sidebar: FC<IProps> = (props) => {
             <LanguageSwitcher />
             </div>
         </div>
-    )
+  )
 }

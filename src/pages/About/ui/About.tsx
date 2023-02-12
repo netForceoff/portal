@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import styles from './About.module.scss';
+import { useTranslation } from 'react-i18next'
+import styles from './About.module.scss'
 
-const About = () => {
-    const {t} = useTranslation('about');
+const About = (): JSX.Element => {
+  const { t } = useTranslation('about')
 
-    return (
+  return (
         <div className={styles.test}>
             {t('about')}
         </div>
-    )
+  )
 }
 
-export default About;
+export default About

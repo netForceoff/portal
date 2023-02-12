@@ -1,5 +1,5 @@
-import withSuspense from "./withSuspense";
+import withSuspense from './withSuspense'
 
 export {
-    withSuspense
+  withSuspense
 }

@@ -1,0 +1,32 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "react-i18n.i18nPaths": "public/locales,src/shared/config/i18n",
+    "i18n-ally.localesPaths": [
+        "public/locales",
+        "src/shared/config/i18n"
+    ],
+	"i18n-ally.keystyle": "nested",
+    	"eslint.validate": [
+		{
+			"language": "typescript",
+			"autoFix": true
+		},
+		{
+			"language": "typescriptreact",
+			"autoFix": true
+		}
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	
+	"[typescript]": {
+		"editor.parameterHints.enabled": true,
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#302B38",
+		"titleBar.activeBackground": "#433D4E",
+		"titleBar.activeForeground": "#FAFAFB"
+	},
+}

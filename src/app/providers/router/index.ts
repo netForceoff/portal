@@ -1,2 +1,2 @@
-import Router  from "./ui/AppRouter";
-export default Router;
+import Router from './ui/AppRouter'
+export default Router

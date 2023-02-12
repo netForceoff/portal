@@ -1,8 +1,8 @@
-import AppLink, {AppLinkVariant} from "./AppLink/AppLink";
-import Button, {ButtonVariant} from "./Button/Button";
+import AppLink, { AppLinkVariant } from './AppLink/AppLink'
+import Button, { ButtonVariant } from './Button/Button'
 export {
-    AppLink,
-    AppLinkVariant,
-    Button,
-    ButtonVariant
+  AppLink,
+  AppLinkVariant,
+  Button,
+  ButtonVariant
 }

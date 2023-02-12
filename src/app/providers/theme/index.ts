@@ -1,5 +1,5 @@
-import ThemeProvider from "./model/provider";
+import ThemeProvider from './model/provider'
 
 export {
-    ThemeProvider
+  ThemeProvider
 }
