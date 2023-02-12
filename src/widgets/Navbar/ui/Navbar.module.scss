@@ -1,12 +1,12 @@
 @import "../../../app/styles/variables/global.scss";
 
 .navbar {
-  width: 100%;
-  height: $navbar-height;
+  align-items: center;
   background: var(--inverted-bg-color);
   display: flex;
-  align-items: center;
+  height: $navbar-height;
   padding: 20px;
+  width: 100%;
 }
 
 .links {
