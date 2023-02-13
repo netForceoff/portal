@@ -1,10 +1,17 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { DefinePlugin, ProgressPlugin, type WebpackPluginInstance } from 'webpack'
+import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack'
 import { type BuildOptions } from '../types/config'
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   const { isDev, name, paths } = options
+
+  const devPlugins = [];
+
+  if (isDev) {
+    devPlugins.push(new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin())
+  }
 
   return [
     new DefinePlugin({
@@ -18,7 +25,7 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
       filename: name.css,
       chunkFilename: name.css
     })
-  ]
+  ].concat(devPlugins)
 }
 
 export default plugins

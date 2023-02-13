@@ -1,17 +1,26 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { type RuleSetRule } from 'webpack'
-import { type BuildOptions } from '../types/config'
+import { RuleSetRule } from 'webpack'
+import { BuildOptions } from '../types/config'
+import ReactRefreshTypeScript from 'react-refresh-typescript'
 
 const loaders = (options: BuildOptions): RuleSetRule[] => ([
   {
+    exclude: /node_modules/,
     test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/
+    use: [{
+      loader: 'ts-loader',
+      options: {
+        getCustomTransformers: () => ({
+          before: options.isDev ? [ReactRefreshTypeScript()] : []
+        }),
+        transpileOnly: options.isDev
+      }
+    }]
   },
   {
     test: /\.s[ac]ss$/i,
     use: [
-      MiniCssExtractPlugin.loader,
+      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: 'css-loader',
         options: {
