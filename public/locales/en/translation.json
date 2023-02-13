@@ -4,6 +4,10 @@
     "about": "About"
   },
   "page": {
-    "notFound": "Page not found"
+    "notFound": "Page not found",
+    "error": {
+      "button": "Reload page",
+      "title": "Somthing went wrong.. Please, reaload page"
+    }
   }
 }

@@ -7,10 +7,10 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   const { isDev, name, paths } = options
 
-  const devPlugins = [];
+  const devPlugins = []
 
   if (isDev) {
-    devPlugins.push(new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin())
+    devPlugins.push(new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin({ overlay: false }))
   }
 
   return [
