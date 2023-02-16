@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { type ButtonHTMLAttributes, type FC } from 'react'
+import { ButtonHTMLAttributes, FC } from 'react'
 import style from './Button.module.scss'
 
 export enum ButtonVariant {
@@ -19,6 +19,7 @@ const Button: FC<IProps> = (props) => {
   return (
         <button
             {...otherProps}
+            data-testid="Button"
             className={clsx([style.button, style[variant], className])}
         >
             {children}

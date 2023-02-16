@@ -10,6 +10,12 @@ module.exports = {
     'plugin:i18next/recommended'
   ],
   overrides: [
+    {
+      files: ['src/**/__tests__/**/*.[jt]s?(x)'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
