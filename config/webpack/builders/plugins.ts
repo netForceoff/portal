@@ -13,7 +13,10 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   if (isDev) {
     devPlugins.push(
       new HotModuleReplacementPlugin(),
-      new ReactRefreshWebpackPlugin({ overlay: false })
+      new ReactRefreshWebpackPlugin({ overlay: false }),
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false
+      })
     )
   }
 
@@ -29,9 +32,6 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
       filename: name.css,
       chunkFilename: name.css
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
   ].concat(devPlugins)
 }
 

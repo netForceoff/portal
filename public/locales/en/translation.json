@@ -9,5 +9,8 @@
       "button": "Reload page",
       "title": "Somthing went wrong.. Please, reaload page"
     }
+  },
+  "sidebar": {
+    "button": "Toggle"
   }
 }

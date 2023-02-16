@@ -4,6 +4,7 @@ import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { useState, type FC } from 'react'
 import { Button } from 'shared/ui'
 import styles from './Sidebar.module.scss'
+import { useTranslation } from 'react-i18next'
 
 interface IProps {
   className?: string
@@ -12,6 +13,7 @@ interface IProps {
 export const Sidebar: FC<IProps> = (props) => {
   const { className } = props
   const [collapsed, setCollapsed] = useState(false)
+  const { t } = useTranslation()
 
   const toggle = (): void => {
     setCollapsed(prev => !prev)
@@ -23,7 +25,7 @@ export const Sidebar: FC<IProps> = (props) => {
 
   return (
         <div className={CN}>
-            <Button onClick={toggle}>Toggle</Button>
+            <Button onClick={toggle}>{t('sidebar.button')}</Button>
             <div className={styles.switchers}>
             <ThemeSwitcher />
             <LanguageSwitcher />

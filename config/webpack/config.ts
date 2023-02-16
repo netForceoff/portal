@@ -18,10 +18,10 @@ export default (env: Env): Configuration => {
       assets: {
         svg: 'static/[hash][ext][query]'
       },
-      entry: resolve(__dirname, '../src', 'index.tsx'),
-      html: resolve(__dirname, '../public', 'index.html'),
-      build: resolve(__dirname, '../build'),
-      src: resolve(__dirname, '../src')
+      entry: resolve(__dirname, '../../src', 'index.tsx'),
+      html: resolve(__dirname, '../../public', 'index.html'),
+      build: resolve(__dirname, '../../build'),
+      src: resolve(__dirname, '../../src')
     },
     port: env.port || 3000
   })
