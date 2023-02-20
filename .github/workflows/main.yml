@@ -30,4 +30,6 @@ jobs:
         run: npm run types
       - name: running unit tests
         run: npm run test
+      - name: running screenshot tests
+        run: npm run test:ui:ci
       
