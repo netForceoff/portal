@@ -2,6 +2,8 @@ import React from 'react'
 import { ComponentStory } from '@storybook/react'
 
 import Button, { ButtonVariant } from './Button'
+import ThemeDecorator from 'shared/config/storybook/decorators/theme'
+import { THEME } from 'entities/theme'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -35,3 +37,12 @@ Clear.args = {
   variant: ButtonVariant.CLEAR,
   children: 'Button'
 }
+
+export const PrimaryDark = Template.bind({})
+
+PrimaryDark.args = {
+  variant: ButtonVariant.PRIMARY,
+  children: 'Button'
+}
+
+PrimaryDark.decorators = [ThemeDecorator(THEME.DARK)]

@@ -33,3 +33,5 @@ export const Sidebar: FC<IProps> = (props) => {
         </div>
   )
 }
+
+export default Sidebar
