@@ -28,9 +28,9 @@ jobs:
         run: npm run lint:css
       - name: check types
         run: npm run types
-      - name: running unit tests
+      - name: unit tests
         run: npm run test
-      - name: running screenshot tests
-        run: npm run storybook:build
+      - name: build storybook
+      - name: screenshot tests
         run: npm run test:ui:ci
       
