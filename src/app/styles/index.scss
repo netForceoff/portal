@@ -6,8 +6,8 @@
 .app {
   background: var(--bg-color);
   color: var(--primary-color);
-  font: $font-m;
-  font-size: $font-size-m;
+  font: var(--font-m);
+  font-size: var(--font-size-m);
   min-height: 100vh;
 }
 

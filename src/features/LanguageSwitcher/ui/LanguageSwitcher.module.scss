@@ -1,6 +1,6 @@
-@import "../../../app/styles/variables/global.scss";
+@import "~app/styles/variables/global.scss";
 
 .languageSwitcher {
-  font-size: $font-size-m;
+  font-size: var(--font-size-m);
   margin-left: 20px;
 }

@@ -2,7 +2,7 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from '../types/config'
 import ReactRefreshTypeScript from 'react-refresh-typescript'
 import cssLoader from '../loaders/cssLoader'
-import svgLoader from 'webpack/loaders/svgLoader'
+import svgLoader from '../loaders/svgLoader'
 
 const loaders = (options: BuildOptions): RuleSetRule[] => ([
   {

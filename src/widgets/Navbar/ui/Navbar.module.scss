@@ -4,7 +4,7 @@
   align-items: center;
   background: var(--inverted-bg-color);
   display: flex;
-  height: $navbar-height;
+  height: var(--navbar-height);
   padding: 20px;
   width: 100%;
 }

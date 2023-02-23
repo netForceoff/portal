@@ -2,9 +2,12 @@ import clsx from 'clsx'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { useState, type FC } from 'react'
-import { Button } from 'shared/ui'
+import { AppLink, AppLinkVariant, Button, ButtonVariant, ButtonBackgroundType, ButtonSize } from 'shared/ui'
 import styles from './Sidebar.module.scss'
 import { useTranslation } from 'react-i18next'
+import { RoutePath } from 'shared/config/router'
+import House from 'shared/assets/icons/house.svg'
+import List from 'shared/assets/icons/list.svg'
 
 interface IProps {
   className?: string
@@ -25,10 +28,34 @@ export const Sidebar: FC<IProps> = (props) => {
 
   return (
         <div className={CN}>
-            <Button onClick={toggle}>{t('sidebar.button')}</Button>
+            <Button
+             backgroundType={ButtonBackgroundType.SQUARE}
+             size={ButtonSize.XL}
+             variant={ButtonVariant.FILLED_INVERTED}
+             className={styles.collapseBtn}
+             onClick={toggle}>{collapsed ? '>' : '<'}
+             </Button>
+             <div className={styles.links}>
+             <AppLink
+                  variant={AppLinkVariant.SECONDARY}
+                  to={RoutePath.about}
+                  className={styles.link}
+                >
+                    <List className={styles.icon} />
+                    <span className={styles.item}>{t('links.about')}</span>
+                </AppLink>
+                <AppLink
+                  variant={AppLinkVariant.SECONDARY}
+                  to={RoutePath['/']}
+                  className={styles.link}
+                >
+                  <House className={styles.icon} />
+                  <span className={styles.item}>{t('links.main')}</span>
+                </AppLink>
+            </div>
             <div className={styles.switchers}>
             <ThemeSwitcher />
-            <LanguageSwitcher />
+            <LanguageSwitcher className={styles.lang} short={collapsed} />
             </div>
         </div>
   )
