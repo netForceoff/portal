@@ -1,3 +1,5 @@
+@import "~app/styles/variables/global.scss";
+
 .button {
   cursor: pointer;
 }
@@ -16,4 +18,42 @@
 
 .secondary {
   color: var(--inverted-secondary-color);
+}
+
+.filled {
+  background: var(--bg-color);
+  border: none;
+  color: var(--primary-color);
+}
+
+.filledInverted {
+  background: var(--inverted-bg-color);
+  border: none;
+  color: var(--inverted-primary-color);
+}
+
+.square {
+  border-radius: 0;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.m {
+  font: var(--font-m);
+  height: var(--font-line-m);
+  width: var(--font-line-m);
+}
+
+.l {
+  font: var(--font-l);
+  height: var(--font-line-l);
+  width: var(--font-line-l);
+}
+
+.xl {
+  font: var(--font-xl);
+  height: var(--font-line-xl);
+  width: var(--font-line-xl);
 }

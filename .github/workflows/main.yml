@@ -23,13 +23,19 @@ jobs:
       - name: build project
         run: npm run build
       - name: lint code
+        if: always()
         run: npm run lint
       - name: lint styles
+        if: always()
         run: npm run lint:css
       - name: check types
+        if: always()
         run: npm run types
-      - name: running unit tests
+      - name: unit tests
+        if: always()
         run: npm run test
-      - name: running screenshot tests
+      # - name: build storybook
+      #   run: npm run storybook:build
+      - name: screenshot tests
         run: npm run test:ui:ci
       

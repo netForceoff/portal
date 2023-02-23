@@ -1,8 +1,10 @@
 import AppLink, { AppLinkVariant } from './AppLink/AppLink'
-import Button, { ButtonVariant } from './Button/Button'
+import Button, { ButtonVariant, ButtonBackgroundType, ButtonSize } from './Button/Button'
 export {
   AppLink,
   AppLinkVariant,
   Button,
-  ButtonVariant
+  ButtonVariant,
+  ButtonBackgroundType,
+  ButtonSize
 }

@@ -2,6 +2,7 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from '../types/config'
 import ReactRefreshTypeScript from 'react-refresh-typescript'
 import cssLoader from '../loaders/cssLoader'
+import svgLoader from '../loaders/svgLoader'
 
 const loaders = (options: BuildOptions): RuleSetRule[] => ([
   {
@@ -18,10 +19,7 @@ const loaders = (options: BuildOptions): RuleSetRule[] => ([
     }]
   },
   cssLoader(options.isDev),
-  {
-    test: /\.svg$/,
-    use: ['@svgr/webpack']
-  },
+  svgLoader(),
   {
     test: /\.(png|jpg|jpeg|gif)$/i,
     type: 'asset/resource'

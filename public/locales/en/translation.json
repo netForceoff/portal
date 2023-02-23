@@ -1,7 +1,8 @@
 {
   "changeLanguage": "Change language",
   "links": {
-    "about": "About"
+    "about": "About",
+    "main": "Main"
   },
   "page": {
     "notFound": "Page not found",
@@ -12,5 +13,6 @@
   },
   "sidebar": {
     "button": "Toggle"
-  }
+  },
+  "changeLanguageShort": "Ru"
 }

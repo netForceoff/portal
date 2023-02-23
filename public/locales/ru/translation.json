@@ -1,7 +1,8 @@
 {
   "changeLanguage": "Сменить язык",
   "links": {
-    "about": "Об этом"
+    "about": "Об этом",
+    "main": "Главная"
   },
   "page": {
     "notFound": "Страница не найдена",
@@ -12,5 +13,6 @@
   },
   "sidebar": {
     "button": "Toggle"
-  }
+  },
+  "changeLanguageShort": "En"
 }

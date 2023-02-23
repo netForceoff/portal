@@ -1,8 +1,13 @@
 import { Button, ButtonVariant } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
 import styles from './PageError.module.scss'
+import { FC } from 'react'
 
-const PageError = (): JSX.Element => {
+interface IProps {
+  className?: string
+}
+
+const PageError: FC<IProps> = () => {
   const { t } = useTranslation()
 
   const handleClick = (): void => {
