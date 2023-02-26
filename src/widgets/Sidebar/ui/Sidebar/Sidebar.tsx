@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { useState, type FC } from 'react'
-import { AppLink, AppLinkVariant, Button, ButtonVariant, ButtonBackgroundType, ButtonSize } from 'shared/ui'
+import { AppLink, AppLinkVariant, Button, ButtonVariant, ButtonBackgroundType, ButtonSize, ButtonColor } from 'shared/ui'
 import styles from './Sidebar.module.scss'
 import { useTranslation } from 'react-i18next'
 import { RoutePath } from 'shared/config/router'
@@ -31,6 +31,7 @@ export const Sidebar: FC<IProps> = (props) => {
             <Button
              backgroundType={ButtonBackgroundType.SQUARE}
              size={ButtonSize.XL}
+             color={ButtonColor.PRIMARY_INVERTED}
              variant={ButtonVariant.FILLED_INVERTED}
              className={styles.collapseBtn}
              onClick={toggle}>{collapsed ? '>' : '<'}

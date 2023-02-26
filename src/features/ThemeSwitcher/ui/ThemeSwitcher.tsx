@@ -1,13 +1,12 @@
 import { useTheme } from 'entities/theme'
 import Icon from 'shared/assets/icons/theme.svg'
-import { Button } from 'shared/ui'
-import styles from './ThemeSwitcher.module.scss'
+import { Button, ButtonColor, ButtonVariant } from 'shared/ui'
 
 const ThemeSwitcher = (): JSX.Element => {
   const { toggle } = useTheme()
 
   return (
-    <Button onClick={toggle}><Icon className={styles.icon} /></Button>
+    <Button variant={ButtonVariant.CLEAR} color={ButtonColor.PRIMARY_INVERTED} onClick={toggle}><Icon /></Button>
   )
 }
 

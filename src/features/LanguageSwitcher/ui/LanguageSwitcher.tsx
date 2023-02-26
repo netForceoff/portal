@@ -1,4 +1,4 @@
-import { Button } from 'shared/ui'
+import { Button, ButtonVariant, ButtonColor } from 'shared/ui'
 import styles from './LanguageSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
@@ -19,7 +19,7 @@ const LanguageSwitcher: FC<IProps> = (props): JSX.Element => {
   const text = t(short ? 'changeLanguageShort' : 'changeLanguage')
 
   return (
-    <Button className={clsx([styles.languageSwitcher, className])} onClick={toggle}>
+    <Button variant={ButtonVariant.CLEAR} color={ButtonColor.PRIMARY_INVERTED} className={clsx([styles.languageSwitcher, className])} onClick={toggle}>
         {text}
     </Button>
   )

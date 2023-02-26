@@ -10,4 +10,8 @@
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
   --navbar-height: 50px;
+
+  /* modal */
+  --modal-z-index: 1;
+  --modal-bg-color: rgba(0 0 0 /60%);
 }

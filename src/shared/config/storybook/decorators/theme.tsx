@@ -4,8 +4,10 @@ import { Story } from '@storybook/react'
 
 function ThemeDecorator (theme: THEME) {
   return function StoryComponent (Component: Story) {
+    document.body.className = theme
+
     return (
-        <div className={`app ${theme}`}>
+        <div>
             <Component />
         </div>
     )

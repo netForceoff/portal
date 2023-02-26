@@ -1,21 +1,25 @@
 import './styles/index.scss'
 import AppRouter from './providers/router'
-import clsx from 'clsx'
 import { Navbar } from 'widgets/Navbar'
 import { useTheme } from 'entities/theme'
-import { Sidebar } from 'widgets/Sidebar/ui'
+import { Sidebar } from 'widgets/Sidebar'
+import { useLayoutEffect } from 'react'
 
 export const App = (): JSX.Element => {
   const { theme } = useTheme()
 
+  useLayoutEffect(() => {
+    document.body.className = theme
+  }, [theme])
+
   return (
-        <div className={clsx(['app', theme])}>
+        <>
             <Navbar />
             <div className="content">
                 <Sidebar />
                 <AppRouter />
             </div>
-        </div>
+        </>
 
   )
 }
