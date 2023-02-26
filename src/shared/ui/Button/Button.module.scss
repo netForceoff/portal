@@ -13,23 +13,29 @@
 }
 
 .primary {
+  color: var(--primary-color);
+}
+
+.primaryInverted {
   color: var(--inverted-primary-color);
 }
 
 .secondary {
+  color: var(--secondary-color);
+}
+
+.secondaryInverted {
   color: var(--inverted-secondary-color);
 }
 
 .filled {
   background: var(--bg-color);
   border: none;
-  color: var(--primary-color);
 }
 
 .filledInverted {
   background: var(--inverted-bg-color);
   border: none;
-  color: var(--inverted-primary-color);
 }
 
 .square {

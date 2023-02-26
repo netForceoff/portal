@@ -14,5 +14,6 @@
   "sidebar": {
     "button": "Toggle"
   },
-  "changeLanguageShort": "En"
+  "changeLanguageShort": "En",
+  "LogIn": "Войти"
 }

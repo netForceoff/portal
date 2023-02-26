@@ -4,8 +4,6 @@ import style from './Button.module.scss'
 
 export enum ButtonVariant {
   CLEAR = 'clear',
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
   FILLED = 'filled',
   FILLED_INVERTED = 'filledInverted'
 }
@@ -21,21 +19,46 @@ export enum ButtonSize {
   XL = 'xl'
 }
 
+export enum ButtonColor {
+  PRIMARY = 'primary',
+  PRIMARY_INVERTED = 'primaryInverted',
+  SECONDARY = 'secondary',
+  SECONDARY_INVERTED = 'secondaryInverted'
+}
+
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   backgroundType?: ButtonBackgroundType
+  color?: ButtonColor
   className?: string
   variant?: ButtonVariant
   size?: ButtonSize
 }
 
 const Button: FC<IProps> = (props) => {
-  const { backgroundType, className, children, size, variant = ButtonVariant.CLEAR, ...otherProps } = props
+  const {
+    backgroundType,
+    color,
+    className,
+    children,
+    size,
+    variant,
+    ...otherProps
+  } = props
+
+  const CN = clsx([
+    style.button,
+    style[color || ''],
+    style[variant || ''],
+    style[backgroundType || ''],
+    style[size || ''],
+    className
+  ])
 
   return (
         <button
             {...otherProps}
             data-testid="Button"
-            className={clsx([style.button, style[variant], style[backgroundType || ''], style[size || ''], className])}
+            className={CN}
         >
             {children}
         </button>
