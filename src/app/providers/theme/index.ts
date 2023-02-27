@@ -1,4 +1,4 @@
-import ThemeProvider from './model/provider'
+import ThemeProvider from './ui/provider'
 
 export {
   ThemeProvider
