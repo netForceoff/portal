@@ -31,7 +31,8 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'off',
-    'react-hooks/rules-of-hooks': 'error'
+    'react-hooks/rules-of-hooks': 'error',
+    '@typescript-eslint/consistent-type-exports': 'off'
   },
   globals: {
     __IS_DEV__: true

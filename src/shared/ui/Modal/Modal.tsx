@@ -29,6 +29,8 @@ const Modal: FC<IProps> = ({ className, children, onCloseOutside }): JSX.Element
     setUseAnimationOut(true)
   }
 
+  console.log('MODAL 123')
+
   return createPortal(
     <KeydownWrapper codes={CODES} callback={handleCloseOutside}>
       <div className={CN}>
