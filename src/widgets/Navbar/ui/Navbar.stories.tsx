@@ -4,6 +4,7 @@ import { ComponentStory } from '@storybook/react'
 import Navbar from './Navbar'
 import ThemeDecorator from 'shared/config/storybook/decorators/theme'
 import { THEME } from 'entities/theme'
+import StoreDecorator from 'shared/config/storybook/decorators/store'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -22,6 +23,20 @@ export const Light = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Light.args = {}
 
+Light.decorators = [StoreDecorator({ user: { user: undefined } })]
+
 export const Dark = Template.bind({})
 
-Dark.decorators = [ThemeDecorator(THEME.DARK)]
+Dark.decorators = [ThemeDecorator(THEME.DARK), StoreDecorator({ user: { user: undefined } })]
+
+export const LogOut = Template.bind({})
+
+LogOut.args = {}
+
+LogOut.decorators = [StoreDecorator({ user: { user: { id: '1', username: 'Name' } } })]
+
+export const LogOutDark = Template.bind({})
+
+LogOutDark.args = {}
+
+LogOutDark.decorators = [ThemeDecorator(THEME.DARK), StoreDecorator({ user: { user: { id: '1', username: 'Name' } } })]

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ButtonHTMLAttributes, FC } from 'react'
+import { ButtonHTMLAttributes, FC, memo } from 'react'
 import style from './Button.module.scss'
 
 export enum ButtonVariant {
@@ -65,4 +65,4 @@ const Button: FC<IProps> = (props) => {
   )
 }
 
-export default Button
+export default memo(Button)

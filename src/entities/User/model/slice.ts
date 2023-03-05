@@ -17,6 +17,11 @@ export const userSlice = createSlice({
       if (user) {
         state.user = JSON.parse(user)
       }
+    },
+    removeUser: (state) => {
+      localStorage.removeItem(USER_KEY)
+
+      state.user = undefined
     }
   }
 })
