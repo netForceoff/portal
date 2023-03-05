@@ -1,6 +1,7 @@
 import AppLink, { AppLinkVariant } from './AppLink/AppLink'
 import Button, { ButtonVariant, ButtonBackgroundType, ButtonColor, ButtonSize } from './Button/Button'
-import Modal from './Modal/Modal'
+import Input from './Input/Input'
+import Text from './Text/Text'
 
 export {
   AppLink,
@@ -10,5 +11,6 @@ export {
   ButtonVariant,
   ButtonBackgroundType,
   ButtonSize,
-  Modal
+  Input,
+  Text
 }

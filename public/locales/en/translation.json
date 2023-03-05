@@ -15,5 +15,9 @@
     "button": "Toggle"
   },
   "changeLanguageShort": "Ru",
-  "LogIn": "Log in"
+  "LogIn": "Log in",
+  "simpleLoginForm": "Authorization form with login and password",
+  "errors": {
+    "simpleLoginForm": "Something went wrong trying to authorization"
+  }
 }

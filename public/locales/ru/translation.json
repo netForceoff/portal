@@ -15,5 +15,9 @@
     "button": "Toggle"
   },
   "changeLanguageShort": "En",
-  "LogIn": "Войти"
+  "LogIn": "Войти",
+  "simpleLoginForm": "Форма авторизации с логином и паролем",
+  "errors": {
+    "simpleLoginForm": "Произошла ошибка при авторизации"
+  }
 }

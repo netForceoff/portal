@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react'
 import { Context, THEME } from 'entities/theme'
-import { THEME_KEY } from 'shared/config/localStorage/keys'
+import { THEME_KEY } from 'shared/const/localStorage'
 
 const defaultTheme = localStorage.getItem(THEME_KEY) as THEME || THEME.LIGHT
 

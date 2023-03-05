@@ -1,8 +1,9 @@
 import clsx from 'clsx'
 import { FC, useState, ReactNode } from 'react'
 import styles from './Navbar.module.scss'
-import { Modal, Button, ButtonVariant, ButtonColor } from 'shared/ui'
+import { Button, ButtonVariant, ButtonColor } from 'shared/ui'
 import { useTranslation } from 'react-i18next'
+import { LoginModal } from 'features/auth/modalByUsername'
 
 interface IProps {
   className?: string
@@ -16,7 +17,7 @@ const Navbar: FC<IProps> = ({ className }) => {
     setIsOpenAuthModal(prev => !prev)
   }
 
-  const renderAuthModal = (): ReactNode => isOpenAuthModal ? <Modal onCloseOutside={toggleAuthModal}>TEST</Modal> : null
+  const renderAuthModal = (): ReactNode => isOpenAuthModal ? <LoginModal onCloseOutside={toggleAuthModal} /> : null
 
   return (
         <div className={clsx(styles.navbar, className)}>
