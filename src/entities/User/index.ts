@@ -1,9 +1,10 @@
-import { userActions, userReducer } from './model/slice/user'
-import type { User, UserSchema } from './model/types/user'
+import { initialState as initialUserState, userActions, userReducer } from './model/slice'
+import type { User, UserSchema } from './model/types'
 
 export {
   userActions,
   userReducer,
   User,
-  UserSchema
+  UserSchema,
+  initialUserState
 }

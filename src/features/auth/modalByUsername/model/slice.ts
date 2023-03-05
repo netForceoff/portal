@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { login } from './services'
 import type { Fields, LoginSchema } from './types'
 
-const initialState: LoginSchema = {
+export const initialState: LoginSchema = {
   error: '',
   fields: {
     username: '',
