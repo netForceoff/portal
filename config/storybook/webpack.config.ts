@@ -1,4 +1,4 @@
-import { Configuration, RuleSetRule } from 'webpack'
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack'
 import { Mode, Paths } from '../webpack/types/config'
 import { resolve } from 'path'
 import cssLoader from '../webpack/loaders/cssLoader'
@@ -20,6 +20,10 @@ export default ({ config }: { config: Configuration }): Configuration => {
   config.resolve?.extensions?.push('.ts', '.tsx')
 
   config.plugins?.push(new MiniCssExtractPlugin())
+
+  config.plugins?.push(new DefinePlugin({
+    __IS_DEV__: true
+  }))
 
   config.module?.rules?.push(cssLoader(config.mode === Mode.DEVELOPMENT))
 
