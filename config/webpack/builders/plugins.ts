@@ -13,14 +13,14 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   if (isDev) {
     devPlugins.push(
       new HotModuleReplacementPlugin(),
-      new ReactRefreshWebpackPlugin({ overlay: false }),
-      new BundleAnalyzerPlugin({
-        openAnalyzer: false
-      })
+      new ReactRefreshWebpackPlugin({ overlay: false })
     )
   }
 
   return [
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false
+    }),
     new DefinePlugin({
       __IS_DEV__: isDev
     }),

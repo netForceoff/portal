@@ -5,10 +5,10 @@ import { ThemeProvider } from './app/providers/theme'
 import 'shared/config/i18n'
 import { ErrorBoundary } from 'shared/lib'
 import PageError from 'widgets/PageError'
-import { initialState, StoreProvider } from 'app/providers/store'
+import { StoreProvider } from 'app/providers/store'
 
 render(
-    <StoreProvider initialState={initialState}>
+    <StoreProvider>
         <BrowserRouter>
             <ErrorBoundary fallback={<PageError />}>
                 <ThemeProvider>

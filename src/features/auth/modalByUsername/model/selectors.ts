@@ -1,6 +1,12 @@
 import { StateSchema } from 'app/providers/store'
-import { LoginSchema } from './types'
+import { RequestStatus } from './types'
 
-const getLoginState = (state: StateSchema): LoginSchema => state.login
+const getLoginUsername = (state: StateSchema): string => state.login?.fields.username || ''
 
-export { getLoginState }
+const getLoginPassword = (state: StateSchema): string => state.login?.fields.password || ''
+
+const getLoginError = (state: StateSchema): string => state.login?.error || ''
+
+const getLoginStatus = (state: StateSchema): RequestStatus => state.login?.status || 'received'
+
+export { getLoginStatus, getLoginError, getLoginPassword, getLoginUsername }

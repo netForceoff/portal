@@ -1,24 +1,32 @@
 import styles from './LoginForm.module.scss'
-import { Button, Input, Text } from 'shared/ui'
+import Button from 'shared/ui/Button/Button'
+import Input from 'shared/ui/Input/Input'
+import Text from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
-import { memo, useCallback, useEffect } from 'react'
-import { loginActions } from '../../model/slice'
+import { FC, memo, useCallback } from 'react'
+import { loginActions, loginReducer } from '../../model/slice'
 import type { Fields } from '../../model/types'
-import { getLoginState } from '../../model/selectors'
+import { getLoginError, getLoginPassword, getLoginStatus, getLoginUsername } from '../../model/selectors'
 import { login } from '../../model/services'
+import { withReducers } from 'shared/lib'
 
-export const LoginForm = (): JSX.Element => {
+const reducers = { login: loginReducer }
+
+export interface IProps extends JSX.IntrinsicAttributes {
+  className?: string
+}
+
+const LoginForm: FC<IProps> = (): JSX.Element => {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const { fields: { username, password }, error, status } = useSelector(getLoginState)
-  const disabled = status === 'request'
 
-  useEffect(() => {
-    return () => {
-      dispatch(loginActions.clear())
-    }
-  }, [dispatch])
+  const username = useSelector(getLoginUsername)
+  const password = useSelector(getLoginPassword)
+  const error = useSelector(getLoginError)
+  const status = useSelector(getLoginStatus)
+
+  const disabled = status === 'request'
 
   const handleChangeField = useCallback((field: keyof Fields) => (value: string) => {
     dispatch(loginActions.setField({ field, value }))
@@ -56,4 +64,4 @@ export const LoginForm = (): JSX.Element => {
   )
 }
 
-export default memo(LoginForm)
+export default memo(withReducers(LoginForm, reducers))
