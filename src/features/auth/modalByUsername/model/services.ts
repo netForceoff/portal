@@ -5,7 +5,7 @@ import axios from 'axios'
 import i18n from 'shared/config/i18n'
 import { USER_KEY } from 'shared/const/localStorage'
 
-const login = createAsyncThunk<User, Fields, { rejectValue: string }>(
+export const login = createAsyncThunk<User, Fields, { rejectValue: string }>(
   'login/login',
   async (data, { dispatch, rejectWithValue }) => {
     try {
@@ -26,7 +26,3 @@ const login = createAsyncThunk<User, Fields, { rejectValue: string }>(
     }
   }
 )
-
-export {
-  login
-}

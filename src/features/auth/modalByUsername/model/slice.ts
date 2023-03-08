@@ -1,32 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { login } from './services'
-import type { Fields, LoginSchema } from './types'
-
-export const initialState: LoginSchema = {
-  error: '',
-  fields: {
-    username: '',
-    password: ''
-  },
-  status: 'received'
-
-}
+import type { Fields } from './types'
+import { initialAuthState } from './state'
 
 export const loginSlice = createSlice({
   name: 'login',
-  initialState,
+  initialState: initialAuthState,
   reducers: {
     setField: (state, action: PayloadAction<{ field: keyof Fields, value: string }>) => {
       const { payload: { field, value } } = action
       state.fields[field] = value
-    },
-    clear: (state) => {
-      state.error = ''
-      state.fields = {
-        username: '',
-        password: ''
-      }
-      state.status = 'received'
     }
   },
   extraReducers: (builder) => {

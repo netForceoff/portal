@@ -1,12 +1,12 @@
 import { DeepPartial } from '@reduxjs/toolkit'
 import { ReactNode, FC } from 'react'
 import { Provider } from 'react-redux'
-import { StateSchema } from '../config/schema'
+import { StateSchema } from '../config/types'
 import createStore from '../config/store'
 
 interface IProps {
   children: ReactNode
-  initialState: DeepPartial<StateSchema>
+  initialState?: DeepPartial<StateSchema>
 }
 
 const StoreProvider: FC<IProps> = ({ children, initialState }): JSX.Element => {
