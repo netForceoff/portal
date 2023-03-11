@@ -29,5 +29,8 @@ export default {
   testEnvironment: 'jsdom',
   testMatch: [
     '<rootDir>src/**/__tests__/**/*.[jt]s?(x)'
-  ]
+  ],
+  globals: {
+    __IS_DEV__: true
+  }
 }

@@ -1,5 +1,4 @@
-
-export type RequestStatus = 'request' | 'received' | 'error'
+import { ServerStatus } from 'shared/types/server'
 
 export interface Fields {
   username: string
@@ -9,5 +8,5 @@ export interface Fields {
 export interface LoginSchema {
   error?: string
   fields: Fields
-  status: RequestStatus
+  status: ServerStatus
 }

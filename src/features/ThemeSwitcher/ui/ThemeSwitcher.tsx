@@ -1,4 +1,5 @@
 import { useTheme } from 'entities/theme'
+import { memo } from 'react'
 import Icon from 'shared/assets/icons/theme.svg'
 import { Button, ButtonColor, ButtonVariant } from 'shared/ui'
 
@@ -10,4 +11,4 @@ const ThemeSwitcher = (): JSX.Element => {
   )
 }
 
-export default ThemeSwitcher
+export default memo(ThemeSwitcher)

@@ -2,7 +2,8 @@
   "changeLanguage": "Change language",
   "links": {
     "about": "About",
-    "main": "Main"
+    "main": "Main",
+    "profile": "Profile page"
   },
   "page": {
     "notFound": "Page not found",
