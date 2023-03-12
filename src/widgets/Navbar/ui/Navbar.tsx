@@ -11,7 +11,7 @@ interface IProps {
   className?: string
 }
 
-// TODO - не срабатывает анимация модалки, после успешного логина
+// TODO - не срабатывает анимация модалки после успешного логина
 const Navbar: FC<IProps> = ({ className }) => {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState<boolean>(false)
   const { t } = useTranslation()
@@ -19,10 +19,10 @@ const Navbar: FC<IProps> = ({ className }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (user) {
+    if (user && isOpenAuthModal) {
       setIsOpenAuthModal(false)
     }
-  }, [user])
+  }, [user, isOpenAuthModal])
 
   const toggleAuthModal = useCallback(() => {
     setIsOpenAuthModal(prev => !prev)

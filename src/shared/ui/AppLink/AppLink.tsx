@@ -1,7 +1,7 @@
 import { Link, type LinkProps } from 'react-router-dom'
 import styles from './AppLink.module.scss'
 import clsx from 'clsx'
-import { memo, FC } from 'react'
+import { FC } from 'react'
 
 export enum AppLinkVariant {
   PRIMARY = 'primary',
@@ -33,4 +33,4 @@ const AppLink: FC<IProps> = (props) => {
   )
 }
 
-export default memo(AppLink)
+export default AppLink

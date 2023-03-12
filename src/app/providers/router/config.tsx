@@ -3,6 +3,7 @@ import NotFound from 'pages/NotFound'
 import { RouteProps } from 'react-router-dom'
 import { RoutePath } from 'shared/config/router'
 import Main from 'pages/Main'
+import { Profile } from 'pages/Profile'
 
 export const routeConfig: RouteProps[] = [{
   element: <About />,
@@ -15,5 +16,9 @@ export const routeConfig: RouteProps[] = [{
 {
   element: <Main />,
   path: RoutePath['/']
+},
+{
+  element: <Profile />,
+  path: RoutePath.profile
 }
 ]

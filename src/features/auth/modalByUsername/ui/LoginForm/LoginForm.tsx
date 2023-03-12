@@ -3,13 +3,14 @@ import Button from 'shared/ui/Button/Button'
 import Input from 'shared/ui/Input/Input'
 import Text from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { FC, memo, useCallback } from 'react'
 import { loginActions, loginReducer } from '../../model/slice'
 import type { Fields } from '../../model/types'
 import { getLoginError, getLoginPassword, getLoginStatus, getLoginUsername } from '../../model/selectors'
 import { login } from '../../model/services'
 import { withReducers } from 'shared/lib'
+import { useAppDispatch } from 'app/providers/store'
 
 const reducers = { login: loginReducer }
 
@@ -19,7 +20,7 @@ export interface IProps extends JSX.IntrinsicAttributes {
 
 const LoginForm: FC<IProps> = (): JSX.Element => {
   const { t } = useTranslation()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
@@ -33,8 +34,6 @@ const LoginForm: FC<IProps> = (): JSX.Element => {
   }, [dispatch])
 
   const handleClick = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     dispatch(login({ username, password }))
   }, [dispatch, username, password])
 
