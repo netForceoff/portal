@@ -3,7 +3,7 @@ import styles from './SidebarLink.module.scss'
 import { FC } from 'react'
 import clsx from 'clsx'
 
-interface IProps {
+interface IProps extends JSX.IntrinsicAttributes {
   Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>
   path: string
   text: string

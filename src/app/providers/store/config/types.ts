@@ -1,11 +1,12 @@
 import { LoginSchema } from 'features/auth/modalByUsername'
 import { UserSchema } from 'entities/User'
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { Profile } from 'entities/Profile'
+import { ProfileSchema } from 'features/EditableProfileCard'
+import { AxiosInstance } from 'axios'
 
 interface AsyncStateSchema {
   login?: LoginSchema
-  profile?: Profile
+  profile?: ProfileSchema
 }
 
 interface StateSchema extends AsyncStateSchema {
@@ -21,6 +22,16 @@ interface Manager {
 
 interface ReduxStoreManager extends EnhancedStore<StateSchema> {
   reducerManager: Manager
+}
+
+export interface ThunkExtraArg {
+  axiosApi: AxiosInstance
+}
+
+export interface ThunkConfig<R> {
+  state: StateSchema
+  rejectValue: R
+  extra: ThunkExtraArg
 }
 
 export {
