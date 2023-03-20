@@ -4,10 +4,10 @@ import { ThemeSwitcher } from 'features/ThemeSwitcher'
 import { useState, type FC, ReactNode } from 'react'
 import { Button, ButtonVariant, ButtonBackgroundType, ButtonSize, ButtonColor } from 'shared/ui'
 import styles from './Sidebar.module.scss'
-import SidebarLink from '../SidebarLink/SidebarLink'
+import SidebarLink from '../SidebarLink/SidebarLink.async'
 import { Links } from '../../config'
 
-interface IProps {
+export interface IProps extends JSX.IntrinsicAttributes {
   className?: string
 }
 

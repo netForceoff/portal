@@ -2,6 +2,7 @@ import { configureStore, AnyAction, Middleware, DeepPartial } from '@reduxjs/too
 import { userReducer } from 'entities/User'
 import { StateSchema } from './types'
 import { createReducerManager } from './manager'
+import { axiosApi } from 'shared/api/axios'
 
 const createStore = (initialState?: DeepPartial<StateSchema>): ReturnType<typeof configureStore> => {
   const reducer = {
@@ -15,7 +16,14 @@ const createStore = (initialState?: DeepPartial<StateSchema>): ReturnType<typeof
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     reducer: reducerManager.reduce,
-    preloadedState: initialState as StateSchema
+    preloadedState: initialState as StateSchema,
+    middleware: getDefaultMiddleware => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          axiosApi
+        }
+      }
+    })
   })
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

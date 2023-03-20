@@ -8,14 +8,14 @@ import PageError from 'widgets/PageError'
 import { StoreProvider } from 'app/providers/store'
 
 render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary fallback={<PageError />}>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>,
+        </StoreProvider>
+    </BrowserRouter>,
     document.getElementById('root')
 )

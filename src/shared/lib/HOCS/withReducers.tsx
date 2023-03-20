@@ -1,5 +1,5 @@
 import { ReduxStoreManager, AsyncStateSchema } from 'app/providers/store'
-import { ComponentType, useEffect } from 'react'
+import { ComponentType, useLayoutEffect } from 'react'
 import { useStore, useDispatch } from 'react-redux'
 import { Reducer } from '@reduxjs/toolkit'
 
@@ -8,11 +8,11 @@ type Reducers = {
 }
 
 function withReducers <P extends JSX.IntrinsicAttributes> (Component: ComponentType<P>, reducers: Reducers) {
-  return function HOC (props: P) {
+  return function HOCReducer (props: P) {
     const store = useStore() as ReduxStoreManager
     const dispatch = useDispatch()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
       Object.entries<Reducer>(reducers).forEach(([key, reducer]) => {
         store.reducerManager.add(key as keyof AsyncStateSchema, reducer)
       })

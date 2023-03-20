@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const CODES = ['Escape']
-
+// TODO попробовать через Renderless подход
 const Modal: FC<IProps> = ({ className, children, onCloseOutside }): JSX.Element | null => {
   const [useAnimationOut, setUseAnimationOut] = useState(false)
   const CN = clsx(styles.modal, className)

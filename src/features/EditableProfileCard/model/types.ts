@@ -1,10 +1,11 @@
-import { Country, Currency } from 'shared/const/common'
+import { Currency } from 'entities/Currency'
+import { Country } from 'shared/const/common'
 import { ServerStatus } from 'shared/types/server'
 
 export interface Profile {
   first: string
   lastname: string
-  age: 22
+  age: number
   currency: Currency
   country: Country
   city: string
@@ -13,7 +14,7 @@ export interface Profile {
 }
 
 export interface ProfileSchema {
-  error?: string
+  error?: { title: string, text: string }
   profile?: Profile
   status: ServerStatus
   readonly: boolean

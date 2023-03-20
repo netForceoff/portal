@@ -1,29 +1,39 @@
 {
-    "posts": [
-      {
-        "id": 1,
-        "title": "json-server",
-        "userId": 1
-      },
-      {
-        "id": 2,
-        "title": "json-server",
-        "userId": 2
-      }
-    ],
-    "comments": [
-      {
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-      }
-    ],
-    "users": [
-      {
-        "id": 1,
-        "username": "admin",
-        "password": "123"
-      }
-    ],
-    "profile": { "name": "typicode" }
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "userId": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "name": "typicode",
+    "first": "First1",
+    "lastname": "Last Name2",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Ekb",
+    "username": "Sergey",
+    "avatar": "https://fikiwiki.com/uploads/posts/2022-02/1644855597_24-fikiwiki-com-p-kartinki-khd-kachestva-25.jpg"
+  }
 }
