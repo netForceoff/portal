@@ -5,17 +5,28 @@ import { ThemeProvider } from './app/providers/theme'
 import 'shared/config/i18n'
 import { ErrorBoundary } from 'shared/lib'
 import PageError from 'widgets/PageError'
-import { StoreProvider } from 'app/providers/store'
+import { createStore } from 'app/providers/store'
+import { Provider } from 'react-redux'
+import { initialize } from 'app/providers/initialize'
 
-render(
-    <BrowserRouter>
-        <StoreProvider>
-            <ErrorBoundary fallback={<PageError />}>
-                <ThemeProvider>
-                    <App />
-                </ThemeProvider>
-            </ErrorBoundary>
-        </StoreProvider>
-    </BrowserRouter>,
-    document.getElementById('root')
-)
+const root = document.getElementById('root')
+
+if (root) {
+  const store = createStore()
+
+  initialize()(store.dispatch, store.getState)
+    .then(() => {
+      render(
+        <BrowserRouter>
+            <Provider store={store}>
+                <ErrorBoundary fallback={<PageError />}>
+                    <ThemeProvider>
+                        <App />
+                    </ThemeProvider>
+                </ErrorBoundary>
+                </Provider>
+        </BrowserRouter>,
+        root
+      )
+    })
+}

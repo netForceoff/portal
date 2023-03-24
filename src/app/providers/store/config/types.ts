@@ -3,6 +3,7 @@ import { UserSchema } from 'entities/User'
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { ProfileSchema } from 'features/EditableProfileCard'
 import { AxiosInstance } from 'axios'
+import createStore from './store'
 
 interface AsyncStateSchema {
   login?: LoginSchema
@@ -24,19 +25,24 @@ interface ReduxStoreManager extends EnhancedStore<StateSchema> {
   reducerManager: Manager
 }
 
-export interface ThunkExtraArg {
+interface ThunkExtraArg {
   axiosApi: AxiosInstance
 }
 
-export interface ThunkConfig<R> {
+interface ThunkConfig<R> {
   state: StateSchema
   rejectValue: R
   extra: ThunkExtraArg
 }
 
+type AppDispatch = ReturnType<typeof createStore>['dispatch']
+
 export {
+  AppDispatch,
   Manager,
   AsyncStateSchema,
   StateSchema,
-  ReduxStoreManager
+  ReduxStoreManager,
+  ThunkConfig,
+  ThunkExtraArg
 }

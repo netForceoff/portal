@@ -1,0 +1,64 @@
+{
+	"React Functional Component": {
+	  "prefix": "rfc",
+	  "body": [
+		"import {FC} from \"react\"",
+		"import { useTranslation } from \"react-i18next\"",
+		"import styles from \"./$TM_FILENAME_BASE.module.scss\"",
+		"",
+		"export interface $I$TM_FILENAME_BASE$Props {",
+		"",
+		"}",
+		"const $TM_FILENAME_BASE: FC<$I$TM_FILENAME_BASE$Props> = (props) => {",
+		"const { t } = useTranslation()",
+		"",
+		"  return (",
+		"    <div className={styles.$TM_FILENAME_BASE}>",
+		"      $2",
+		"    </div>",
+		"  )",
+		"};",
+		"",
+		"export default $TM_FILENAME_BASE;",
+		""
+	  ],
+	  "description": "React Functional Component"
+	},
+	"Redux Slice": {
+		"prefix": "sl",
+		"body": [
+			"import { createSlice, PayloadAction } from '@reduxjs/toolkit'",
+			"import { initial${1:name}State } from './state'",
+			"export const ${1:name}Slice = createSlice({",
+  			"name: '${1:name}',",
+  			"initialState: initial${1:name}State,",
+  			"reducers: {},",
+  			"extraReducers: (builder) => {",
+			"",
+			"}",
+			"})",
+
+			"export const { actions: loginActions, reducer: loginReducer } = ${1:name}Slice"
+		]
+	},
+	"HOC": {
+		"prefix": "hoc",
+		"body": [
+			"import {ComponentType} from 'react'",
+			"",
+			"interface IProps extends JSX.IntrinsicAttributes {",
+			"",
+			"}",
+			"",
+			"function with${1:name} <P extends IProps> (Component: ComponentType<P>) {",
+			"return function HOC${1:name} (props: P) {",
+			"return (",
+			"<Component {...props} />",
+  			")",
+  			"}",
+  			"}",
+			"",
+			"export default with${1:name}"
+		]
+	}
+  }
