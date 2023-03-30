@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
-import { useState, type FC, ReactNode, useMemo, useCallback } from 'react'
+import { useState, type FC, useCallback } from 'react'
 import { Button, ButtonVariant, ButtonBackgroundType, ButtonSize, ButtonColor } from 'shared/ui'
 import styles from './Sidebar.module.scss'
 import SidebarLink from '../SidebarLink/SidebarLink.async'

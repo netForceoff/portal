@@ -5,7 +5,7 @@ import { RoutePath } from 'shared/config/router'
 import Main from 'pages/Main'
 import Profile from 'pages/Profile'
 import ArticlesPage from 'pages/ArticlesPage'
-import ArticleDetailsPage from 'pages/ArticleDetailsPage'
+import ArticlePage from 'pages/ArticlePage'
 
 export type RouteConfigProps = RouteProps & {
   authOnly?: boolean
@@ -36,7 +36,7 @@ export const routeConfig: RouteConfigProps[] = [
   },
   {
     authOnly: true,
-    element: <ArticleDetailsPage />,
+    element: <ArticlePage />,
     path: `${RoutePath.article_details}:id`
   }
 ]

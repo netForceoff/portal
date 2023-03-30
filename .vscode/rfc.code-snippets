@@ -2,18 +2,20 @@
 	"React Functional Component": {
 	  "prefix": "rfc",
 	  "body": [
+		"import clsx from 'clsx'",
 		"import {FC} from \"react\"",
 		"import { useTranslation } from \"react-i18next\"",
 		"import styles from \"./$TM_FILENAME_BASE.module.scss\"",
 		"",
 		"export interface $I$TM_FILENAME_BASE$Props {",
-		"",
+		"className?: string",
 		"}",
 		"const $TM_FILENAME_BASE: FC<$I$TM_FILENAME_BASE$Props> = (props) => {",
+		"const { className } = props",
 		"const { t } = useTranslation()",
 		"",
 		"  return (",
-		"    <div className={styles.$TM_FILENAME_BASE}>",
+		"    <div className={clsx(styles.$TM_FILENAME_BASE, className)}>",
 		"      $2",
 		"    </div>",
 		"  )",
@@ -29,6 +31,7 @@
 		"body": [
 			"import { createSlice, PayloadAction } from '@reduxjs/toolkit'",
 			"import { initial${1:name}State } from './state'",
+			"",
 			"export const ${1:name}Slice = createSlice({",
   			"name: '${1:name}',",
   			"initialState: initial${1:name}State,",
@@ -38,7 +41,7 @@
 			"}",
 			"})",
 
-			"export const { actions: loginActions, reducer: loginReducer } = ${1:name}Slice"
+			"export const { actions: ${1:name}Actions, reducer: ${1:name}Reducer } = ${1:name}Slice"
 		]
 	},
 	"HOC": {

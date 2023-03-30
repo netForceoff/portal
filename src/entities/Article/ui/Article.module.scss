@@ -1,0 +1,25 @@
+.avatar {
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  max-height: 200px;
+  width: auto;
+}
+
+.info {
+  align-items: center;
+  display: flex;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.block {
+  margin-bottom: 16px;
+}
