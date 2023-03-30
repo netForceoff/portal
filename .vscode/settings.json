@@ -33,5 +33,86 @@
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.stylelint": true
-	}
+	},
+	"editor.tabCompletion": "on",
+	"folderTemplates.structures": [
+		{
+			"name": "Feauteres",
+			"customVariables": [],
+			"omitParentDirectory": false,
+			"structure": [
+			  {
+				"fileName": "ui/<FTName>.tsx",
+			  },
+			  {
+				"fileName": "ui/<FTName>.stories.tsx"
+			  },
+			  {
+				"fileName": "ui/<FTName>.module.scss"
+			  },
+			  {
+				"fileName": "ui/__tests__/<FTName>.tsx"
+			  },
+			  {
+				"fileName": "model/slice.ts"
+			  },
+			  {
+				"fileName": "model/selectors.ts"
+			  },
+			  {
+				"fileName": "model/state.ts"
+			  },
+			  {
+				"fileName": "model/service.ts"
+			  },
+			  {
+				"fileName": "model/types.ts"
+			  },
+			  {
+				"fileName": "index.ts"
+			  },
+			]
+		},
+		{
+			"name": "Component",
+			"customVariables": [],
+			"omitParentDirectory": false,
+			"structure": [
+				{
+					"fileName": "ui/<FTName>.tsx",
+				  },
+				  {
+					"fileName": "ui/<FTName>.stories.tsx"
+				  },
+				  {
+					"fileName": "ui/<FTName>.module.scss"
+				  },
+				  {
+					"fileName": "ui/__tests__/<FTName>.tsx"
+				  },
+				  {
+					"fileName": "index.ts"
+				  }
+			]
+		},
+		{
+			"name": "Shared Component",
+			"customVariables": [],
+			"omitParentDirectory": false,
+			"structure": [
+				{
+					"fileName": "<FTName>.tsx",
+				  },
+				  {
+					"fileName": "<FTName>.stories.tsx"
+				  },
+				  {
+					"fileName": "<FTName>.module.scss"
+				  },
+				  {
+					"fileName": "__tests__/<FTName>.tsx"
+				  }
+			]
+		}
+	]
 }

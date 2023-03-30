@@ -18,4 +18,9 @@ export const Links = [{
   path: RoutePath.profile,
   Icon: Profile,
   text: i18n.t('links.profile')
+},
+{
+  path: RoutePath.articles,
+  Icon: Profile,
+  text: 'Статьи'
 }]

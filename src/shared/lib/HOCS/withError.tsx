@@ -14,7 +14,7 @@ function withError <P extends IProps> (Component: ComponentType<Omit<P, 'classNa
     const { className, error, ...otherProps } = props
 
     if (error) {
-      return <Text className={className} title={error.title} text={error.text} />
+      return <Text colorType="error" className={className} title={error.title} text={error.text} />
     }
 
     return <Component className={className} {...otherProps} />

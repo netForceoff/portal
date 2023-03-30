@@ -14,7 +14,8 @@ const config = (options: BuildOptions): Configuration => {
     output: {
       filename: name.js,
       path: paths.build,
-      clean: true
+      clean: true,
+      publicPath: '/'
     },
     plugins: plugins(options),
     module: {

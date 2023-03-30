@@ -2,6 +2,7 @@
 @import "variables/global.scss";
 @import "./themes/dark.scss";
 @import "./themes/light.scss";
+@import "./themes/green.scss";
 
 body {
   background: var(--bg-color);
@@ -17,5 +18,8 @@ body {
 
 .wrapper {
   flex-grow: 1;
-  padding: 20px;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  padding: 20px 20px 20px 45px;
+  width: 100%;
 }

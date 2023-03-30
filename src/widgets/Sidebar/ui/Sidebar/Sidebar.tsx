@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
-import { useState, type FC, ReactNode } from 'react'
+import { useState, type FC, useCallback } from 'react'
 import { Button, ButtonVariant, ButtonBackgroundType, ButtonSize, ButtonColor } from 'shared/ui'
 import styles from './Sidebar.module.scss'
 import SidebarLink from '../SidebarLink/SidebarLink.async'
@@ -23,8 +23,8 @@ export const Sidebar: FC<IProps> = (props) => {
     [styles.collapsed]: collapsed
   })
 
-  const renderLinks = (): ReactNode =>
-    Links.map(link => <SidebarLink key={link.path} collapsed={collapsed} Icon={link.Icon} path={link.path} text={link.text} />)
+  const renderLinks = useCallback(() =>
+    Links.map(link => <SidebarLink key={link.path} collapsed={collapsed} Icon={link.Icon} path={link.path} text={link.text} />), [collapsed])
 
   return (
         <div className={CN}>

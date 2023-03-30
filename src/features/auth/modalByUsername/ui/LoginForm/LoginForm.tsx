@@ -35,7 +35,7 @@ const LoginForm: FC<IProps> = (): JSX.Element => {
 
   const handleClick = useCallback(() => {
     dispatch(login({ username, password }))
-  }, [dispatch, username, password])
+  }, [dispatch, username])
 
   return (
         <div className={styles.simpleLoginForm}>

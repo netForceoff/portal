@@ -1,10 +1,11 @@
-import { configureStore, AnyAction, Middleware, DeepPartial } from '@reduxjs/toolkit'
+import { configureStore, AnyAction, Middleware, DeepPartial, Dispatch } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
 import { StateSchema } from './types'
 import { createReducerManager } from './manager'
 import { axiosApi } from 'shared/api/axios'
+import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 
-const createStore = (initialState?: DeepPartial<StateSchema>): ReturnType<typeof configureStore> => {
+const createStore = (initialState?: DeepPartial<StateSchema>): ToolkitStore<StateSchema, AnyAction, ReadonlyArray<Middleware<string, StateSchema, Dispatch<AnyAction>>>> => {
   const reducer = {
     user: userReducer
   }
