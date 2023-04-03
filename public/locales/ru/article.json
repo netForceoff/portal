@@ -2,5 +2,10 @@
   "errors": {
     "loading": "Произошла загрузка статьи"
   },
-  "nothingFound": "Статья не найдена"
+  "nothingFound": "Статья не найдена",
+  "article": {
+    "comments": {
+      "nothingFound": "Комментариев нет!"
+    }
+  }
 }

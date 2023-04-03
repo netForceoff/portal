@@ -2,5 +2,10 @@
   "errors": {
     "loading": "Something went wrong"
   },
-  "nothingFound": "Article has not found"
+  "nothingFound": "Article has not found",
+  "article": {
+    "comments": {
+      "nothingFound": "Comments are not"
+    }
+  }
 }

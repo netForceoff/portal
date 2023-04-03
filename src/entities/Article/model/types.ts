@@ -44,7 +44,3 @@ export interface IArticle {
   type: IArticleType[]
   blocks: IArticleBlock[]
 }
-
-export interface ArticleSchema {
-  data?: IArticle
-}

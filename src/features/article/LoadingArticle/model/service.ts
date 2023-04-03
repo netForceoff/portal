@@ -1,21 +1,23 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import i18n from 'shared/config/i18n'
 import { ThunkConfig } from 'app/providers/store'
-import { articleActions, IArticle } from 'entities/Article'
+import { IArticle } from 'entities/Article'
 
-export const getArticle = createAsyncThunk<IArticle, string, ThunkConfig<{ title: string, text: string }>>(
+export const getArticle = createAsyncThunk<IArticle, string | undefined, ThunkConfig<{ title: string, text: string }>>(
   'article/getArticle',
   async (uuid, { extra, dispatch, rejectWithValue }) => {
     try {
-      const response = await extra.axiosApi.get<IArticle>('/articles/' + uuid)
+      if (uuid) {
+        const response = await extra.axiosApi.get<IArticle>('/articles/' + uuid)
 
-      if (!response.data) {
-        throw new Error()
+        if (!response.data) {
+          throw new Error()
+        }
+
+        return response.data
       }
 
-      dispatch(articleActions.setArticle(response.data))
-
-      return response.data
+      throw new Error('No Uuid')
     } catch (error) {
       console.error(error)
 

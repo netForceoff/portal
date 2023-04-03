@@ -6,27 +6,30 @@ import ArticleCode from './ArticleCode/ui/ArticleCode'
 import ArticleImage from './ArticleImage/ArticleImage'
 import ArticleText from './ArticleText/ArticleText'
 
-export interface IArticleProps extends IArticle {
-
+export interface IArticleProps {
+  article?: IArticle
 }
 
 const Article: FC<IArticleProps> = (props) => {
-  const { img, blocks, id, subtitle, title, views, createdAt } = props
+  const { article } = props
 
-  const renderBlock = (block: IArticleBlock): ReactNode => {
-    switch (block.type) {
-      case IArticleBlockType.CODE:
-        return <ArticleCode key={id} className={styles.block} block={block} />
-      case IArticleBlockType.IMAGE:
-        return <ArticleImage key={id} className={styles.block} block={block} />
-      case IArticleBlockType.TEXT:
-        return <ArticleText key={id} className={styles.block} block={block} />
-      default:
-        return null
+  if (article) {
+    const { img, blocks, id, subtitle, title, views, createdAt } = article
+
+    const renderBlock = (block: IArticleBlock): ReactNode => {
+      switch (block.type) {
+        case IArticleBlockType.CODE:
+          return <ArticleCode key={id} className={styles.block} block={block} />
+        case IArticleBlockType.IMAGE:
+          return <ArticleImage key={id} className={styles.block} block={block} />
+        case IArticleBlockType.TEXT:
+          return <ArticleText key={id} className={styles.block} block={block} />
+        default:
+          return null
+      }
     }
-  }
 
-  return (
+    return (
     <div className={styles.Article}>
       <div className={styles.avatarWrapper}>
       <img alt="Img" src={img} className={styles.avatar} />
@@ -40,7 +43,10 @@ const Article: FC<IArticleProps> = (props) => {
       </div>
       {blocks.map(renderBlock)}
     </div>
-  )
+    )
+  }
+
+  return null
 }
 
 export default memo(Article)

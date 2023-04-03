@@ -1,22 +1,19 @@
-import { Article, articleReducer, getArticleProps, IArticleProps } from 'entities/Article'
-import { FC, memo, useEffect } from 'react'
+import { Article, IArticleProps } from 'entities/Article'
+import { FC, memo } from 'react'
 import styles from './LoadingArticle.module.scss'
 import { withReducers } from 'shared/lib'
 import { useSelector } from 'react-redux'
-import { getLoadingArticleError, getLoadingArticleStatus } from '../model/selectors'
+import { getArticleError, getArticleStatus, getArticleProps } from '../model/selectors'
 import withError from 'shared/lib/HOCS/withError'
-import { useAppDispatch } from 'app/providers/store'
-import { getArticle } from '../model/service'
-import { loadingArticleReducer } from '../model/slice'
+import { articleReducer } from '../model/slice'
 import Skeleton from 'shared/ui/Skeleton/Skeleton'
 
 const reducers = {
-  article: articleReducer,
-  loadingArticle: loadingArticleReducer
+  article: articleReducer
 }
 
 export interface ILoadingArticleProps extends JSX.IntrinsicAttributes {
-  uuid: string
+
 }
 
 const Card = withError<IArticleProps &
@@ -24,15 +21,9 @@ const Card = withError<IArticleProps &
 >(Article)
 
 const LoadingArticle: FC<ILoadingArticleProps> = (props) => {
-  const { uuid } = props
-  const status = useSelector(getLoadingArticleStatus)
-  const error = useSelector(getLoadingArticleError)
+  const status = useSelector(getArticleStatus)
+  const error = useSelector(getArticleError)
   const data = useSelector(getArticleProps)
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(getArticle(uuid))
-  }, [dispatch, uuid])
 
   if (status === 'request') {
     return (
@@ -46,15 +37,11 @@ const LoadingArticle: FC<ILoadingArticleProps> = (props) => {
     )
   }
 
-  if (data) {
-    return (
+  return (
     <div className={styles.loadingArticle}>
-        <Card error={error} {...data} />
+        <Card error={error} article={data} />
     </div>
-    )
-  }
-
-  return null
+  )
 }
 
 export default memo<ILoadingArticleProps>(withReducers(LoadingArticle, reducers))

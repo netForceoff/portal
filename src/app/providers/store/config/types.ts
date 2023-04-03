@@ -4,14 +4,14 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { ProfileSchema } from 'features/EditableProfileCard'
 import { AxiosInstance } from 'axios'
 import createStore from './store'
-import { ArticleSchema } from 'entities/Article'
-import { LoadingArticleSchema } from 'features/LoadingArticle'
+import { ArticleSchema } from 'features/article/LoadingArticle'
+import { ArticleCommentsSchema } from 'features/article/ArticleComments'
 
 interface AsyncStateSchema {
   login?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
-  loadingArticle?: LoadingArticleSchema
+  articleComments?: ArticleCommentsSchema
 }
 
 interface StateSchema extends AsyncStateSchema {
