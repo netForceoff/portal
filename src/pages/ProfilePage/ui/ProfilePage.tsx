@@ -1,0 +1,28 @@
+import { FC, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { EditableProfileCard, getProfile } from 'features/EditableProfileCard'
+import { useAppDispatch } from 'app/providers/store'
+import { useParams } from 'react-router-dom'
+
+interface IProps extends JSX.IntrinsicAttributes {
+  className?: string
+}
+
+const ProfilePage: FC<IProps> = ({ className }) => {
+  const { id } = useParams<{ id: string }>()
+  const { t } = useTranslation('profile')
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(getProfile(id))
+  }, [dispatch, id])
+
+  return (
+    <section className={className}>
+        {t('profilePage')}
+        <EditableProfileCard />
+    </section>
+  )
+}
+
+export default ProfilePage

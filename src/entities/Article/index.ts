@@ -1,15 +1,13 @@
-import Article, { type IArticleProps } from './ui/Article'
-import type { IArticle, ArticleSchema, IArticleTextBlock, IArticleCodeBlock, IArticleImageBlock } from './model/types'
-import { articleActions, articleReducer } from './model/slice'
-import { getArticleProps } from './model/selectors'
+import Article, { type IArticleProps } from './ui/Article/Article'
+import type { IArticle, IArticleTextBlock, IArticleCodeBlock, IArticleImageBlock } from './model/types'
+import ArticleListCompact from './ui/ArticleListCompact/ArticleListCompact'
+import ArticleListExtended from './ui/ArticleListExtended/ArticleListExtended'
 
 export {
-  articleActions,
-  articleReducer,
-  ArticleSchema,
+  ArticleListCompact,
+  ArticleListExtended,
   IArticleProps,
   Article,
-  getArticleProps,
   IArticle,
   IArticleCodeBlock,
   IArticleTextBlock,

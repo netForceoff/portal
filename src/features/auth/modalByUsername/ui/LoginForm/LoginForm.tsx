@@ -28,14 +28,14 @@ const LoginForm: FC<IProps> = (): JSX.Element => {
   const status = useSelector(getLoginStatus)
 
   const disabled = status === 'request'
-
+  // Нахера вытаскивать в reducer поля?
   const handleChangeField = useCallback((field: keyof Fields) => (value: string) => {
     dispatch(loginActions.setField({ field, value }))
   }, [dispatch])
 
   const handleClick = useCallback(() => {
     dispatch(login({ username, password }))
-  }, [dispatch, username])
+  }, [dispatch, username, password])
 
   return (
         <div className={styles.simpleLoginForm}>

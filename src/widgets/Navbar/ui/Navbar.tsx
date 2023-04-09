@@ -57,10 +57,10 @@ const Navbar: FC<IProps> = ({ className }) => {
   )
 
   return (
-    <div className={clsx(styles.navbar, className)}>
+    <header className={clsx(styles.navbar, className)}>
       {user ? renderLogOutButton() : renderLogInButton()}
       {renderAuthModal()}
-    </div>
+    </header>
   )
 }
 

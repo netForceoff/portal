@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui'
 import type { Profile } from '../../../../features/EditableProfileCard/model/types'
 import type { ServerStatus } from 'shared/types/server'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import styles from './ProfileCard.module.scss'
 import Avatar from 'shared/ui/Avatar/Avatar'
 import Select from 'shared/ui/Select/Select'
@@ -22,7 +22,7 @@ const options = [{
   value: Currency.EUR, content: Currency.EUR
 }]
 
-export const ProfileCard: FC<IProps> = (props): JSX.Element | null => {
+const ProfileCard: FC<IProps> = (props): JSX.Element | null => {
   const { t } = useTranslation('profile')
   const { profile, readOnly, onChangeFirstName, onChangeLastName } = props
 
@@ -54,3 +54,5 @@ export const ProfileCard: FC<IProps> = (props): JSX.Element | null => {
 
   return null
 }
+
+export default memo(ProfileCard)

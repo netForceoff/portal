@@ -4,17 +4,21 @@ import { ThunkConfig } from 'app/providers/store'
 import { Profile } from './types'
 import { getProfileState } from './selectors'
 
-export const getProfile = createAsyncThunk<Profile, undefined, ThunkConfig<{ title: string, text: string }>>(
+export const getProfile = createAsyncThunk<Profile, string | undefined, ThunkConfig<{ title: string, text: string }>>(
   'profile/getProfile',
-  async (_, { extra, dispatch, rejectWithValue }) => {
+  async (uuid, { extra, dispatch, rejectWithValue }) => {
     try {
-      const response = await extra.axiosApi.get<Profile>('/profile')
+      if (uuid) {
+        const response = await extra.axiosApi.get<Profile>('/profiles/' + uuid)
 
-      if (!response.data) {
-        throw new Error()
+        if (!response.data) {
+          throw new Error()
+        }
+
+        return response.data
       }
 
-      return response.data
+      throw new Error('Nothing found')
     } catch (error) {
       console.error(error)
 

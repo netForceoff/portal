@@ -1,11 +1,12 @@
 import clsx from 'clsx'
 import { LanguageSwitcher } from 'features/LanguageSwitcher'
 import { ThemeSwitcher } from 'features/ThemeSwitcher'
-import { useState, type FC, useCallback } from 'react'
+import { useState, type FC, ReactNode } from 'react'
 import { Button, ButtonVariant, ButtonBackgroundType, ButtonSize, ButtonColor } from 'shared/ui'
 import styles from './Sidebar.module.scss'
 import SidebarLink from '../SidebarLink/SidebarLink.async'
-import { Links } from '../../config'
+import { useSelector } from 'react-redux'
+import { getSidebarLinks } from '../../model/selectors'
 
 export interface IProps extends JSX.IntrinsicAttributes {
   className?: string
@@ -14,6 +15,7 @@ export interface IProps extends JSX.IntrinsicAttributes {
 export const Sidebar: FC<IProps> = (props) => {
   const { className } = props
   const [collapsed, setCollapsed] = useState(false)
+  const links = useSelector(getSidebarLinks)
 
   const toggle = (): void => {
     setCollapsed(prev => !prev)
@@ -23,11 +25,10 @@ export const Sidebar: FC<IProps> = (props) => {
     [styles.collapsed]: collapsed
   })
 
-  const renderLinks = useCallback(() =>
-    Links.map(link => <SidebarLink key={link.path} collapsed={collapsed} Icon={link.Icon} path={link.path} text={link.text} />), [collapsed])
+  const renderLinks = (): ReactNode[] => links.map(link => <SidebarLink key={link.path} collapsed={collapsed} Icon={link.Icon} path={link.path} text={link.text} />)
 
   return (
-        <div className={CN}>
+        <aside className={CN}>
             <Button
               backgroundType={ButtonBackgroundType.SQUARE}
               size={ButtonSize.XL}
@@ -43,7 +44,7 @@ export const Sidebar: FC<IProps> = (props) => {
             <ThemeSwitcher />
             <LanguageSwitcher className={styles.lang} short={collapsed} />
             </div>
-        </div>
+        </aside>
   )
 }
 

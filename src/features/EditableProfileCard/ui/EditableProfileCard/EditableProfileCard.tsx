@@ -1,10 +1,9 @@
 import { useAppDispatch } from 'app/providers/store'
 import { profileReducer } from '../../model/slice'
-import { useEffect, ReactNode, useCallback } from 'react'
+import { ReactNode, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { withReducers } from 'shared/lib'
 import { getProfileState, getProfileStatus, getProfileError, getProfileReadOnly } from '../../model/selectors'
-import { getProfile } from '../../model/services'
 import { ProfileCard, IProfileCardProps } from 'entities/Profile'
 import withLoader from 'shared/lib/HOCS/withLoader'
 import clsx from 'clsx'
@@ -31,10 +30,6 @@ const EditableProfileCard = (): JSX.Element => {
     [styles.error]: status === 'error',
     [styles.loading]: isLoading
   })
-
-  useEffect(() => {
-    dispatch(getProfile())
-  }, [dispatch])
 
   const onChangeFirstName = useCallback((value: string) => {
     dispatch(profileActions.updateProfile({ key: 'first', value }))

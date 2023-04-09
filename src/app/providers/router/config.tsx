@@ -3,7 +3,7 @@ import NotFound from 'pages/NotFound'
 import { RouteProps } from 'react-router-dom'
 import { RoutePath } from 'shared/config/router'
 import Main from 'pages/Main'
-import Profile from 'pages/Profile'
+import Profile from 'pages/ProfilePage'
 import ArticlesPage from 'pages/ArticlesPage'
 import ArticlePage from 'pages/ArticlePage'
 
@@ -27,7 +27,7 @@ export const routeConfig: RouteConfigProps[] = [
   {
     authOnly: true,
     element: <Profile />,
-    path: RoutePath.profile
+    path: `${RoutePath.profile}:id`
   },
   {
     authOnly: true,
