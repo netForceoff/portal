@@ -21,5 +21,8 @@
   "errors": {
     "simpleLoginForm": "Произошла ошибка при авторизации"
   },
-  "LogOut": "Выйти"
+  "LogOut": "Выйти",
+  "buttons": {
+    "showMore": "Показать еще"
+  }
 }

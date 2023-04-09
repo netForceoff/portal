@@ -33,7 +33,8 @@ module.exports = {
     '@typescript-eslint/prefer-optional-chain': 'off',
     'react-hooks/rules-of-hooks': 'error',
     '@typescript-eslint/consistent-type-exports': 'off',
-    '@typescript-eslint/no-dynamic-delete': 'off'
+    '@typescript-eslint/no-dynamic-delete': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off'
   },
   globals: {
     __IS_DEV__: true

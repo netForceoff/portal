@@ -4,9 +4,9 @@ import {
   createSlice,
   PayloadAction
 } from '@reduxjs/toolkit'
-import { IComment } from 'entities/Comments'
+import { IComment } from 'entities/Comment'
 import { ArticleCommentsSchema } from './types'
-import { getComments } from './service'
+import { addComment, getComments } from './service'
 
 const commentsAdapter = createEntityAdapter<IComment>({
   selectId: (comment) => comment.id
@@ -33,6 +33,9 @@ const articleCommentsSlice = createSlice({
       .addCase(getComments.rejected, (state, action: PayloadAction<{ title: string, text: string } | undefined>) => {
         state.status = 'error'
         state.error = action.payload
+      })
+      .addCase(addComment.fulfilled, (state, action: PayloadAction<IComment>) => {
+        commentsAdapter.addOne(state, action.payload)
       })
   }
 })

@@ -1,7 +1,7 @@
 import { IArticleCodeBlock } from 'entities/Article'
 import { FC, memo } from 'react'
 import Code from 'shared/ui/Code/Code'
-import styles from './ArticleCode.module.scss'
+// import styles from './ArticleCode.module.scss'
 import clsx from 'clsx'
 
 export interface IArticleCodeProps {
@@ -12,7 +12,7 @@ const ArticleCode: FC<IArticleCodeProps> = (props) => {
   const { className, block } = props
 
   return (
-    <div className={clsx(styles.ArticleCode, className)}>
+    <div className={clsx(className)}>
         <Code text={block.code} copyBtnText="Копировать" />
     </div>
   )

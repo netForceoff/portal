@@ -21,5 +21,8 @@
   "errors": {
     "simpleLoginForm": "Something went wrong trying to authorization"
   },
-  "LogOut": "Log out"
+  "LogOut": "Log out",
+  "buttons": {
+    "showMore": "Show more"
+  }
 }

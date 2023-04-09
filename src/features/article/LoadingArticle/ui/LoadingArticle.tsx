@@ -19,7 +19,8 @@ export interface ILoadingArticleProps extends JSX.IntrinsicAttributes {
 const Card = withError<IArticleProps &
 { className?: string, error?: { title: string, text: string } }
 >(Article)
-
+// TODO - возможно стоило утащить на уровень widgets или вообще оставить в enteties, т.к. статья это одна сущность и вряд ли будет переиспользоваться
+// Модули также стоит перетащить в другое место
 const LoadingArticle: FC<ILoadingArticleProps> = (props) => {
   const status = useSelector(getArticleStatus)
   const error = useSelector(getArticleError)

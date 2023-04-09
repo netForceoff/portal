@@ -6,12 +6,14 @@ import { AxiosInstance } from 'axios'
 import createStore from './store'
 import { ArticleSchema } from 'features/article/LoadingArticle'
 import { ArticleCommentsSchema } from 'features/article/ArticleComments'
+import { ArticleListSchema } from 'pages/ArticlesPage'
 
 interface AsyncStateSchema {
   login?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
   articleComments?: ArticleCommentsSchema
+  articles?: ArticleListSchema
 }
 
 interface StateSchema extends AsyncStateSchema {

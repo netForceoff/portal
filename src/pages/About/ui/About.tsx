@@ -5,9 +5,9 @@ const About = (): JSX.Element => {
   const { t } = useTranslation('about')
 
   return (
-        <div className={styles.test}>
+        <section className={styles.test}>
             {t('about')}
-        </div>
+        </section>
   )
 }
 

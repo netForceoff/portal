@@ -2,7 +2,7 @@ import { getArticle, LoadingArticle } from 'features/article/LoadingArticle'
 import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import styles from './ArticlePage.module.scss'
+// import styles from './ArticlePage.module.scss'
 import { useAppDispatch } from 'app/providers/store'
 import { ArticleComments, getComments } from 'features/article/ArticleComments'
 
@@ -22,17 +22,17 @@ const ArticlePage: FC<IArticlePageProps> = (props) => {
 
   if (id) {
     return (
-      <div className={styles.ArticlePage}>
+      <section>
           <LoadingArticle />
           <ArticleComments />
-      </div>
+      </section>
     )
   }
 
   return (
-    <div className={styles.ArticlePage}>
+    <section>
        {t('nothingFound')}
-    </div>
+    </section>
   )
 }
 
