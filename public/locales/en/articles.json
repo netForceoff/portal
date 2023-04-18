@@ -2,5 +2,7 @@
   "view": {
     "table": "Table",
     "list": "List"
-  }
+  },
+  "sortBy": "Sort by",
+  "search": "Search"
 }

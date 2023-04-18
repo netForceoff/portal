@@ -23,17 +23,20 @@ const ArticleListExtended: FC<IArticleListExtendedProps> = (props) => {
     )
   })
 
-  if (loading) {
-    return (
-        <>
-          <Skeleton width="100%" height="500px" />
-        </>
-    )
+  const renderLoading = () => {
+    if (loading) {
+      return (
+          <>
+            <Skeleton width="100%" height="500px" />
+          </>
+      )
+    }
   }
 
   return (
       <div className={clsx(styles.container, className)}>
           {renderList()}
+          {renderLoading()}
       </div>
   )
 }

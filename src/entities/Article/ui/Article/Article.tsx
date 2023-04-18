@@ -1,6 +1,6 @@
 import { FC, memo, ReactNode } from 'react'
 import { Text } from 'shared/ui'
-import { IArticle, IArticleBlock, IArticleBlockType } from '../../model/types'
+import { IArticle, IArticleBlock, IArticleBlockType } from '../../../ArticleList/model/types'
 import styles from './Article.module.scss'
 import ArticleCode from './ArticleCode/ui/ArticleCode'
 import ArticleImage from './ArticleImage/ArticleImage'

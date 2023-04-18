@@ -1,3 +1,6 @@
+import { ServerError, ServerStatus } from 'shared/types/server'
+import { EntityState } from '@reduxjs/toolkit'
+
 export enum IArticleBlockType {
   CODE = 'CODE',
   IMAGE = 'IMAGE',
@@ -43,4 +46,20 @@ export interface IArticle {
   createdAt: string
   type: IArticleType[]
   blocks: IArticleBlock[]
+}
+
+export type Order = 'asc' | 'desc'
+
+export type SortBy = 'views' | 'title' | 'createdAt'
+
+export interface ArticleListSchema extends EntityState<IArticle> {
+  error?: ServerError
+  status: ServerStatus
+  view?: 'table' | 'list'
+  page: number
+  limit: number
+  hasMore: boolean
+  order: Order
+  sort: SortBy
+  search: string
 }

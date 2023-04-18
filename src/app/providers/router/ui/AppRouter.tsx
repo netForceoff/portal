@@ -6,11 +6,7 @@ import RequireAuth from './RequireAuth'
 // TODO подумать куда засунуть класс wrapper
 const Router = (): JSX.Element => {
   const renerRoute = useCallback(({ authOnly, element, path }: RouteConfigProps): JSX.Element => {
-    const wrappedElement = (
-      <div className="wrapper">{element}</div>
-    )
-
-    return <Route key={path} path={path} element={authOnly ? <RequireAuth>{wrappedElement}</RequireAuth> : wrappedElement} />
+    return <Route key={path} path={path} element={authOnly ? <RequireAuth>{element}</RequireAuth> : element} />
   }, [])
 
   return (
