@@ -1,21 +1,23 @@
-import { FC, memo, useMemo, ChangeEvent } from 'react'
+import { memo, useMemo, ChangeEvent } from 'react'
 import styles from './Select.module.scss'
 import clsx from 'clsx'
 
-interface Option {
-  value: string
+interface Option <V extends string = string> {
+  value: V
   content: string
 }
 
-interface IProps {
+interface IProps <V extends string = string> {
   className?: string
   label?: string
-  options: Option[]
+  options: Array<Option<V>>
   value?: string
-  onChange?: (value: string) => void
+  onChange?: (value: V) => void
 }
 
-const Select: FC<IProps> = ({ className, label, options, value, onChange }): JSX.Element => {
+const typedMemo: <T>(c: T) => T = memo
+
+const Select = typedMemo(<V extends string>({ className, label, options, value, onChange }: IProps<V>): JSX.Element => {
   const optionsList = useMemo(() => {
     return options.map(option => {
       return <option key={option.value} value={option.value}>{option.content}</option>
@@ -23,7 +25,7 @@ const Select: FC<IProps> = ({ className, label, options, value, onChange }): JSX
   }, [options])
 
   const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>): void => {
-    onChange?.(event.currentTarget.value)
+    onChange?.(event.currentTarget.value as V)
   }
 
   return (
@@ -34,6 +36,6 @@ const Select: FC<IProps> = ({ className, label, options, value, onChange }): JSX
             </select>
         </div>
   )
-}
+})
 
-export default memo(Select)
+export default Select

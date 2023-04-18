@@ -23,19 +23,22 @@ const ArticleListCompact: FC<IArticleListCompactProps> = (props) => {
     )
   })
 
-  if (loading) {
-    return (
-      <>
-        <Skeleton width="200px" height="200px" />
-        <Skeleton width="200px" height="200px" />
-        <Skeleton width="200px" height="200px" />
-      </>
-    )
+  const renderLoading = () => {
+    if (loading) {
+      return (
+        <>
+          <Skeleton width="200px" height="200px" />
+          <Skeleton width="200px" height="200px" />
+          <Skeleton width="200px" height="200px" />
+        </>
+      )
+    }
   }
 
   return (
     <div className={clsx(styles.container, className)}>
         {renderList()}
+        {renderLoading()}
     </div>
   )
 }

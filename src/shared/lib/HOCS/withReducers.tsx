@@ -7,7 +7,7 @@ type Reducers = {
   [key in keyof AsyncStateSchema]: Reducer
 }
 
-function withReducers <P extends JSX.IntrinsicAttributes> (Component: ComponentType<P>, reducers: Reducers) {
+function withReducers <P extends JSX.IntrinsicAttributes> (Component: ComponentType<P>, reducers: Reducers, shouldRemoveReducers: boolean = true) {
   return function HOCReducer (props: P) {
     const store = useStore() as ReduxStoreManager
     const dispatch = useDispatch()
@@ -15,15 +15,16 @@ function withReducers <P extends JSX.IntrinsicAttributes> (Component: ComponentT
     useLayoutEffect(() => {
       Object.entries<Reducer>(reducers).forEach(([key, reducer]) => {
         store.reducerManager.add(key as keyof AsyncStateSchema, reducer)
+        dispatch({ type: `@@INIT ${key}` })
       })
 
-      dispatch({ type: '@@INIT' })
-
       return () => {
-        Object.entries<Reducer>(reducers).forEach(([key]) => {
-          store.reducerManager.remove(key as keyof AsyncStateSchema)
-        })
-        dispatch({ type: '@@REMOVE DISPATCH' })
+        if (shouldRemoveReducers) {
+          Object.entries<Reducer>(reducers).forEach(([key]) => {
+            store.reducerManager.remove(key as keyof AsyncStateSchema)
+            dispatch({ type: `@@REMOVE DISPATCH ${key}` })
+          })
+        }
       }
     }, [])
 

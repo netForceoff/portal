@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next'
+import { Layout } from 'widgets/Layout'
 
 const Main = (): JSX.Element => {
   const { t } = useTranslation('main')
   return (
-        <section>
-            {t('page.main')}
-        </section>
+      <Layout>
+        {() => t('page.main')}
+      </Layout>
   )
 }
 

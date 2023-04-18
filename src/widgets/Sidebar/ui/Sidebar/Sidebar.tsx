@@ -28,7 +28,7 @@ export const Sidebar: FC<IProps> = (props) => {
   const renderLinks = (): ReactNode[] => links.map(link => <SidebarLink key={link.path} collapsed={collapsed} Icon={link.Icon} path={link.path} text={link.text} />)
 
   return (
-        <aside className={CN}>
+        <menu className={CN}>
             <Button
               backgroundType={ButtonBackgroundType.SQUARE}
               size={ButtonSize.XL}
@@ -44,7 +44,7 @@ export const Sidebar: FC<IProps> = (props) => {
             <ThemeSwitcher />
             <LanguageSwitcher className={styles.lang} short={collapsed} />
             </div>
-        </aside>
+        </menu>
   )
 }
 

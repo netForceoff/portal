@@ -6,7 +6,8 @@ import { AxiosInstance } from 'axios'
 import createStore from './store'
 import { ArticleSchema } from 'features/article/LoadingArticle'
 import { ArticleCommentsSchema } from 'features/article/ArticleComments'
-import { ArticleListSchema } from 'pages/ArticlesPage'
+import { SaveScrollPositionSchema } from 'features/SaveScrollPosition'
+import { ArticleListSchema } from 'entities/ArticleList'
 
 interface AsyncStateSchema {
   login?: LoginSchema
@@ -14,6 +15,7 @@ interface AsyncStateSchema {
   article?: ArticleSchema
   articleComments?: ArticleCommentsSchema
   articles?: ArticleListSchema
+  scrollPosition?: SaveScrollPositionSchema
 }
 
 interface StateSchema extends AsyncStateSchema {

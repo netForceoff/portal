@@ -30,6 +30,7 @@
     // можно писать такой
     // import React from 'react';
     "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
     "paths": {
       "*": ["./src/*", "./config/*"]
     }
