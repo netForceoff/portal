@@ -43,7 +43,7 @@ const optionsOrder = [{
   value: 'desc' as const,
   content: 'по убыванию'
 }]
-
+// TODO - возможно это widget
 const ArticlesPageFilters: FC<IArticlesPageFiltersProps> = (props) => {
   const { className } = props
   const { t } = useTranslation('articles')

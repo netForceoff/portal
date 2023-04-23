@@ -65,7 +65,7 @@ export const filterArticles = createAsyncThunk<IArticle[], ArticleParams, ThunkC
         params: {
           _sort: sort,
           _order: order,
-          _limit: limit,
+          // _limit: limit,
           _page: page,
           q: search
         }

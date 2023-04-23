@@ -7,8 +7,7 @@ import { useSelector } from 'react-redux'
 import { getArticleCommentsError, getArticleCommentsStatus } from '../model/selectors'
 import Skeleton from 'shared/ui/Skeleton/Skeleton'
 import { Text } from 'shared/ui'
-import { withReducers } from 'shared/lib'
-import { articleCommentsReducer, getArticleCommentsSelector } from '../model/slice'
+import { getArticleCommentsSelector } from '../model/slice'
 import { Error } from 'entities/Error'
 import { addComment } from '../model/service'
 import { useAppDispatch } from 'app/providers/store'
@@ -17,9 +16,6 @@ export interface IArticleCommentsProps extends JSX.IntrinsicAttributes {
   className?: string
 }
 
-const reducers = {
-  articleComments: articleCommentsReducer
-}
 // TODO - возможно стоило утащить на уровень widgets
 const ArticleComments: FC<IArticleCommentsProps> = (props) => {
   const { className } = props
@@ -53,4 +49,4 @@ const ArticleComments: FC<IArticleCommentsProps> = (props) => {
   )
 }
 
-export default withReducers(ArticleComments, reducers)
+export default ArticleComments

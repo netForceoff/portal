@@ -8,12 +8,14 @@ import { ArticleSchema } from 'features/article/LoadingArticle'
 import { ArticleCommentsSchema } from 'features/article/ArticleComments'
 import { SaveScrollPositionSchema } from 'features/SaveScrollPosition'
 import { ArticleListSchema } from 'entities/ArticleList'
+import { ArticleRecommendationsSchema } from 'widgets/ArticleRecommendations'
 
 interface AsyncStateSchema {
   login?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
   articleComments?: ArticleCommentsSchema
+  articleRecommendations?: ArticleRecommendationsSchema
   articles?: ArticleListSchema
   scrollPosition?: SaveScrollPositionSchema
 }

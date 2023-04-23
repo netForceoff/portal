@@ -12,6 +12,7 @@ import { SaveScrollPosition } from 'features/SaveScrollPosition'
 import { ArticlesPageFilters } from 'features/ArticlesPageFilters'
 import { articleListActions, ArticleListCompact, ArticleListExtended, articleListReducer, getArticleList, getArticleListError, getArticleListStatus, getArticleListView, getArticlesMore, initArticles } from 'entities/ArticleList'
 import { useSearchParams } from 'react-router-dom'
+import { Virtuoso } from 'react-virtuoso'
 
 const reducers = {
   articles: articleListReducer
@@ -52,25 +53,39 @@ const ArticlesPage: FC<IArticlesPageProps> = (props) => {
     return <Error title={error.title} text={error.text} />
   }
 
-  const renderList = () => view === 'table' ? <ArticleListCompact loading={status === 'request'} articles={articles} /> : <ArticleListExtended loading={status === 'request'} articles={articles} />
+  const renderHeader = () => {
+    return (
+      <>
+      <ArticlesPageFilters />
+      <Button onClick={handleClickTable}>{t('view.table')}</Button>
+      <Button onClick={handleLickList}>{t('view.list')}</Button>
+      </>
+    )
+  }
 
+  const renderItemWrapper = () => <div style={{ width: '100%', height: '100%' }}></div>
+
+  const renderList = () => view === 'table' ? <ArticleListCompact loading={status === 'request'} article={article} /> : <ArticleListExtended loading={status === 'request'} articles={articles} />
+  console.log(articles, 'articles')
   return (
     <Layout>
-      {(ref) => {
-        return (
-          <>
-          <SaveScrollPosition containerRef={ref}>
-          <InfinityScrollWrapper wrapperRef={ref} triggerRef={triggerRef} callback={handleUpdate}>
-            <ArticlesPageFilters />
-            <Button onClick={handleClickTable}>{t('view.table')}</Button>
-            <Button onClick={handleLickList}>{t('view.list')}</Button>
-            {renderList()}
-          </InfinityScrollWrapper>
-            <div ref={triggerRef} />
-            </SaveScrollPosition>
-          </>
-        )
-      }}
+      {(ref) => (
+        <Virtuoso
+        components={{
+          Header: renderHeader
+        }}
+        // scrollerRef={ref}
+        style={{ height: '100%' }}
+        data={articles}
+        itemContent={(index, article) => {
+          console.log(article, 'article')
+
+          return <ArticleListExtended loading={status === 'request'} article={article} />
+        }
+      }
+      />
+      )}
+
     </Layout>
   )
 }

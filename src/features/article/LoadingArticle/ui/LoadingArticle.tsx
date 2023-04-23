@@ -1,16 +1,10 @@
 import { Article, IArticleProps } from 'entities/Article'
 import { FC, memo } from 'react'
 import styles from './LoadingArticle.module.scss'
-import { withReducers } from 'shared/lib'
 import { useSelector } from 'react-redux'
 import { getArticleError, getArticleStatus, getArticleProps } from '../model/selectors'
 import withError from 'shared/lib/HOCS/withError'
-import { articleReducer } from '../model/slice'
 import Skeleton from 'shared/ui/Skeleton/Skeleton'
-
-const reducers = {
-  article: articleReducer
-}
 
 export interface ILoadingArticleProps extends JSX.IntrinsicAttributes {
 
@@ -25,7 +19,7 @@ const LoadingArticle: FC<ILoadingArticleProps> = (props) => {
   const status = useSelector(getArticleStatus)
   const error = useSelector(getArticleError)
   const data = useSelector(getArticleProps)
-
+  console.log(data, 'data')
   if (status === 'request') {
     return (
       <>
@@ -45,4 +39,4 @@ const LoadingArticle: FC<ILoadingArticleProps> = (props) => {
   )
 }
 
-export default memo<ILoadingArticleProps>(withReducers(LoadingArticle, reducers))
+export default memo<ILoadingArticleProps>(LoadingArticle)
