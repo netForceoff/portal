@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { IArticleTextBlock } from 'entities/Article'
+import { IArticleTextBlock } from '../../../../ArticleList/model/types'
 import { FC, memo, ReactNode } from 'react'
 import { Text } from 'shared/ui'
 import styles from './ArticleText.module.scss'
