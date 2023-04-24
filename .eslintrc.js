@@ -22,9 +22,10 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json']
   },
-  plugins: ['react', 'i18next', 'react-hooks'],
+  plugins: ['react', 'i18next', 'react-hooks', 'eslint-custom-rules'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'eslint-custom-rules/relative-paths': 'error',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-floating-promises': 'off',

@@ -1,5 +1,5 @@
 import { useAppDispatch } from 'app/providers/store'
-import { profileReducer } from '../../model/slice'
+import { profileReducer, profileActions } from '../../model/slice'
 import { ReactNode, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { withReducers } from 'shared/lib'
@@ -10,7 +10,6 @@ import clsx from 'clsx'
 import styles from './EditableProfileCard.module.scss'
 import withError from 'shared/lib/HOCS/withError'
 import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProfileCardHeader'
-import { profileActions } from 'features/EditableProfileCard/model/slice'
 
 const reducers = {
   profile: profileReducer
