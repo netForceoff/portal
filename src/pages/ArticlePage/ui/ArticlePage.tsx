@@ -1,30 +1,29 @@
-import { getArticle, LoadingArticle } from 'features/article/LoadingArticle'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-// import styles from './ArticlePage.module.scss'
-import { useAppDispatch } from 'app/providers/store'
-import { ArticleComments, getComments } from 'features/article/ArticleComments'
+import { ArticleComments, articleCommentsReducer } from 'widgets/ArticleComments'
+import { articleReducer } from 'entities/Article'
+import { ArticleCard } from 'widgets/ArticleCard'
+import withReducers from 'shared/lib/HOCS/withReducers'
 
-export interface IArticlePageProps {
+export interface IArticlePageProps extends JSX.IntrinsicAttributes {
   className?: string
+}
+
+const reducers = {
+  article: articleReducer,
+  articleComments: articleCommentsReducer
 }
 
 const ArticlePage: FC<IArticlePageProps> = (props) => {
   const { id } = useParams<{ id: string }>()
   const { t } = useTranslation('article')
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(getArticle(id))
-    dispatch(getComments(id))
-  }, [dispatch, id])
 
   if (id) {
     return (
       <section>
-          <LoadingArticle />
-          <ArticleComments />
+          <ArticleCard id={id} />
+          <ArticleComments id ={id} />
       </section>
     )
   }
@@ -36,4 +35,4 @@ const ArticlePage: FC<IArticlePageProps> = (props) => {
   )
 }
 
-export default ArticlePage
+export default withReducers(ArticlePage, reducers)

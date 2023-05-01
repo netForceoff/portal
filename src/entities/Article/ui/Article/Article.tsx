@@ -1,17 +1,32 @@
 import { FC, memo, ReactNode } from 'react'
 import { Text } from 'shared/ui'
-import { IArticle, IArticleBlock, IArticleBlockType } from '../../../ArticleList/model/types'
+import Flex from 'shared/ui/Flex/Flex'
+import Skeleton from 'shared/ui/Skeleton/Skeleton'
 import styles from './Article.module.scss'
 import ArticleCode from './ArticleCode/ui/ArticleCode'
 import ArticleImage from './ArticleImage/ArticleImage'
 import ArticleText from './ArticleText/ArticleText'
+import { IArticle, IArticleBlock, IArticleBlockType } from '../../model/types'
 
 export interface IArticleProps {
   article?: IArticle
+  loading: boolean
 }
 
 const Article: FC<IArticleProps> = (props) => {
-  const { article } = props
+  const { article, loading } = props
+
+  if (loading) {
+    return (
+      <>
+        <Skeleton className={styles.sceletonAvatar} width={200} height={200} radius={50} />
+        <Skeleton className={styles.sceletonTitle} width={300} height={32} />
+        <Skeleton className={styles.sceletonItem} width={600} height={24} />
+        <Skeleton className={styles.sceletonItem} width="100%" height={200} />
+        <Skeleton className={styles.sceletonItem} width="100%" height={200} />
+      </>
+    )
+  }
 
   if (article) {
     const { img, blocks, id, subtitle, title, views, createdAt } = article
@@ -31,13 +46,13 @@ const Article: FC<IArticleProps> = (props) => {
 
     return (
     <div className={styles.Article}>
-      <div className={styles.avatarWrapper}>
+      <Flex justify='center'>
       <img alt="Img" src={img} className={styles.avatar} />
-      </div>
+      </Flex>
       <Text className={styles.title} title={title} text={subtitle} size="l" />
-      <div className={styles.info}>
+      <Flex align='center'>
         <Text text={String(views)} />
-      </div>
+      </Flex>
       <div className={styles.info}>
         <Text text={String(createdAt)} />
       </div>

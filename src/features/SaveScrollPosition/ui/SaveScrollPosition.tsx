@@ -29,7 +29,6 @@ const SaveScrollPosition: FC<ISaveScrollPositionProps> = (props) => {
   const debounced = useDebounce(callback, 1000)
 
   useEffect(() => {
-    console.log(containerRef.current, 'current')
     containerRef?.current?.scroll(0, scrollPosition?.[location.pathname] || 0)
 
     if (containerRef.current) {
