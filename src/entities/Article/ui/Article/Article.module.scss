@@ -5,14 +5,7 @@
   width: auto;
 }
 
-.info {
-  align-items: center;
-  display: flex;
-}
-
 .avatarWrapper {
-  display: flex;
-  justify-content: center;
   width: 100%;
 }
 
@@ -22,4 +15,16 @@
 
 .block {
   margin-bottom: 16px;
+}
+
+.sceletonAvatar {
+  margin: 0 auto 15px;
+}
+
+.sceletonTitle {
+  margin-bottom: 20px;
+}
+
+.sceletonItem {
+  margin-bottom: 15px;
 }

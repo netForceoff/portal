@@ -3,6 +3,7 @@ import { ComponentStory } from '@storybook/react'
 
 import Sidebar from './Sidebar'
 import ThemeDecorator from 'shared/config/storybook/decorators/theme'
+import StoreDecorator from 'shared/config/storybook/decorators/store'
 import { THEME } from 'entities/theme'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -12,7 +13,8 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' }
-  }
+  },
+  decorators: [StoreDecorator]
 }
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

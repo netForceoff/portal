@@ -1,9 +1,10 @@
-import { FC, useEffect, MutableRefObject } from 'react'
+import { FC, useEffect, MutableRefObject, ReactNode } from 'react'
 
 export interface IInfinityScrollWrapperProps {
   callback: () => void
   wrapperRef: MutableRefObject<HTMLElement | null>
   triggerRef: MutableRefObject<HTMLElement | null>
+  children: ReactNode
 }
 const InfinityScrollWrapper: FC<IInfinityScrollWrapperProps> = ({ callback, children, wrapperRef, triggerRef }) => {
   useEffect(() => {

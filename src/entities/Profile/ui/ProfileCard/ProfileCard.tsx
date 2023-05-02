@@ -36,12 +36,14 @@ const ProfileCard: FC<IProps> = (props): JSX.Element | null => {
                     readOnly={readOnly}
                     value={profile?.first}
                     placeholder={t('fields.name')}
+                    testId="ProfileCard.FirstName"
                 />
                 <Input
                     onChange={onChangeLastName}
                     readOnly={readOnly}
                     value={profile?.lastname}
                     placeholder={t('fields.surname')}
+                    testId="ProfileCard.LastName"
                 />
                 <Select
                   label='Укажите валюту'

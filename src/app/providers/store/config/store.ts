@@ -1,13 +1,16 @@
-import { configureStore, AnyAction, Middleware, DeepPartial, Dispatch } from '@reduxjs/toolkit'
+import { configureStore, AnyAction, Middleware, DeepPartial, Dispatch, ReducersMapObject } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
-import { StateSchema } from './types'
+import { AsyncStateSchema, StateSchema } from './types'
 import { createReducerManager } from './manager'
 import { axiosApi } from 'shared/api/axios'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
+import { rtkApi } from 'shared/api/query'
 
-const createStore = (initialState?: DeepPartial<StateSchema>): ToolkitStore<StateSchema, AnyAction, ReadonlyArray<Middleware<string, StateSchema, Dispatch<AnyAction>>>> => {
+const createStore = (initialState?: DeepPartial<StateSchema>, asyncReducers?: ReducersMapObject<AsyncStateSchema>): ToolkitStore<StateSchema, AnyAction, ReadonlyArray<Middleware<string, StateSchema, Dispatch<AnyAction>>>> => {
   const reducer = {
-    user: userReducer
+    ...(asyncReducers && { ...asyncReducers }),
+    user: userReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(reducer)
@@ -24,7 +27,7 @@ const createStore = (initialState?: DeepPartial<StateSchema>): ToolkitStore<Stat
           axiosApi
         }
       }
-    })
+    }).concat(rtkApi.middleware)
   })
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

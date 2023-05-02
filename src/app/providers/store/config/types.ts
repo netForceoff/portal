@@ -4,10 +4,11 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { ProfileSchema } from 'features/EditableProfileCard'
 import { AxiosInstance } from 'axios'
 import createStore from './store'
-import { ArticleSchema } from 'features/article/LoadingArticle'
-import { ArticleCommentsSchema } from 'features/article/ArticleComments'
+import { ArticleCommentsSchema } from 'widgets/ArticleComments'
 import { SaveScrollPositionSchema } from 'features/SaveScrollPosition'
 import { ArticleListSchema } from 'entities/ArticleList'
+import { rtkApi } from 'shared/api/query'
+import { ArticleSchema } from 'entities/Article'
 
 interface AsyncStateSchema {
   login?: LoginSchema
@@ -20,6 +21,7 @@ interface AsyncStateSchema {
 
 interface StateSchema extends AsyncStateSchema {
   user: UserSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }
 
 interface Manager {

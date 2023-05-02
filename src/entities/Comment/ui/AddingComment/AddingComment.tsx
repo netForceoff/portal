@@ -8,7 +8,7 @@ export interface IAddingCommentProps {
   buttonText: string
   onClick: (value: string) => void
 }
-// TODO возможно стоило вытащить на уровень features
+
 const AddingComment: FC<IAddingCommentProps> = (props) => {
   const { buttonText, onClick, className } = props
   const [value, setValue] = useState<string>('')
