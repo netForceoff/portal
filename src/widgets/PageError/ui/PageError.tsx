@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import styles from './PageError.module.scss'
 import { FC } from 'react'
 
-interface IProps {
+interface IProps extends JSX.IntrinsicAttributes {
   className?: string
 }
 

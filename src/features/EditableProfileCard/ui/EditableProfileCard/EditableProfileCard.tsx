@@ -16,8 +16,11 @@ const reducers = {
 }
 
 const Card = withError<IProfileCardProps & {
-  className?: string, error?: { title: string, text: string }, isLoading: boolean
-}>(withLoader<IProfileCardProps & { className?: string, isLoading: boolean }>(ProfileCard))
+  className?: string
+  error?: { title: string, text: string }
+  isLoading: boolean
+}
+>(withLoader<IProfileCardProps & { className?: string, isLoading: boolean }>(ProfileCard))
 
 const EditableProfileCard = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -25,7 +28,6 @@ const EditableProfileCard = (): JSX.Element => {
   const status = useSelector(getProfileStatus)
   const error = useSelector(getProfileError)
   const readOnly = useSelector(getProfileReadOnly)
-  console.log(profile, 'profile')
   const isLoading = status === 'request'
   const CN = clsx({
     [styles.error]: status === 'error',

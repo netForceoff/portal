@@ -77,7 +77,17 @@ export const commentsApi = rtkApi.injectEndpoints({
           articleId: uuid,
           _expand: 'user'
         }
-      })
+      }),
+      transformErrorResponse: (
+        response: { status: string | number },
+        meta,
+        arg
+      ) => {
+        return {
+          title: i18n.t('errors.loading', { ns: 'article' }),
+          text: i18n.t('errors.loading', { ns: 'article' })
+        }
+      }
     })
   })
 })
