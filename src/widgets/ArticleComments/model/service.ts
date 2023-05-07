@@ -71,7 +71,7 @@ export const addComment = createAsyncThunk<IComment, string, ThunkConfig<{ title
 export const commentsApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getComments: build.query({
-      query: (uuid) => ({
+      query: (uuid?: string) => ({
         url: '/comments',
         params: {
           articleId: uuid,

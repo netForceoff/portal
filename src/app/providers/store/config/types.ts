@@ -47,7 +47,7 @@ interface ThunkConfig<R> {
 
 type AppDispatch = ReturnType<typeof createStore>['dispatch']
 
-export {
+export type {
   AppDispatch,
   Manager,
   AsyncStateSchema,

@@ -4,7 +4,7 @@ import styles from './ArticleCard.module.scss'
 import withError from 'shared/lib/HOCS/withError'
 
 export interface IArticleCardProps extends JSX.IntrinsicAttributes {
-  id: string
+  id?: string
 }
 
 const Card = withError<IArticleProps &

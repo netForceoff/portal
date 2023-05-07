@@ -2,8 +2,9 @@ import ArticleListCompact from './ui/ArticleListCompact/ArticleListCompact'
 import ArticleListExtended from './ui/ArticleListExtended/ArticleListExtended'
 import { articleListActions, articleListReducer, getArticleList } from './model/slice'
 import { getArticleListStatus, getArticleListError, getArticleListPage, getArticleListView, getArticleListSortBy, getArticleListOrder, getArticleListSearch } from './model/selectors'
-import { getArticlesMore, initArticles, filterArticles } from './model/service'
+import { getArticlesMore, initArticles } from './model/service'
 import type { ArticleListSchema, IArticle, Order, SortBy } from './model/types'
+import { filterArticles } from './model/service/filter'
 
 export {
   ArticleListSchema,

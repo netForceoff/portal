@@ -23,11 +23,12 @@
     // c флагом результат [object Object]
     // console.log(Moment);
     "esModuleInterop": true,
+    "isolatedModules": true,
     // Если какая-либо библиотека не имеет default import,
     // лоадеры вроде ts-loader или babel-loader автоматически создают их
     // вместо такого импорта
     // import * as React from 'react';
-    // можно писать такой
+  // можно писать такой
     // import React from 'react';
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,

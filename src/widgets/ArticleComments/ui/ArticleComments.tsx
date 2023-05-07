@@ -11,7 +11,7 @@ import { ArticleAddingComment } from 'features/ArticleAddingComment'
 
 export interface IArticleCommentsProps extends JSX.IntrinsicAttributes {
   className?: string
-  id: string
+  id?: string
 }
 
 const ArticleComments: FC<IArticleCommentsProps> = (props) => {

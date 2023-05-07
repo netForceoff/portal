@@ -33,8 +33,8 @@ export const getArticle = createAsyncThunk<IArticle, string | undefined, ThunkCo
 export const articleApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getArticles: build.query({
-      query: (id: string) => ({
-        url: `/articles/${id}`
+      query: (id: string | undefined) => ({
+        url: id ? `/articles/${id}` : '/articles/'
       }),
       transformErrorResponse: (
         response: { status: string | number },
