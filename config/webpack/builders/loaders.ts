@@ -1,23 +1,11 @@
 import { RuleSetRule } from 'webpack'
 import { BuildOptions } from '../types/config'
-import ReactRefreshTypeScript from 'react-refresh-typescript'
 import cssLoader from '../loaders/cssLoader'
 import svgLoader from '../loaders/svgLoader'
+import babelLoader from '../loaders/babelLoader'
 
 const loaders = (options: BuildOptions): RuleSetRule[] => ([
-  {
-    exclude: /node_modules/,
-    test: /\.tsx?$/,
-    use: [{
-      loader: 'ts-loader',
-      options: {
-        getCustomTransformers: () => ({
-          before: options.isDev ? [ReactRefreshTypeScript()] : []
-        }),
-        transpileOnly: options.isDev
-      }
-    }]
-  },
+  babelLoader(),
   cssLoader(options.isDev),
   svgLoader(),
   {

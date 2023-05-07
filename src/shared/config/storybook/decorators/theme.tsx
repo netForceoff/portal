@@ -7,9 +7,7 @@ function ThemeDecorator (theme: THEME) {
     document.body.className = theme
 
     return (
-        <div>
-            <Component />
-        </div>
+      <Component />
     )
   }
 }

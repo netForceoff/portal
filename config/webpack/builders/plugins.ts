@@ -4,6 +4,7 @@ import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPlugin
 import { type BuildOptions } from '../types/config'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   const { isDev, name, paths } = options
@@ -16,6 +17,10 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
       new ReactRefreshWebpackPlugin({ overlay: false }),
       new BundleAnalyzerPlugin({
         openAnalyzer: false
+      }),
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true
       })
     )
   }

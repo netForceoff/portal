@@ -5,7 +5,7 @@ import {
   PayloadAction
 } from '@reduxjs/toolkit'
 import { ArticleListSchema, IArticle, Order, SortBy } from './types'
-import { filterArticles } from './service'
+import { filterArticles } from './service/filter'
 
 const articleListAdapter = createEntityAdapter<IArticle>({
   selectId: (article) => article.id

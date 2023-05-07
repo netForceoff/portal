@@ -1,24 +1,44 @@
 import React from 'react'
 import { ComponentStory } from '@storybook/react'
-
-import Sidebar from './Sidebar'
+import withMock from 'storybook-addon-mock'
+import ArticlePage from './ArticlePage'
 import ThemeDecorator from 'shared/config/storybook/decorators/theme'
 import StoreDecorator from 'shared/config/storybook/decorators/store'
 import { THEME } from 'entities/theme'
 
+const article = {
+  id: '1',
+  title: 'test article title',
+  subtitle: 'test article subtitle',
+  img: '',
+  views: 10,
+  createdAt: '21.01.2011',
+  type: 'IT',
+  blocks: []
+}
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'widget/Sidebar',
-  component: Sidebar,
+  title: 'pages/ArticlePage',
+  component: ArticlePage,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' }
   },
-  decorators: [StoreDecorator({ user: { user: { id: '1', username: 'Name' } } })]
+  decorators: [StoreDecorator({ user: { user: { id: '1', username: 'Name' } } }), withMock],
+  parameters: {
+    mockData: [
+      {
+        url: 'http://localhost:2000/articles/',
+        method: 'GET',
+        status: 200,
+        response: article
+      }
+    ]
+  }
 }
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
+const Template: ComponentStory<typeof ArticlePage> = (args) => <ArticlePage {...args} />
 
 export const Light = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
