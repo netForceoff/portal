@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import styles from './Modal.module.scss'
 import { createPortal } from 'react-dom'
 import { MousedownWrapper, KeydownWrapper } from 'shared/lib'
+import Overlay from '../Overlay/Overlay'
 
 interface IProps {
   className?: string
@@ -14,7 +15,6 @@ const CODES = ['Escape']
 // TODO попробовать через Renderless подход
 const Modal: FC<IProps> = ({ className, children, onCloseOutside }): JSX.Element | null => {
   const [useAnimationOut, setUseAnimationOut] = useState(false)
-  const CN = clsx(styles.modal, className)
   const contentCN = clsx(styles.content, {
     [styles.animationOut]: useAnimationOut
   })
@@ -31,13 +31,13 @@ const Modal: FC<IProps> = ({ className, children, onCloseOutside }): JSX.Element
 
   return createPortal(
     <KeydownWrapper codes={CODES} callback={handleCloseOutside}>
-      <div className={CN}>
+      <Overlay className={className}>
         <MousedownWrapper callback={handleCloseOutside}>
           <div className={contentCN} onAnimationEnd={handleAnimationEnd}>
             {children}
           </div>
         </MousedownWrapper>
-      </div>
+      </Overlay>
     </KeydownWrapper>,
     document.body
   )

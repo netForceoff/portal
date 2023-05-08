@@ -14,10 +14,11 @@ export interface IFlexProps {
   direction?: FlexDirection
   align?: FlexAlign
   justify?: FlexJustify
+  gap?: | '4' | '8' | '16' | '32'
 }
 
 const Flex: FC<IFlexProps> = (props) => {
-  const { className, children, direction, align, justify } = props
+  const { className, children, direction, align, justify, gap } = props
 
   const CN = clsx(
     {
@@ -25,7 +26,8 @@ const Flex: FC<IFlexProps> = (props) => {
       [className || '']: Boolean(className),
       [styles[`direction_${direction || ''}`]]: Boolean(direction),
       [styles[`align_${align || ''}`]]: Boolean(align),
-      [styles[`justify_${justify || ''}`]]: Boolean(justify)
+      [styles[`justify_${justify || ''}`]]: Boolean(justify),
+      [styles[`gap_${gap}`]]: Boolean(gap)
     }
   )
 

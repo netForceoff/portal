@@ -15,7 +15,7 @@ export interface IArticleProps {
 
 const Article: FC<IArticleProps> = (props) => {
   const { article, loading } = props
-
+  // TODO - все таки надо утащить на уровень widget
   if (loading) {
     return (
       <>
@@ -30,7 +30,7 @@ const Article: FC<IArticleProps> = (props) => {
 
   if (article) {
     const { img, blocks, id, subtitle, title, views, createdAt } = article
-    console.log(article, 'article')
+
     const renderBlock = (block: IArticleBlock): ReactNode => {
       switch (block.type) {
         case IArticleBlockType.CODE:

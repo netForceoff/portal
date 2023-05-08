@@ -7,7 +7,7 @@ const useDebounce = <T extends (...args: any[]) => void>(callback: T, delay: num
 
   useEffect(() => () => { clearTimeout(timeoutRef.current) }, [timeoutRef])
 
-  return useCallback((...args: any[]) => {
+  return useCallback((...args: Parameters<T>) => {
     clearTimeout(timeoutRef.current)
 
     timeoutRef.current = setTimeout(() => {

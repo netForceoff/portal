@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/auth/modalByUsername'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUser, userActions } from 'entities/User'
+import NotificationButton from 'features/NotificationButton/ui/NotificationButton'
 
 interface IProps {
   className?: string
@@ -58,6 +59,7 @@ const Navbar: FC<IProps> = ({ className }) => {
 
   return (
     <header className={clsx(styles.navbar, className)}>
+      <NotificationButton />
       {user ? renderLogOutButton() : renderLogInButton()}
       {renderAuthModal()}
     </header>
