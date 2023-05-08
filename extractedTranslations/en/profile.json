@@ -1,0 +1,13 @@
+{
+  "error": {
+    "profile": {
+      "text": "text",
+      "title": "title"
+    }
+  },
+  "fields": {
+    "name": "name",
+    "surname": "surname"
+  },
+  "profilePage": "profilePage"
+}

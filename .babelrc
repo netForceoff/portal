@@ -8,5 +8,18 @@
 	],
 	"plugins": [
 		"@babel/plugin-transform-runtime"
-	]
+	],
+	"env": {
+		"dev": {
+			"plugins": [
+				["i18next-extract", {
+					"locales": ["ru", "en"],
+					"keyAsDefaultValue": true
+				}],
+				["./config/babel/plugins/removeProps.ts", {
+					"props": ["data-testid"]
+				}]
+			]
+		}
+	}
 }

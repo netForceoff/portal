@@ -1,0 +1,24 @@
+{
+  "LogIn": "LogIn",
+  "LogOut": "LogOut",
+  "button": {
+    "save": "save"
+  },
+  "errors": {
+    "loading": "loading",
+    "simpleLoginForm": "simpleLoginForm"
+  },
+  "links": {
+    "about": "about",
+    "main": "main",
+    "profile": "profile"
+  },
+  "page": {
+    "error": {
+      "button": "button",
+      "title": "title"
+    },
+    "notFound": "notFound"
+  },
+  "simpleLoginForm": "simpleLoginForm"
+}

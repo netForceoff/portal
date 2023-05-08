@@ -7,7 +7,8 @@ const babelLoader = (): RuleSetRule => ({
     {
       loader: 'babel-loader',
       options: {
-        cacheDirectory: true
+        cacheDirectory: true,
+        envName: 'dev'
       }
     }
   ]

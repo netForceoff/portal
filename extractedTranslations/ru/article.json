@@ -1,0 +1,13 @@
+{
+  "article": {
+    "comments": {
+      "nothingFound": "nothingFound"
+    }
+  },
+  "buttons": {
+    "add": "add"
+  },
+  "errors": {
+    "loading": "loading"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "search": "search",
+  "sortBy": "sortBy",
+  "view": {
+    "list": "list",
+    "table": "table"
+  }
+}
