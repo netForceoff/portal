@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { FC, memo } from 'react'
 import { INotification } from '../../model/types'
 import styles from './Notification.module.scss'
-import Text from 'shared/ui/Text/Text'
+import Text from '@/shared/ui/Text/Text'
 
 export interface INotificationProps extends INotification {
   className?: string

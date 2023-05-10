@@ -1,4 +1,4 @@
-import { withSuspense } from 'shared/lib'
+import { withSuspense } from '@/shared/lib'
 import { lazy } from 'react'
 
 const PageError = lazy(async () => await import('./ui/PageError'))

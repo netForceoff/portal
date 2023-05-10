@@ -1,6 +1,6 @@
 import { IArticleCodeBlock } from '../../../../../ArticleList/model/types'
 import { FC, memo } from 'react'
-import Code from 'shared/ui/Code/Code'
+import Code from '@/shared/ui/Code/Code'
 // import styles from './ArticleCode.module.scss'
 import clsx from 'clsx'
 

@@ -2,7 +2,7 @@ import { AnimationEvent, FC, ReactNode, useState, memo } from 'react'
 import clsx from 'clsx'
 import styles from './Modal.module.scss'
 import { createPortal } from 'react-dom'
-import { MousedownWrapper, KeydownWrapper } from 'shared/lib'
+import { MousedownWrapper, KeydownWrapper } from '@/shared/lib'
 import Overlay from '../Overlay/Overlay'
 
 interface IProps {

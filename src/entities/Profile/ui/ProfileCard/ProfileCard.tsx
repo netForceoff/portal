@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next'
-import { Input } from 'shared/ui'
+import { Input } from '@/shared/ui'
 import type { Profile } from '../../../../features/EditableProfileCard/model/types'
-import type { ServerStatus } from 'shared/types/server'
+import type { ServerStatus } from '@/shared/types/server'
 import { FC, memo } from 'react'
 import styles from './ProfileCard.module.scss'
-import Avatar from 'shared/ui/Avatar/Avatar'
-import Select from 'shared/ui/Select/Select'
+import Avatar from '@/shared/ui/Avatar/Avatar'
+import Select from '@/shared/ui/Select/Select'
 import { Currency } from '../../../../shared/const/common'
 
 export interface IProps {

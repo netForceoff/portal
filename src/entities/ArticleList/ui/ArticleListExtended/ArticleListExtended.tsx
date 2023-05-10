@@ -2,8 +2,8 @@ import clsx from 'clsx'
 import { FC } from 'react'
 import styles from './ArticleListExtended.module.scss'
 import { IArticle } from '../../model/types'
-import { Text } from 'shared/ui'
-import Skeleton from 'shared/ui/Skeleton/Skeleton'
+import { Text } from '@/shared/ui'
+import Skeleton from '@/shared/ui/Skeleton/Skeleton'
 
 export interface IArticleListExtendedProps {
   className?: string

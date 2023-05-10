@@ -1,6 +1,6 @@
-import { IComment } from 'entities/Comment'
-import { rtkApi } from 'shared/api/query'
-import i18n from 'shared/config/i18n'
+import { IComment } from '@/entities/Comment'
+import { rtkApi } from '@/shared/api/query'
+import i18n from '@/shared/config/i18n'
 
 // export const addComment = createAsyncThunk<IComment, string, ThunkConfig<{ title: string, text: string }>>(
 //   'article/addComment',

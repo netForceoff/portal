@@ -1,9 +1,9 @@
 import { profileActions } from '../../model/slice'
 import { memo, FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/ui'
+import { Button } from '@/shared/ui'
 import styles from './EditableProfileCardHeader.module.scss'
-import { useAppDispatch } from 'app/providers/store'
+import { useAppDispatch } from '@/app/providers/store'
 import { updateProfile } from '../../model/services'
 
 interface IProps {

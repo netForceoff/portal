@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { THEME_KEY } from 'shared/const/localStorage'
+import { THEME_KEY } from '@/shared/const/localStorage'
 import ThemeContext from '../model/context'
 import { THEME, type IUseThemeResult } from '../types'
 

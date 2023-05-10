@@ -1,8 +1,8 @@
-import { useAppDispatch } from 'app/providers/store'
-import { articleListActions } from 'entities/ArticleList'
+import { useAppDispatch } from '@/app/providers/store'
+import { articleListActions } from '@/entities/ArticleList'
 import { FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/ui'
+import { Button } from '@/shared/ui'
 
 export interface IArticlesPageChangeViewerProps {
   className?: string

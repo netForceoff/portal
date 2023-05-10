@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/store'
-import { ServerStatus, ServerError } from 'shared/types/server'
+import { StateSchema } from '@/app/providers/store'
+import { ServerStatus, ServerError } from '@/shared/types/server'
 
 export const getArticleListStatus = (state: StateSchema): ServerStatus => state?.articles?.status || 'received'
 

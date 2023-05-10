@@ -2,8 +2,8 @@ import React from 'react'
 import { ComponentStory } from '@storybook/react'
 
 import Button, { ButtonBackgroundType, ButtonSize, ButtonColor, ButtonVariant } from './Button'
-import ThemeDecorator from 'shared/config/storybook/decorators/theme'
-import { THEME } from 'entities/theme'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
+import { THEME } from '@/entities/theme'
 
 export default {
   title: 'shared/Button',

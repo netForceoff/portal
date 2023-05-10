@@ -1,5 +1,5 @@
 // Подумать над архитектурой, плохо, что entities тянется в shared
-import { THEME } from 'entities/theme'
+import { THEME } from '@/entities/theme'
 import { Story } from '@storybook/react'
 
 function ThemeDecorator (theme: THEME) {

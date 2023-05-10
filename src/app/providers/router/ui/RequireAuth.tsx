@@ -1,8 +1,8 @@
-import { getUser } from 'entities/User'
+import { getUser } from '@/entities/User'
 import { FC, ReactNode } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
-import { RoutePath } from 'shared/config/router'
+import { RoutePath } from '@/shared/config/router'
 
 export interface IRequireAuthProps extends JSX.IntrinsicAttributes {
   children: ReactNode

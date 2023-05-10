@@ -1,10 +1,10 @@
-import { useAppDispatch } from 'app/providers/store'
+import { useAppDispatch } from '@/app/providers/store'
 import clsx from 'clsx'
 import { FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import useDebounce from 'shared/lib/hooks/useDebounce'
-import { Input } from 'shared/ui'
-import Select from 'shared/ui/Select/Select'
+import useDebounce from '@/shared/lib/hooks/useDebounce'
+import { Input } from '@/shared/ui'
+import Select from '@/shared/ui/Select/Select'
 import { useSelector } from 'react-redux'
 import {
   getArticleListSearch,
@@ -14,7 +14,7 @@ import {
   Order,
   articleListActions,
   filterArticles
-} from 'entities/ArticleList'
+} from '@/entities/ArticleList'
 import { createSearchParams, useSearchParams } from 'react-router-dom'
 
 export interface IArticlesPageFiltersProps {

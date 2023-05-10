@@ -1,4 +1,4 @@
-import { ServerStatus } from 'shared/types/server'
+import { ServerStatus } from '@/shared/types/server'
 
 export interface Fields {
   username: string

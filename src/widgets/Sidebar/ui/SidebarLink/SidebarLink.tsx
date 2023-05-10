@@ -1,4 +1,4 @@
-import { AppLink, AppLinkVariant } from 'shared/ui'
+import { AppLink, AppLinkVariant } from '@/shared/ui'
 import styles from './SidebarLink.module.scss'
 import { FC } from 'react'
 import clsx from 'clsx'

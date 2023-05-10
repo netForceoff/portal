@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { User, userActions } from 'entities/User'
+import { User, userActions } from '@/entities/User'
 import type { Fields } from './types'
-import i18n from 'shared/config/i18n'
-import { USER_KEY } from 'shared/const/localStorage'
-import { ThunkConfig } from 'app/providers/store'
+import i18n from '@/shared/config/i18n'
+import { USER_KEY } from '@/shared/const/localStorage'
+import { ThunkConfig } from '@/app/providers/store'
 
 export const login = createAsyncThunk<User, Fields, ThunkConfig<string>>(
   'login/login',

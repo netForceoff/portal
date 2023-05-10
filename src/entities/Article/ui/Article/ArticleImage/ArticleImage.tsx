@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { IArticleImageBlock } from '../../../../ArticleList/model/types'
 import { FC, memo, ReactNode } from 'react'
-import { Text } from 'shared/ui'
+import { Text } from '@/shared/ui'
 import styles from './ArticleImage.module.scss'
 
 export interface IArticleImageProps {

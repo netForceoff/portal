@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Layout } from 'widgets/Layout'
+import { Layout } from '@/widgets/Layout'
 
 const Main = (): JSX.Element => {
   const { t } = useTranslation('main')

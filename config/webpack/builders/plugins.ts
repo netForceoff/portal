@@ -5,6 +5,7 @@ import { type BuildOptions } from '../types/config'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CircularDependencyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   const { isDev, name, paths } = options
@@ -26,6 +27,7 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
   }
 
   return [
+    new ForkTsCheckerWebpackPlugin(),
     new DefinePlugin({
       __IS_DEV__: isDev
     }),

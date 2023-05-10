@@ -1,7 +1,7 @@
-import { Article, IArticleProps, useArticle } from 'entities/Article'
+import { Article, IArticleProps, useArticle } from '@/entities/Article'
 import { FC, memo } from 'react'
 import styles from './ArticleCard.module.scss'
-import withError from 'shared/lib/HOCS/withError'
+import withError from '@/shared/lib/HOCS/withError'
 
 export interface IArticleCardProps extends JSX.IntrinsicAttributes {
   id?: string

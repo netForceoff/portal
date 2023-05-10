@@ -1,10 +1,10 @@
-import { AddingComment } from 'entities/Comment'
+import { AddingComment } from '@/entities/Comment'
 import { FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAddComentMutation } from '../model/service'
 import { useSelector } from 'react-redux'
-import { getUser } from 'entities/User'
-import { getArticleProps } from 'entities/Article'
+import { getUser } from '@/entities/User'
+import { getArticleProps } from '@/entities/Article'
 
 export interface IArticleAddingCommentProps {
   className?: string

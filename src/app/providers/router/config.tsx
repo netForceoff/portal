@@ -1,11 +1,11 @@
-import About from 'pages/About'
-import NotFound from 'pages/NotFound'
+import About from '@/pages/About'
+import NotFound from '@/pages/NotFound'
 import { RouteProps } from 'react-router-dom'
-import { RoutePath } from 'shared/config/router'
-import Main from 'pages/Main'
-import Profile from 'pages/ProfilePage'
-import ArticlesPage from 'pages/ArticlesPage'
-import ArticlePage from 'pages/ArticlePage'
+import { RoutePath } from '@/shared/config/router'
+import Main from '@/pages/Main'
+import Profile from '@/pages/ProfilePage'
+import ArticlesPage from '@/pages/ArticlesPage'
+import ArticlePage from '@/pages/ArticlePage'
 
 export type RouteConfigProps = RouteProps & {
   authOnly?: boolean

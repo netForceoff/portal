@@ -1,7 +1,7 @@
-import { useTheme } from 'entities/theme'
+import { useTheme } from '@/entities/theme'
 import { memo } from 'react'
-import Icon from 'shared/assets/icons/theme.svg'
-import { Button, ButtonColor, ButtonVariant } from 'shared/ui'
+import Icon from '@/shared/assets/icons/theme.svg'
+import { Button, ButtonColor, ButtonVariant } from '@/shared/ui'
 
 const ThemeSwitcher = (): JSX.Element => {
   const { toggle } = useTheme()

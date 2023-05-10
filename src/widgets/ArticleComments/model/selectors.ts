@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/store'
-import { ServerStatus } from 'shared/types/server'
+import { StateSchema } from '@/app/providers/store'
+import { ServerStatus } from '@/shared/types/server'
 
 const getArticleCommentsStatus = (state: StateSchema): ServerStatus => state.articleComments?.status || 'received'
 

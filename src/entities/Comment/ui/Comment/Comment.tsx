@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { FC, memo } from 'react'
-import { Text } from 'shared/ui'
+import { Text } from '@/shared/ui'
 import { IComment } from '../../model/types'
 import styles from './Comment.module.scss'
 

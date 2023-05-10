@@ -1,5 +1,5 @@
 import LoginForm from '../LoginForm'
-import Modal from 'shared/ui/Modal/Modal'
+import Modal from '@/shared/ui/Modal/Modal'
 import { FC } from 'react'
 
 interface IProps {

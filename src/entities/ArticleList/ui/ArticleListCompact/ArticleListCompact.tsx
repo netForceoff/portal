@@ -1,9 +1,9 @@
 import clsx from 'clsx'
 import { IArticle } from '../../model/types'
 import { FC } from 'react'
-import { Text } from 'shared/ui'
+import { Text } from '@/shared/ui'
 import styles from './ArticleListCompact.module.scss'
-import Skeleton from 'shared/ui/Skeleton/Skeleton'
+import Skeleton from '@/shared/ui/Skeleton/Skeleton'
 
 export interface IArticleListCompactProps {
   className?: string

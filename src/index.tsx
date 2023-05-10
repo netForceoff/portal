@@ -1,12 +1,12 @@
 import App from './app'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from './app/providers/theme'
-import 'shared/config/i18n'
-import { ErrorBoundary } from 'shared/lib'
-import PageError from 'widgets/PageError'
-import { createStore } from 'app/providers/store'
+import '@/shared/config/i18n'
+import { ErrorBoundary } from '@/shared/lib'
+import PageError from '@/widgets/PageError'
+import { createStore } from '@/app/providers/store'
 import { Provider } from 'react-redux'
-import { initialize } from 'app/providers/initialize'
+import { initialize } from '@/app/providers/initialize'
 
 import { createRoot } from 'react-dom/client'
 

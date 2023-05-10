@@ -1,7 +1,7 @@
 import styles from './LoginForm.module.scss'
-import Button from 'shared/ui/Button/Button'
-import Input from 'shared/ui/Input/Input'
-import Text from 'shared/ui/Text/Text'
+import Button from '@/shared/ui/Button/Button'
+import Input from '@/shared/ui/Input/Input'
+import Text from '@/shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { FC, memo, useCallback } from 'react'
@@ -9,8 +9,8 @@ import { loginActions, loginReducer } from '../../model/slice'
 import type { Fields } from '../../model/types'
 import { getLoginError, getLoginPassword, getLoginStatus, getLoginUsername } from '../../model/selectors'
 import { login } from '../../model/services'
-import { withReducers } from 'shared/lib'
-import { useAppDispatch } from 'app/providers/store'
+import { withReducers } from '@/shared/lib'
+import { useAppDispatch } from '@/app/providers/store'
 
 const reducers = { login: loginReducer }
 

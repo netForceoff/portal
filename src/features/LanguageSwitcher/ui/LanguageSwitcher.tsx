@@ -1,4 +1,4 @@
-import { Button, ButtonVariant, ButtonColor } from 'shared/ui'
+import { Button, ButtonVariant, ButtonColor } from '@/shared/ui'
 import styles from './LanguageSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'

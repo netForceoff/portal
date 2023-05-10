@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { IArticleTextBlock } from '../../../../ArticleList/model/types'
 import { FC, memo, ReactNode } from 'react'
-import { Text } from 'shared/ui'
+import { Text } from '@/shared/ui'
 import styles from './ArticleText.module.scss'
 
 export interface IArticleTextProps {

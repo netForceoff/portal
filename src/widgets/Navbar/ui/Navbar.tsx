@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 import { FC, useState, ReactNode, useCallback, useEffect } from 'react'
 import styles from './Navbar.module.scss'
-import { Button, ButtonVariant, ButtonColor } from 'shared/ui'
+import { Button, ButtonVariant, ButtonColor } from '@/shared/ui'
 import { useTranslation } from 'react-i18next'
-import { LoginModal } from 'features/auth/modalByUsername'
+import { LoginModal } from '@/features/auth/modalByUsername'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, userActions } from 'entities/User'
-import NotificationButton from 'features/NotificationButton/ui/NotificationButton'
+import { getUser, userActions } from '@/entities/User'
+import NotificationButton from '@/features/NotificationButton/ui/NotificationButton'
 
 interface IProps {
   className?: string

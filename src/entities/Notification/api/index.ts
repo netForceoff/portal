@@ -1,5 +1,5 @@
-import { rtkApi } from 'shared/api/query'
-import i18n from 'shared/config/i18n'
+import { rtkApi } from '@/shared/api/query'
+import i18n from '@/shared/config/i18n'
 import { INotification } from '../model/types'
 
 export const notificationApi = rtkApi.injectEndpoints({

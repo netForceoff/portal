@@ -1,11 +1,11 @@
 import { FC, ReactNode, useEffect, MutableRefObject } from 'react'
-import { useAppDispatch } from 'app/providers/store'
+import { useAppDispatch } from '@/app/providers/store'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { getScroll } from '../model/selectors'
-import { withReducers } from 'shared/lib'
+import { withReducers } from '@/shared/lib'
 import { saveScrollPositionActions, saveScrollPositionReducer } from '../model/slice'
-import useDebounce from 'shared/lib/hooks/useDebounce'
+import useDebounce from '@/shared/lib/hooks/useDebounce'
 
 export interface ISaveScrollPositionProps extends JSX.IntrinsicAttributes {
   containerRef: MutableRefObject<HTMLElement | null>

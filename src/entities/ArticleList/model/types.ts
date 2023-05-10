@@ -1,4 +1,4 @@
-import { ServerError, ServerStatus } from 'shared/types/server'
+import { ServerError, ServerStatus } from '@/shared/types/server'
 import { EntityState } from '@reduxjs/toolkit'
 
 export enum IArticleBlockType {

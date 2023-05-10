@@ -1,6 +1,6 @@
-import { Currency } from 'entities/Currency'
-import { Country } from 'shared/const/common'
-import { ServerStatus } from 'shared/types/server'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/shared/const/common'
+import { ServerStatus } from '@/shared/types/server'
 
 export interface Profile {
   first: string

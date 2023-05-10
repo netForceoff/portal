@@ -1,4 +1,4 @@
-import { ServerStatus, ServerError } from 'shared/types/server'
+import { ServerStatus, ServerError } from '@/shared/types/server'
 
 import { EntityState } from '@reduxjs/toolkit'
 

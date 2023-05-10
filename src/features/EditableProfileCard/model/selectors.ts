@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/store'
+import { StateSchema } from '@/app/providers/store'
 import { Profile } from './types'
-import { ServerStatus } from 'shared/types/server'
+import { ServerStatus } from '@/shared/types/server'
 
 export const getProfileState = (state: StateSchema): Profile | undefined => state.profile?.profile
 

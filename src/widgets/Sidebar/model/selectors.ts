@@ -1,10 +1,10 @@
-import { StateSchema } from 'app/providers/store'
-import { getUser } from 'entities/User'
-import { RoutePath } from 'shared/config/router'
-import List from 'shared/assets/icons/list.svg'
-import i18n from 'shared/config/i18n'
-import House from 'shared/assets/icons/house.svg'
-import Profile from 'shared/assets/icons/profile.svg'
+import { StateSchema } from '@/app/providers/store'
+import { getUser } from '@/entities/User'
+import { RoutePath } from '@/shared/config/router'
+import List from '@/shared/assets/icons/list.svg'
+import i18n from '@/shared/config/i18n'
+import House from '@/shared/assets/icons/house.svg'
+import Profile from '@/shared/assets/icons/profile.svg'
 
 export const getSidebarLinks = (state: StateSchema): Array<{ path: string, Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>, text: string }> => {
   const user = getUser(state)
