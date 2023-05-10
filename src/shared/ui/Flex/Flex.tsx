@@ -8,13 +8,15 @@ type FlexAlign = 'center' | 'end' | 'start'
 
 type FlexJustify = 'start' | 'end' | 'around' | 'between' | 'center'
 
+type FlexGap = '4' | '8' | '16' | '32'
+
 export interface IFlexProps {
   className?: string
   children: ReactNode
   direction?: FlexDirection
   align?: FlexAlign
   justify?: FlexJustify
-  gap?: | '4' | '8' | '16' | '32'
+  gap?: FlexGap
 }
 
 const Flex: FC<IFlexProps> = (props) => {
@@ -27,7 +29,7 @@ const Flex: FC<IFlexProps> = (props) => {
       [styles[`direction_${direction || ''}`]]: Boolean(direction),
       [styles[`align_${align || ''}`]]: Boolean(align),
       [styles[`justify_${justify || ''}`]]: Boolean(justify),
-      [styles[`gap_${gap}`]]: Boolean(gap)
+      [styles[`gap_${gap || ''}`]]: Boolean(gap)
     }
   )
 
