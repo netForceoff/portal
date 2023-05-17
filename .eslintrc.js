@@ -25,7 +25,9 @@ module.exports = {
   plugins: ['react', 'i18next', 'react-hooks', 'eslint-custom-rules'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'eslint-custom-rules/relative-paths': 'error',
+    'eslint-custom-rules/relative-paths': ['error', {
+      alias: '@'
+    }],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-floating-promises': 'off',

@@ -7,7 +7,17 @@ module.exports = {
       meta: {
         docs: {
           description: 'Правило для использования относительных путей в импортах'
-        }
+        },
+        schema: [
+          {
+            type: 'object',
+            properties: {
+              alias: {
+                type: 'string'
+              }
+            }
+          }
+        ]
       }
     }
   }
