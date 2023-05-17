@@ -38,6 +38,9 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
     new MiniCssExtractPlugin({
       filename: name.css,
       chunkFilename: name.css
+    }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: true
     })
   ].concat(devPlugins)
 }

@@ -10,5 +10,7 @@
   },
   "buttons": {
     "add": "Add"
-  }
+  },
+  "articleRateTitle": "Send feedback",
+  "feedbackTitle": "Send your feedback"
 }

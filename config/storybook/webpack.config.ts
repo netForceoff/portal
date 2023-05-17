@@ -19,6 +19,13 @@ export default ({ config }: { config: Configuration }): Configuration => {
   config.resolve?.modules?.push(paths.src)
   config.resolve?.extensions?.push('.ts', '.tsx')
 
+  if (config.resolve?.alias) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': paths.src
+    }
+  }
+
   config.plugins?.push(new MiniCssExtractPlugin())
 
   config.plugins?.push(new DefinePlugin({

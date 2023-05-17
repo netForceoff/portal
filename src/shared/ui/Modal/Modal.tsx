@@ -8,7 +8,7 @@ import Overlay from '../Overlay/Overlay'
 interface IProps {
   className?: string
   children: ReactNode
-  onCloseOutside: () => void
+  onCloseOutside?: () => void
 }
 
 const CODES = ['Escape']
@@ -21,7 +21,7 @@ const Modal: FC<IProps> = ({ className, children, onCloseOutside }): JSX.Element
 
   const handleAnimationEnd = (event: AnimationEvent<HTMLDivElement>): void => {
     if (event.animationName === styles.out) {
-      onCloseOutside()
+      onCloseOutside?.()
     }
   }
 

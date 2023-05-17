@@ -4,6 +4,7 @@ import { ArticleComments, articleCommentsReducer } from '@/widgets/ArticleCommen
 import { articleReducer } from '@/entities/Article'
 import { ArticleCard } from '@/widgets/ArticleCard'
 import withReducers from '@/shared/lib/HOCS/withReducers'
+import { ArticleRating } from '@/features/ArticleRating'
 
 export interface IArticlePageProps extends JSX.IntrinsicAttributes {
   className?: string
@@ -20,6 +21,7 @@ const ArticlePage: FC<IArticlePageProps> = (props) => {
   return (
     <section>
         <ArticleCard id={id} />
+        <ArticleRating id={id} />
         <ArticleComments id ={id} />
     </section>
   )

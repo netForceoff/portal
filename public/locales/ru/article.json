@@ -10,5 +10,7 @@
   },
   "buttons": {
     "add": "Добавить"
-  }
+  },
+  "articleRateTitle": "Оцените статью",
+  "feedbackTitle": "Оставьте свой отзыв."
 }

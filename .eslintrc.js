@@ -35,7 +35,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     '@typescript-eslint/consistent-type-exports': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off'
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-invalid-void-type': 'off'
   },
   globals: {
     __IS_DEV__: true
