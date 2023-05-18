@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { LoginModal } from '@/features/auth/modalByUsername'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUser, userActions } from '@/entities/User'
-import NotificationButton from '@/features/NotificationButton/ui/NotificationButton'
+import { NotificationButton } from '@/features/NotificationButton'
 
 interface IProps {
   className?: string

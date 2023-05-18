@@ -28,6 +28,9 @@ module.exports = {
     'eslint-custom-rules/relative-paths': ['error', {
       alias: '@'
     }],
+    'eslint-custom-rules/public-api': ['error', {
+      alias: '@'
+    }],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
