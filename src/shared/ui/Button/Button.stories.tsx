@@ -3,6 +3,8 @@ import { ComponentStory } from '@storybook/react'
 
 import Button, { ButtonBackgroundType, ButtonSize, ButtonColor, ButtonVariant } from './Button'
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
+// TODO - надо добавить в исключения файлы декораторов
+// eslint-disable-next-line eslint-custom-rules/fsd-architecture
 import { THEME } from '@/entities/theme'
 
 export default {

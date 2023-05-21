@@ -1,5 +1,6 @@
 const relativePaths = require('./rules/relative-paths')
 const publicApi = require('./rules/public-api')
+const fsdArchitecture = require('./rules/fsd-architecture')
 
 module.exports = {
   rules: {
@@ -33,6 +34,27 @@ module.exports = {
             properties: {
               alias: {
                 type: 'string'
+              }
+            }
+          }
+        ]
+      }
+    },
+    'fsd-architecture': {
+      create: fsdArchitecture,
+      meta: {
+        docs: {
+          description: 'Правило для соблюдения корректного импорта по методологии FSD'
+        },
+        schema: [
+          {
+            type: 'object',
+            properties: {
+              alias: {
+                type: 'string'
+              },
+              ignorePatterns: {
+                type: 'array'
               }
             }
           }

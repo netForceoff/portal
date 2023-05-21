@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom'
-import { routeConfig, RouteConfigProps } from '../config'
+import { routeConfig } from '../config'
 import { useCallback } from 'react'
 import RequireAuth from './RequireAuth'
+import { RouteConfigProps } from '@/shared/types/router'
 
 // TODO подумать куда засунуть класс wrapper
 const Router = (): JSX.Element => {

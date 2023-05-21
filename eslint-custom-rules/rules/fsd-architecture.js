@@ -1,5 +1,7 @@
 const { isPathRelative, shouldBeRelative } = require('../helpers')
-// TODO - должен орать и на относительные пути, чтоб защититься от дурака
+const path = require('path')
+
+// TODO - надо бы порефакторить, общие части вытащить в отдельный модуль
 module.exports = function (context) {
   const alias = context.options[0]?.alias || ''
   const ignorePatterns = context.options[0]?.ignorePatterns || []
@@ -22,17 +24,17 @@ module.exports = function (context) {
 
       const paths = importPath.split('/')
 
-      const layers = {
-        app: 'app',
-        widgets: 'widgets',
-        entities: 'entities',
-        features: 'features',
-        pages: 'pages'
+      const layersWithAcceptableLayers = {
+        pages: ['widgets', 'features', 'entities', 'shared'],
+        widgets: ['features', 'entities', 'shared'],
+        features: ['entities', 'shared'],
+        entities: ['shared'],
+        shared: ['shared']
       }
 
       const layer = paths[0]
 
-      if (!layer || !layers[layer]) {
+      if (!layer || !layersWithAcceptableLayers[layer]) {
         return false
       }
 
@@ -43,10 +45,23 @@ module.exports = function (context) {
         return false
       }
 
-      const segments = ['ui', 'model', 'api', 'config', 'lib']
+      const normalizeProjectPath = path.toNamespacedPath(projectPath)
+      const normalizeFullPath = path.toNamespacedPath(fullPath)
 
-      if (paths.some(path => segments.includes(path))) {
-        context.report(node, 'Импорт должен быть из PUBLIC API (index.ts)')
+      if (!normalizeFullPath.startsWith(normalizeProjectPath)) {
+        return false
+      }
+
+      const pathChunks = normalizeFullPath.split('/')
+
+      const layersKeys = Object.keys(layersWithAcceptableLayers)
+
+      const currentLayer = pathChunks.find(chunk => layersKeys.includes(chunk))
+
+      if (!currentLayer || layersWithAcceptableLayers[currentLayer].includes(layer)) {
+        return false
+      } else {
+        context.report(node, 'Слой должен быть на уровень ниже')
       }
     }
   }

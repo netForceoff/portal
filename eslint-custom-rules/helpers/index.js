@@ -10,6 +10,7 @@ const shouldBeRelative = (fullPath, importPath, projectPath) => {
   const toSlice = toArray[1]
 
   const layers = {
+    app: 'app',
     widgets: 'widgets',
     entities: 'entities',
     shared: 'shared',

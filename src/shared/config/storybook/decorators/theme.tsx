@@ -1,4 +1,5 @@
-// Подумать над архитектурой, плохо, что entities тянется в shared
+// TODO - надо добавить в исключения файлы декораторов
+// eslint-disable-next-line eslint-custom-rules/fsd-architecture
 import { THEME } from '@/entities/theme'
 import { Story } from '@storybook/react'
 

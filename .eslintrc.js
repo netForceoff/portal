@@ -31,6 +31,9 @@ module.exports = {
     'eslint-custom-rules/public-api': ['error', {
       alias: '@'
     }],
+    'eslint-custom-rules/fsd-architecture': ['error', {
+      alias: '@'
+    }],
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
