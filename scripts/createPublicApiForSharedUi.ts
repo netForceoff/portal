@@ -1,5 +1,6 @@
-import { Project, SourceFile, ImportDeclaration } from 'ts-morph'
 import path from 'path'
+
+import { Project, SourceFile, ImportDeclaration } from 'ts-morph'
 const project = new Project()
 
 project.addSourceFilesAtPaths('src/**/*.ts')

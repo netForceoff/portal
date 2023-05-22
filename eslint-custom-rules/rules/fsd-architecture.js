@@ -1,5 +1,6 @@
-const { isPathRelative, shouldBeRelative } = require('../helpers')
 const path = require('path')
+
+const { isPathRelative, shouldBeRelative } = require('../helpers')
 
 // TODO - надо бы порефакторить, общие части вытащить в отдельный модуль
 module.exports = function (context) {

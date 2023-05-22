@@ -1,6 +1,8 @@
-const rule = require('../../../rules/fsd-architecture')
-const RuleTester = require('eslint').RuleTester
 const path = require('path')
+
+const RuleTester = require('eslint').RuleTester
+
+const rule = require('../../../rules/fsd-architecture')
 
 const ruleTester = new RuleTester({
   parserOptions: { ecmaVersion: 6, sourceType: 'module' }

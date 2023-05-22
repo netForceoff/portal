@@ -1,6 +1,8 @@
-const rule = require('../../../rules/relative-paths')
-const RuleTester = require('eslint').RuleTester
 const path = require('path')
+
+const RuleTester = require('eslint').RuleTester
+
+const rule = require('../../../rules/relative-paths')
 
 const ruleTester = new RuleTester({
   parserOptions: { ecmaVersion: 6, sourceType: 'module' }

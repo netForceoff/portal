@@ -1,6 +1,6 @@
-const relativePaths = require('./rules/relative-paths')
-const publicApi = require('./rules/public-api')
 const fsdArchitecture = require('./rules/fsd-architecture')
+const publicApi = require('./rules/public-api')
+const relativePaths = require('./rules/relative-paths')
 
 module.exports = {
   rules: {
@@ -28,6 +28,7 @@ module.exports = {
         docs: {
           description: 'Правило для использования PUBLIC API в файлах по FSD системе'
         },
+        fixable: 'code',
         schema: [
           {
             type: 'object',

@@ -21,6 +21,7 @@ module.exports = function (context) {
       }
 
       const paths = importPath.split('/')
+      const [layer, slice] = paths
 
       const layers = {
         app: 'app',
@@ -29,8 +30,6 @@ module.exports = function (context) {
         features: 'features',
         pages: 'pages'
       }
-
-      const layer = paths[0]
 
       if (!layer || !layers[layer]) {
         return false
@@ -46,7 +45,14 @@ module.exports = function (context) {
       const segments = ['ui', 'model', 'api', 'config', 'lib']
 
       if (paths.some(path => segments.includes(path))) {
-        context.report(node, 'Импорт должен быть из PUBLIC API (index.ts)')
+        context.report({
+          node,
+          message: 'Импорт должен быть из PUBLIC API (index.ts)',
+          fix (fixer) {
+            const withAlias = alias ? `${alias}/` : ''
+            return fixer.replaceText(node.source, `'${withAlias}${layer}/${slice}'`)
+          }
+        })
       }
     }
   }
