@@ -4,8 +4,8 @@ import type { Profile } from '../../../../features/EditableProfileCard/model/typ
 import type { ServerStatus } from '@/shared/types/server'
 import { FC, memo } from 'react'
 import styles from './ProfileCard.module.scss'
-import Avatar from '@/shared/ui/Avatar/Avatar'
-import Select from '@/shared/ui/Select/Select'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Select } from '@/shared/ui/Select'
 import { Currency } from '../../../../shared/const/common'
 
 export interface IProps {

@@ -1,6 +1,6 @@
 import { NotificationList } from '@/entities/Notification'
 import { FC, memo } from 'react'
-import Icon from '@/shared/ui/Icon/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import { Popover } from '@/shared/ui/Popups'
 import styles from './NotificationButton.module.scss'
 import NotificationIcon from '@/shared/assets/icons/notification.svg'

@@ -4,7 +4,7 @@ import { FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import useDebounce from '@/shared/lib/hooks/useDebounce'
 import { Input } from '@/shared/ui'
-import Select from '@/shared/ui/Select/Select'
+import { Select } from '@/shared/ui/Select'
 import { useSelector } from 'react-redux'
 import {
   getArticleListSearch,
