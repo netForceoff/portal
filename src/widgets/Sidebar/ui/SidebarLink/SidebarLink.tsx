@@ -1,7 +1,9 @@
-import { AppLink, AppLinkVariant } from '@/shared/ui'
-import styles from './SidebarLink.module.scss'
-import { FC } from 'react'
 import clsx from 'clsx'
+import { FC } from 'react'
+
+import { AppLink, AppLinkVariant } from '@/shared/ui'
+
+import styles from './SidebarLink.module.scss'
 
 interface IProps extends JSX.IntrinsicAttributes {
   Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>

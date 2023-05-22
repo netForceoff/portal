@@ -1,10 +1,11 @@
 import { FC } from 'react'
 import { useParams } from 'react-router-dom'
-import { ArticleComments, articleCommentsReducer } from '@/widgets/ArticleComments'
+
 import { articleReducer } from '@/entities/Article'
-import { ArticleCard } from '@/widgets/ArticleCard'
-import withReducers from '@/shared/lib/HOCS/withReducers'
 import { ArticleRating } from '@/features/ArticleRating'
+import withReducers from '@/shared/lib/HOCS/withReducers'
+import { ArticleCard } from '@/widgets/ArticleCard'
+import { ArticleComments, articleCommentsReducer } from '@/widgets/ArticleComments'
 
 export interface IArticlePageProps extends JSX.IntrinsicAttributes {
   className?: string

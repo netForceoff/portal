@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, ReactNode } from 'react'
+
 import styles from './Overlay.module.scss'
 
 export interface IOverlayProps {

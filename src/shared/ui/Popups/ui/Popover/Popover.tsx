@@ -1,6 +1,7 @@
 import { Popover as HPopover } from '@headlessui/react'
 import clsx from 'clsx'
 import { FC, ReactNode } from 'react'
+
 import styles from './Popover.module.scss'
 
 interface IPopoverProps {

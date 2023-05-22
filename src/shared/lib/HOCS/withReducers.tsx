@@ -1,7 +1,8 @@
-import { ReduxStoreManager, AsyncStateSchema } from '@/app/providers/store'
+import { Reducer } from '@reduxjs/toolkit'
 import { ComponentType, useLayoutEffect } from 'react'
 import { useStore, useDispatch } from 'react-redux'
-import { Reducer } from '@reduxjs/toolkit'
+
+import { ReduxStoreManager, AsyncStateSchema } from '@/app/providers/store'
 
 type Reducers = {
   [key in keyof AsyncStateSchema]: Reducer

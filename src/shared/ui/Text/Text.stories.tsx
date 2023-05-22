@@ -1,11 +1,12 @@
-import React from 'react'
 import { ComponentStory } from '@storybook/react'
+import React from 'react'
 
 import Text from './Text'
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
+
 // TODO - надо добавить в исключения файлы декораторов
 // eslint-disable-next-line eslint-custom-rules/fsd-architecture
 import { THEME } from '@/entities/theme'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
 
 export default {
   title: 'shared/Text',

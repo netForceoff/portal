@@ -1,14 +1,16 @@
-import { LoginSchema } from '@/features/auth/modalByUsername'
-import { UserSchema } from '@/entities/User'
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { ProfileSchema } from '@/features/EditableProfileCard'
 import { AxiosInstance } from 'axios'
+
 import createStore from './store'
-import { ArticleCommentsSchema } from '@/widgets/ArticleComments'
-import { SaveScrollPositionSchema } from '@/features/SaveScrollPosition'
-import { ArticleListSchema } from '@/entities/ArticleList'
-import { rtkApi } from '@/shared/api/query'
+
 import { ArticleSchema } from '@/entities/Article'
+import { ArticleListSchema } from '@/entities/ArticleList'
+import { UserSchema } from '@/entities/User'
+import { ProfileSchema } from '@/features/EditableProfileCard'
+import { SaveScrollPositionSchema } from '@/features/SaveScrollPosition'
+import { LoginSchema } from '@/features/auth/modalByUsername'
+import { rtkApi } from '@/shared/api/query'
+import { ArticleCommentsSchema } from '@/widgets/ArticleComments'
 
 interface AsyncStateSchema {
   login?: LoginSchema

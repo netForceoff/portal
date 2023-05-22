@@ -1,6 +1,7 @@
+import { IArticle } from './types'
+
 import { StateSchema } from '@/app/providers/store'
 import { ServerStatus } from '@/shared/types/server'
-import { IArticle } from './types'
 
 const getArticleProps = (state: StateSchema): IArticle | undefined => state?.article?.article || undefined
 

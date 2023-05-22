@@ -1,4 +1,5 @@
 import { useRef, useCallback, useEffect } from 'react'
+
 import { useLatest } from './useLatest'
 
 const useDebounce = <T extends (...args: any[]) => void>(callback: T, delay: number = 500) => {

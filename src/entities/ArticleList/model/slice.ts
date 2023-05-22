@@ -1,11 +1,13 @@
-import { StateSchema } from '@/app/providers/store'
 import {
   createEntityAdapter,
   createSlice,
   PayloadAction
 } from '@reduxjs/toolkit'
-import { ArticleListSchema, IArticle, Order, SortBy } from './types'
+
 import { filterArticles } from './service/filter'
+import { ArticleListSchema, IArticle, Order, SortBy } from './types'
+
+import { StateSchema } from '@/app/providers/store'
 
 const articleListAdapter = createEntityAdapter<IArticle>({
   selectId: (article) => article.id

@@ -1,17 +1,18 @@
 import { FC, useEffect, useCallback, useRef } from 'react'
-// import styles from './ArticlesPage.module.scss'
-import { withReducers } from '@/shared/lib'
-import { useAppDispatch } from '@/app/providers/store'
 import { useSelector } from 'react-redux'
-import { Error } from '@/entities/Error'
-import { Layout } from '@/widgets/Layout'
-import InfinityScrollWrapper from '@/shared/lib/wrappers/InfinityScrollWrapper'
-import { SaveScrollPosition } from '@/features/SaveScrollPosition'
-import { ArticlesPageFilters } from '@/features/ArticlesPageFilters'
-import { articleListReducer, getArticleListError, getArticlesMore, initArticles } from '@/entities/ArticleList'
 import { useSearchParams } from 'react-router-dom'
+
+// import styles from './ArticlesPage.module.scss'
+import { useAppDispatch } from '@/app/providers/store'
+import { articleListReducer, getArticleListError, getArticlesMore, initArticles } from '@/entities/ArticleList'
+import { Error } from '@/entities/Error'
 import { ArticlesPageChangeViewer } from '@/features/ArticlesPageChangeViewer'
+import { ArticlesPageFilters } from '@/features/ArticlesPageFilters'
+import { SaveScrollPosition } from '@/features/SaveScrollPosition'
+import { withReducers } from '@/shared/lib'
+import InfinityScrollWrapper from '@/shared/lib/wrappers/InfinityScrollWrapper'
 import { ArticleCards } from '@/widgets/ArticleCards'
+import { Layout } from '@/widgets/Layout'
 
 const reducers = {
   articles: articleListReducer

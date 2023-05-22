@@ -1,10 +1,12 @@
-import { componentRender } from '@/shared/lib/tests/componentRender'
-import EditableProfileCard from '../EditableProfileCard'
 import { fireEvent, screen } from '@testing-library/react'
-import { Profile } from '../../../model/types'
+
 import { profileReducer } from '../../../model/slice'
+import { Profile } from '../../../model/types'
+import EditableProfileCard from '../EditableProfileCard'
+
 import { Currency } from '@/entities/Currency'
 import { Country } from '@/shared/const/common'
+import { componentRender } from '@/shared/lib/tests/componentRender'
 
 const profile: Profile = {
   avatar: 'avatar',

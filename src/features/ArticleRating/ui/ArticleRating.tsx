@@ -1,8 +1,10 @@
-import { Rating } from '@/entities/Rating'
 import { FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useRateArticle, useRating } from '../api'
 import { useSelector } from 'react-redux'
+
+import { useRateArticle, useRating } from '../api'
+
+import { Rating } from '@/entities/Rating'
 import { getUser } from '@/entities/User'
 import { Skeleton } from '@/shared/ui/Skeleton'
 

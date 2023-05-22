@@ -1,4 +1,5 @@
 import { ComponentType } from 'react'
+
 import Loader from '../../ui/Loader/Loader'
 
 interface IProps extends JSX.IntrinsicAttributes {

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { articleApi } from './service'
 import { initialArticleState } from './state'
 import { ArticleSchema, IArticle } from './types'

@@ -1,6 +1,8 @@
 import clsx from 'clsx'
 import { FC, memo } from 'react'
+
 import Button, { ButtonColor, ButtonVariant } from '../Button/Button'
+
 import styles from './Code.module.scss'
 
 export interface ICodeProps {

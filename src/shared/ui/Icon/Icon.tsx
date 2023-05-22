@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, memo, SVGProps } from 'react'
+
 import styles from './Icon.module.scss'
 
 export interface IIconProps {

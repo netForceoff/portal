@@ -1,6 +1,6 @@
-import { ServerStatus, ServerError } from '@/shared/types/server'
-
 import { EntityState } from '@reduxjs/toolkit'
+
+import { ServerStatus, ServerError } from '@/shared/types/server'
 
 export interface ArticleSchema {
   error?: {

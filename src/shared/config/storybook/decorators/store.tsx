@@ -1,5 +1,6 @@
 import { DeepPartial } from '@reduxjs/toolkit'
 import { Story } from '@storybook/react'
+
 import { StoreProvider, StateSchema } from '@/app/providers/store'
 
 function StoreDecorator (initialState: DeepPartial<StateSchema>) {

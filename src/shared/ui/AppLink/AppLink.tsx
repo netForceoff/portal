@@ -1,7 +1,8 @@
-import { Link, type LinkProps } from 'react-router-dom'
-import styles from './AppLink.module.scss'
 import clsx from 'clsx'
 import { FC } from 'react'
+import { Link, type LinkProps } from 'react-router-dom'
+
+import styles from './AppLink.module.scss'
 
 export enum AppLinkVariant {
   PRIMARY = 'primary',

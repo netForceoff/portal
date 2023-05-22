@@ -1,9 +1,12 @@
 import clsx from 'clsx'
 import { FC, memo, useState } from 'react'
-import styles from './StarRating.module.scss'
-import Star from '@/shared/assets/icons/star.svg'
-import Icon from '../Icon/Icon'
+
 import Flex from '../Flex/Flex'
+import Icon from '../Icon/Icon'
+
+import Star from '@/shared/assets/icons/star.svg'
+
+import styles from './StarRating.module.scss'
 
 export interface IStarRatingProps {
   className?: string

@@ -1,5 +1,6 @@
-import { useTheme } from '@/entities/theme'
 import { memo } from 'react'
+
+import { useTheme } from '@/entities/theme'
 import Icon from '@/shared/assets/icons/theme.svg'
 import { Button, ButtonColor, ButtonVariant } from '@/shared/ui'
 

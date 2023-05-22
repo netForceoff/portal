@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import i18n from '@/shared/config/i18n'
+
 import { ThunkConfig } from '@/app/providers/store'
 import { IComment } from '@/entities/Comment'
 import { rtkApi } from '@/shared/api/query'
+import i18n from '@/shared/config/i18n'
 
 export const getComments = createAsyncThunk<IComment[], string | undefined, ThunkConfig<{ title: string, text: string }>>(
   'article/getComments',

@@ -1,8 +1,9 @@
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit'
 import { ReactNode, FC } from 'react'
 import { Provider } from 'react-redux'
-import { StateSchema } from '../config/types'
+
 import createStore from '../config/store'
+import { StateSchema } from '../config/types'
 
 interface IProps {
   children: ReactNode

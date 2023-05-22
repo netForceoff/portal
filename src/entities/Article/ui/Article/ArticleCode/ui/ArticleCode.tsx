@@ -1,8 +1,11 @@
-import { IArticleCodeBlock } from '../../../../../ArticleList/model/types'
-import { FC, memo } from 'react'
-import { Code } from '@/shared/ui/Code'
-// import styles from './ArticleCode.module.scss'
 import clsx from 'clsx'
+import { FC, memo } from 'react'
+
+import { IArticleCodeBlock } from '../../../../../ArticleList/model/types'
+
+import { Code } from '@/shared/ui/Code'
+
+// import styles from './ArticleCode.module.scss'
 
 export interface IArticleCodeProps {
   className?: string

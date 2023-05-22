@@ -1,5 +1,6 @@
-import { withSuspense } from '@/shared/lib'
 import { lazy } from 'react'
+
+import { withSuspense } from '@/shared/lib'
 
 const ProfilePage = lazy(async () => await import('./ui/ProfilePage'))
 

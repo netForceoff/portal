@@ -1,6 +1,8 @@
 import { lazy } from 'react'
-import { withSuspense } from '@/shared/lib'
+
 import { IArticlesPageProps } from './ui/ArticlesPage'
+
+import { withSuspense } from '@/shared/lib'
 
 const ArticlesPage = lazy(async () => await import('./ui/ArticlesPage'))
 

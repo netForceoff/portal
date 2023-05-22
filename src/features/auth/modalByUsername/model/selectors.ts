@@ -1,5 +1,5 @@
-import { ServerStatus } from '@/shared/types/server'
 import { StateSchema } from '@/app/providers/store'
+import { ServerStatus } from '@/shared/types/server'
 
 const getLoginUsername = (state: StateSchema): string => state.login?.fields.username || ''
 

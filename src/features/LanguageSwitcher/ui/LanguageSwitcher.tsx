@@ -1,8 +1,10 @@
-import { Button, ButtonVariant, ButtonColor } from '@/shared/ui'
-import styles from './LanguageSwitcher.module.scss'
-import { useTranslation } from 'react-i18next'
-import { FC } from 'react'
 import clsx from 'clsx'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import { Button, ButtonVariant, ButtonColor } from '@/shared/ui'
+
+import styles from './LanguageSwitcher.module.scss'
 interface IProps {
   className?: string
   short?: boolean

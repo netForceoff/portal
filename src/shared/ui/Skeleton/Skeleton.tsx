@@ -1,6 +1,7 @@
-import { CSSProperties, FC } from 'react'
-import styles from './Skeleton.module.scss'
 import clsx from 'clsx'
+import { CSSProperties, FC } from 'react'
+
+import styles from './Skeleton.module.scss'
 
 export interface ISkeletonProps {
   className?: string

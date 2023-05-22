@@ -1,4 +1,5 @@
 import { ComponentType } from 'react'
+
 import Text from '../../ui/Text/Text'
 
 interface IProps extends JSX.IntrinsicAttributes {

@@ -1,9 +1,11 @@
 import { configureStore, AnyAction, Middleware, DeepPartial, Dispatch, ReducersMapObject } from '@reduxjs/toolkit'
-import { userReducer } from '@/entities/User'
-import { AsyncStateSchema, StateSchema } from './types'
-import { createReducerManager } from './manager'
-import { axiosApi } from '@/shared/api/axios'
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
+
+import { createReducerManager } from './manager'
+import { AsyncStateSchema, StateSchema } from './types'
+
+import { userReducer } from '@/entities/User'
+import { axiosApi } from '@/shared/api/axios'
 import { rtkApi } from '@/shared/api/query'
 
 const createStore = (initialState?: DeepPartial<StateSchema>, asyncReducers?: ReducersMapObject<AsyncStateSchema>): ToolkitStore<StateSchema, AnyAction, ReadonlyArray<Middleware<string, StateSchema, Dispatch<AnyAction>>>> => {

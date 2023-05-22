@@ -1,7 +1,10 @@
-import { Route, Routes } from 'react-router-dom'
-import { routeConfig } from '../config'
 import { useCallback } from 'react'
+import { Route, Routes } from 'react-router-dom'
+
+import { routeConfig } from '../config'
+
 import RequireAuth from './RequireAuth'
+
 import { RouteConfigProps } from '@/shared/types/router'
 
 // TODO подумать куда засунуть класс wrapper

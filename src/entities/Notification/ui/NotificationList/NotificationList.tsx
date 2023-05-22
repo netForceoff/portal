@@ -1,8 +1,10 @@
 import { FC } from 'react'
-import { Flex } from '@/shared/ui/Flex'
-import { Skeleton } from '@/shared/ui/Skeleton'
+
 import { useNotifications } from '../../api'
 import Notification from '../Notification/Notification'
+
+import { Flex } from '@/shared/ui/Flex'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 export interface INotificationListProps {
   className?: string

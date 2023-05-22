@@ -1,6 +1,7 @@
-import { CSSProperties, FC, ImgHTMLAttributes, memo, useMemo } from 'react'
-import styles from './Avatar.module.scss'
 import clsx from 'clsx'
+import { CSSProperties, FC, ImgHTMLAttributes, memo, useMemo } from 'react'
+
+import styles from './Avatar.module.scss'
 
 interface IProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string

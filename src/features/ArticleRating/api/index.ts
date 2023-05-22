@@ -1,6 +1,6 @@
+import { IRating } from '@/entities/Rating'
 import { rtkApi } from '@/shared/api/query'
 import i18n from '@/shared/config/i18n'
-import { IRating } from '@/entities/Rating'
 
 interface GetArticleRatingArgs {
   userId: string

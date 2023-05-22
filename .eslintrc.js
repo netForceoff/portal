@@ -11,6 +11,9 @@ module.exports = {
     'plugin:storybook/recommended',
     'plugin:react-hooks/recommended'
   ],
+  globals: {
+    __IS_DEV__: true
+  },
   overrides: [{
     files: ['src/**/__tests__/**/*.[jt]s?(x)'],
     rules: {
@@ -22,7 +25,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json']
   },
-  plugins: ['react', 'i18next', 'react-hooks', 'eslint-custom-rules'],
+  plugins: ['react', 'i18next', 'react-hooks', 'eslint-custom-rules', 'import'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'eslint-custom-rules/relative-paths': ['error', {
@@ -44,9 +47,30 @@ module.exports = {
     '@typescript-eslint/consistent-type-exports': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-invalid-void-type': 'off'
+    '@typescript-eslint/no-invalid-void-type': 'off',
+    'import/order': ['error', {
+      pathGroups: [{
+        pattern: '@/**',
+        group: 'internal',
+        position: 'after'
+      },
+      {
+        pattern: './**.module.*',
+        group: 'internal',
+        position: 'after'
+      }
+      ],
+      'newlines-between': 'always',
+      alphabetize: {
+        order: 'asc',
+        caseInsensitive: false
+      }
+    }
+    ]
   },
-  globals: {
-    __IS_DEV__: true
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }

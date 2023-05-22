@@ -1,13 +1,15 @@
 import clsx from 'clsx'
-import { Comments } from '@/entities/Comment'
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { Text } from '@/shared/ui'
-import { getArticleCommentsSelector } from '../model/slice'
+
 import { useComments } from '../model/service'
+import { getArticleCommentsSelector } from '../model/slice'
+
+import { Comments } from '@/entities/Comment'
 import { ArticleAddingComment } from '@/features/ArticleAddingComment'
+import { Text } from '@/shared/ui'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 export interface IArticleCommentsProps extends JSX.IntrinsicAttributes {
   className?: string

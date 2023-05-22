@@ -1,4 +1,5 @@
 import { type FC, useState, ReactNode } from 'react'
+
 import { Context, THEME } from '@/entities/theme'
 import { THEME_KEY } from '@/shared/const/localStorage'
 

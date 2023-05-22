@@ -1,4 +1,5 @@
-import { withSuspense } from '@/shared/lib'
 import App from './App'
+
+import { withSuspense } from '@/shared/lib'
 
 export default withSuspense(App)

@@ -1,11 +1,10 @@
-import { useAppDispatch } from '@/app/providers/store'
 import clsx from 'clsx'
 import { FC, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import useDebounce from '@/shared/lib/hooks/useDebounce'
-import { Input } from '@/shared/ui'
-import { Select } from '@/shared/ui/Select'
 import { useSelector } from 'react-redux'
+import { createSearchParams, useSearchParams } from 'react-router-dom'
+
+import { useAppDispatch } from '@/app/providers/store'
 import {
   getArticleListSearch,
   getArticleListOrder,
@@ -15,7 +14,9 @@ import {
   articleListActions,
   filterArticles
 } from '@/entities/ArticleList'
-import { createSearchParams, useSearchParams } from 'react-router-dom'
+import useDebounce from '@/shared/lib/hooks/useDebounce'
+import { Input } from '@/shared/ui'
+import { Select } from '@/shared/ui/Select'
 
 export interface IArticlesPageFiltersProps {
   className?: string

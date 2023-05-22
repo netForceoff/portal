@@ -1,6 +1,8 @@
-import LoginForm from '../LoginForm'
-import { Modal } from '@/shared/ui/Modal'
 import { FC } from 'react'
+
+import LoginForm from '../LoginForm'
+
+import { Modal } from '@/shared/ui/Modal'
 
 interface IProps {
   onCloseOutside: () => void

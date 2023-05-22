@@ -1,15 +1,18 @@
-import { useAppDispatch } from '@/app/providers/store'
-import { profileReducer, profileActions } from '../../model/slice'
+import clsx from 'clsx'
 import { ReactNode, useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { withReducers } from '@/shared/lib'
+
 import { getProfileState, getProfileStatus, getProfileError, getProfileReadOnly } from '../../model/selectors'
-import { ProfileCard, IProfileCardProps } from '@/entities/Profile'
-import withLoader from '@/shared/lib/HOCS/withLoader'
-import clsx from 'clsx'
-import styles from './EditableProfileCard.module.scss'
-import withError from '@/shared/lib/HOCS/withError'
+import { profileReducer, profileActions } from '../../model/slice'
 import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProfileCardHeader'
+
+import { useAppDispatch } from '@/app/providers/store'
+import { ProfileCard, IProfileCardProps } from '@/entities/Profile'
+import { withReducers } from '@/shared/lib'
+import withError from '@/shared/lib/HOCS/withError'
+import withLoader from '@/shared/lib/HOCS/withLoader'
+
+import styles from './EditableProfileCard.module.scss'
 
 const reducers = {
   profile: profileReducer

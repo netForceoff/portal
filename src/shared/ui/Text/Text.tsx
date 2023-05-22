@@ -1,6 +1,7 @@
-import { FC, memo } from 'react'
-import styles from './Text.module.scss'
 import clsx from 'clsx'
+import { FC, memo } from 'react'
+
+import styles from './Text.module.scss'
 
 type ColorType = 'error' | 'default'
 

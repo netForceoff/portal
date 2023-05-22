@@ -1,8 +1,10 @@
 import clsx from 'clsx'
 import { FC, ReactNode } from 'react'
+
 import { IComment } from '../../model/types'
-import styles from './Comments.module.scss'
 import Comment from '../Comment/Comment'
+
+import styles from './Comments.module.scss'
 
 export interface ICommentsProps extends JSX.IntrinsicAttributes {
   className?: string

@@ -1,10 +1,10 @@
 import About from '@/pages/About'
-import NotFound from '@/pages/NotFound'
-import { RoutePath } from '@/shared/config/router'
-import Main from '@/pages/Main'
-import Profile from '@/pages/ProfilePage'
-import ArticlesPage from '@/pages/ArticlesPage'
 import ArticlePage from '@/pages/ArticlePage'
+import ArticlesPage from '@/pages/ArticlesPage'
+import Main from '@/pages/Main'
+import NotFound from '@/pages/NotFound'
+import Profile from '@/pages/ProfilePage'
+import { RoutePath } from '@/shared/config/router'
 import { RouteConfigProps } from '@/shared/types/router'
 
 export const routeConfig: RouteConfigProps[] = [

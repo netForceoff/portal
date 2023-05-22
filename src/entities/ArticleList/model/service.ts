@@ -1,8 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfig } from '@/app/providers/store'
+
 import { filterArticles } from './service/filter'
 import { articleListActions } from './slice'
 import { Order, SortBy } from './types'
+
+import { ThunkConfig } from '@/app/providers/store'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const getArticlesMore = createAsyncThunk<void, void, ThunkConfig<{ title: string, text: string }>>(

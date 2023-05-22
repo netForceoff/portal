@@ -1,12 +1,16 @@
 import { FC, memo, ReactNode } from 'react'
-import { Text } from '@/shared/ui/Text'
-import { Flex } from '@/shared/ui/Flex'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import styles from './Article.module.scss'
+
+import { IArticle, IArticleBlock, IArticleBlockType } from '../../model/types'
+
 import ArticleCode from './ArticleCode/ui/ArticleCode'
 import ArticleImage from './ArticleImage/ArticleImage'
 import ArticleText from './ArticleText/ArticleText'
-import { IArticle, IArticleBlock, IArticleBlockType } from '../../model/types'
+
+import { Flex } from '@/shared/ui/Flex'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Text } from '@/shared/ui/Text'
+
+import styles from './Article.module.scss'
 
 export interface IArticleProps {
   article?: IArticle

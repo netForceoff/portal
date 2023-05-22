@@ -1,7 +1,9 @@
-import { Button, ButtonColor } from '@/shared/ui'
-import { useTranslation } from 'react-i18next'
-import styles from './PageError.module.scss'
 import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import { Button, ButtonColor } from '@/shared/ui'
+
+import styles from './PageError.module.scss'
 
 interface IProps extends JSX.IntrinsicAttributes {
   className?: string

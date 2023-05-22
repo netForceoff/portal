@@ -1,7 +1,9 @@
+
+import { Story } from '@storybook/react'
+
 // TODO - надо добавить в исключения файлы декораторов
 // eslint-disable-next-line eslint-custom-rules/fsd-architecture
 import { THEME } from '@/entities/theme'
-import { Story } from '@storybook/react'
 
 function ThemeDecorator (theme: THEME) {
   return function StoryComponent (Component: Story) {

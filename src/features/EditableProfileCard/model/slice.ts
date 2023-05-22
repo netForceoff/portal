@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { initialProfileState } from './state'
+
 import { getProfile, updateProfile } from './services'
+import { initialProfileState } from './state'
 import { Profile, ProfileSchema } from './types'
 
 export const profileSlice = createSlice({

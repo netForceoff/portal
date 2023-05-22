@@ -1,8 +1,9 @@
 import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { EditableProfileCard, getProfile } from '@/features/EditableProfileCard'
-import { useAppDispatch } from '@/app/providers/store'
 import { useParams } from 'react-router-dom'
+
+import { useAppDispatch } from '@/app/providers/store'
+import { EditableProfileCard, getProfile } from '@/features/EditableProfileCard'
 import { Layout } from '@/widgets/Layout'
 
 interface IProps extends JSX.IntrinsicAttributes {

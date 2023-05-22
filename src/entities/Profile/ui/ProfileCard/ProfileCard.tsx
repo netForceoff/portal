@@ -1,12 +1,15 @@
-import { useTranslation } from 'react-i18next'
-import { Input } from '@/shared/ui'
-import type { Profile } from '../../../../features/EditableProfileCard/model/types'
-import type { ServerStatus } from '@/shared/types/server'
 import { FC, memo } from 'react'
-import styles from './ProfileCard.module.scss'
+import { useTranslation } from 'react-i18next'
+
+import type { Profile } from '../../../../features/EditableProfileCard/model/types'
+import { Currency } from '../../../../shared/const/common'
+
+import type { ServerStatus } from '@/shared/types/server'
+import { Input } from '@/shared/ui'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Select } from '@/shared/ui/Select'
-import { Currency } from '../../../../shared/const/common'
+
+import styles from './ProfileCard.module.scss'
 
 export interface IProps {
   className?: string

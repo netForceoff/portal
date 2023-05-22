@@ -1,9 +1,11 @@
 import './styles/index.scss'
-import AppRouter from './providers/router'
-import { Navbar } from '@/widgets/Navbar'
-import { useTheme } from '@/entities/theme'
-import { Sidebar } from '@/widgets/Sidebar'
 import { useLayoutEffect } from 'react'
+
+import AppRouter from './providers/router'
+
+import { useTheme } from '@/entities/theme'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
 
 export const App = (): JSX.Element => {
   const { theme } = useTheme()

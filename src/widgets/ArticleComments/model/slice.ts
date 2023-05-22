@@ -1,12 +1,14 @@
-import { StateSchema } from '@/app/providers/store'
 import {
   createEntityAdapter,
   createSlice,
   PayloadAction
 } from '@reduxjs/toolkit'
-import { IComment } from '@/entities/Comment'
-import { ArticleCommentsSchema } from './types'
+
 import { commentsApi } from './service'
+import { ArticleCommentsSchema } from './types'
+
+import { StateSchema } from '@/app/providers/store'
+import { IComment } from '@/entities/Comment'
 import { articleAddingCommentApi } from '@/features/ArticleAddingComment'
 
 const commentsAdapter = createEntityAdapter<IComment>({

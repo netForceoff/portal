@@ -1,12 +1,15 @@
 import clsx from 'clsx'
+import { useState, type FC, ReactNode } from 'react'
+import { useSelector } from 'react-redux'
+
+import { getSidebarLinks } from '../../model/selectors'
+import SidebarLink from '../SidebarLink/SidebarLink.async'
+
 import { LanguageSwitcher } from '@/features/LanguageSwitcher'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { useState, type FC, ReactNode } from 'react'
 import { Button, ButtonVariant, ButtonBackgroundType, ButtonSize, ButtonColor } from '@/shared/ui'
+
 import styles from './Sidebar.module.scss'
-import SidebarLink from '../SidebarLink/SidebarLink.async'
-import { useSelector } from 'react-redux'
-import { getSidebarLinks } from '../../model/selectors'
 
 export interface IProps extends JSX.IntrinsicAttributes {
   className?: string

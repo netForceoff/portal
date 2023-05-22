@@ -1,4 +1,5 @@
 import { FC, memo } from 'react'
+
 import { Text } from '@/shared/ui'
 
 export interface IErrorProps {

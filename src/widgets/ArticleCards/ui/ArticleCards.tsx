@@ -1,6 +1,7 @@
-import { ArticleListCompact, ArticleListExtended, getArticleList, getArticleListStatus, getArticleListView } from '@/entities/ArticleList'
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
+
+import { ArticleListCompact, ArticleListExtended, getArticleList, getArticleListStatus, getArticleListView } from '@/entities/ArticleList'
 
 export interface IArticleCardsProps {
   className?: string

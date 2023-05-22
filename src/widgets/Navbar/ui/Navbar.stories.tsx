@@ -1,10 +1,11 @@
-import React from 'react'
 import { ComponentStory } from '@storybook/react'
+import React from 'react'
 
 import Navbar from './Navbar'
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
+
 import { THEME } from '@/entities/theme'
 import StoreDecorator from '@/shared/config/storybook/decorators/store'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { FC, MutableRefObject, ReactNode, useRef } from 'react'
+
 import styles from './Layout.module.scss'
 
 export interface ILayoutProps {

@@ -1,9 +1,10 @@
-import React from 'react'
 import { ComponentStory } from '@storybook/react'
+import React from 'react'
 
 import PageError from './PageError'
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
+
 import { THEME } from '@/entities/theme'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,7 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+
+import { IArticle } from '../types'
+
 import { ThunkConfig } from '@/app/providers/store'
 import i18n from '@/shared/config/i18n'
-import { IArticle } from '../types'
 
 interface ArticleParams {
   page?: number

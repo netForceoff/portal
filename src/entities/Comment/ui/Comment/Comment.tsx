@@ -1,7 +1,10 @@
 import clsx from 'clsx'
 import { FC, memo } from 'react'
-import { Text } from '@/shared/ui'
+
 import { IComment } from '../../model/types'
+
+import { Text } from '@/shared/ui'
+
 import styles from './Comment.module.scss'
 
 export interface ICommentProps extends IComment, JSX.IntrinsicAttributes {

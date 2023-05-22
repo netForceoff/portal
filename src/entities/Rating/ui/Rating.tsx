@@ -1,8 +1,9 @@
+import { FC, memo, useState } from 'react'
+
 import { Button, ButtonColor, Input, Text } from '@/shared/ui'
 import { Flex } from '@/shared/ui/Flex'
 import { Modal } from '@/shared/ui/Modal'
 import { StarRating } from '@/shared/ui/StarRating'
-import { FC, memo, useState } from 'react'
 
 export interface IRatingProps {
   className?: string

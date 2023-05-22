@@ -1,7 +1,8 @@
+import clsx from 'clsx'
 import type { ChangeEvent } from 'react'
 import { memo, useMemo } from 'react'
+
 import styles from './Select.module.scss'
-import clsx from 'clsx'
 
 interface Option <V extends string = string> {
   value: V

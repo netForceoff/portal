@@ -1,14 +1,15 @@
-import App from './app'
+import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from './app/providers/theme'
+
+import App from './app'
+
 import '@/shared/config/i18n'
+import { initialize } from '@/app/providers/initialize'
+import { createStore } from '@/app/providers/store'
+import { ThemeProvider } from '@/app/providers/theme'
 import { ErrorBoundary } from '@/shared/lib'
 import PageError from '@/widgets/PageError'
-import { createStore } from '@/app/providers/store'
-import { Provider } from 'react-redux'
-import { initialize } from '@/app/providers/initialize'
-
-import { createRoot } from 'react-dom/client'
 
 const container = document.getElementById('root')
 
