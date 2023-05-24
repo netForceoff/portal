@@ -15,6 +15,11 @@ interface IProps {
 }
 
 // TODO - не срабатывает анимация модалки после успешного логина
+/**
+ *
+ * Тестовый коммент
+ *
+ */
 const Navbar: FC<IProps> = ({ className }) => {
   const [isOpenAuthModal, setIsOpenAuthModal] = useState<boolean>(false)
   const { t } = useTranslation()

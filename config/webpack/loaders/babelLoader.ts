@@ -1,6 +1,8 @@
 import { RuleSetRule } from 'webpack'
 
-const babelLoader = (): RuleSetRule => ({
+import { Mode } from '../types/config'
+
+const babelLoader = (env: Mode): RuleSetRule => ({
   exclude: /node_modules/,
   test: /\.(ts|js)x?$/,
   use: [
@@ -8,7 +10,7 @@ const babelLoader = (): RuleSetRule => ({
       loader: 'babel-loader',
       options: {
         cacheDirectory: true,
-        envName: 'dev'
+        envName: env
       }
     }
   ]

@@ -1,11 +1,12 @@
 import { RuleSetRule } from 'webpack'
-import { BuildOptions } from '../types/config'
+
+import babelLoader from '../loaders/babelLoader'
 import cssLoader from '../loaders/cssLoader'
 import svgLoader from '../loaders/svgLoader'
-import babelLoader from '../loaders/babelLoader'
+import { BuildOptions } from '../types/config'
 
 const loaders = (options: BuildOptions): RuleSetRule[] => ([
-  babelLoader(),
+  babelLoader(options.mode),
   cssLoader(options.isDev),
   svgLoader(),
   {

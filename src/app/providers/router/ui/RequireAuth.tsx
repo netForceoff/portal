@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
 
 import { getUser } from '@/entities/User'
-import { RoutePath } from '@/shared/config/router'
+import { getRouteMain } from '@/shared/config/router'
 
 export interface IRequireAuthProps extends JSX.IntrinsicAttributes {
   children: ReactNode
@@ -17,7 +17,7 @@ const RequireAuth: FC<IRequireAuthProps> = (props) => {
     return <>{props.children}</>
   }
 
-  return <Navigate to={RoutePath['/']} state={{ from: location }} replace />
+  return <Navigate to={getRouteMain()} state={{ from: location }} replace />
 }
 
 export default RequireAuth

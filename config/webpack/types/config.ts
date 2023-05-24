@@ -26,6 +26,7 @@ export interface FileName {
 export interface BuildOptions {
   mode: Mode
   isDev: boolean
+  isProd: boolean
   name: FileName
   paths: Paths
   port: number

@@ -1,19 +1,38 @@
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack'
-import { type BuildOptions } from '../types/config'
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import CircularDependencyPlugin from 'circular-dependency-plugin'
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+
+import { type BuildOptions } from '../types/config'
 
 const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
-  const { isDev, name, paths } = options
+  const { isDev, isProd, name, paths } = options
 
-  const devPlugins = []
+  const plugins = [
+    new ForkTsCheckerWebpackPlugin(),
+    new DefinePlugin({
+      __IS_DEV__: isDev
+    }),
+    new HTMLWebpackPlugin({
+      template: paths.html
+    }),
+    new ProgressPlugin()
+  ]
+
+  if (isProd) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: name.css,
+        chunkFilename: name.css
+      })
+    )
+  }
 
   if (isDev) {
-    devPlugins.push(
+    plugins.push(
       new HotModuleReplacementPlugin(),
       new ReactRefreshWebpackPlugin({ overlay: false }),
       new BundleAnalyzerPlugin({
@@ -26,23 +45,7 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
     )
   }
 
-  return [
-    new ForkTsCheckerWebpackPlugin(),
-    new DefinePlugin({
-      __IS_DEV__: isDev
-    }),
-    new HTMLWebpackPlugin({
-      template: paths.html
-    }),
-    new ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: name.css,
-      chunkFilename: name.css
-    }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: true
-    })
-  ].concat(devPlugins)
+  return plugins
 }
 
 export default plugins

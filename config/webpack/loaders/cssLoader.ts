@@ -2,6 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { RuleSetRule } from 'webpack'
 
 const cssLoader = (isDev: boolean): RuleSetRule => ({
+  exclude: /node_modules/,
   test: /\.s[ac]ss$/i,
   use: [
     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,

@@ -1,38 +1,39 @@
+
 import About from '@/pages/About'
 import ArticlePage from '@/pages/ArticlePage'
 import ArticlesPage from '@/pages/ArticlesPage'
 import Main from '@/pages/Main'
 import NotFound from '@/pages/NotFound'
 import Profile from '@/pages/ProfilePage'
-import { RoutePath } from '@/shared/config/router'
+import { getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile } from '@/shared/config/router'
 import { RouteConfigProps } from '@/shared/types/router'
 
 export const routeConfig: RouteConfigProps[] = [
   {
     element: <About />,
-    path: RoutePath.about
+    path: getRouteAbout()
   },
   {
     element: <NotFound />,
-    path: RoutePath.notFound
+    path: '*'
   },
   {
     element: <Main />,
-    path: RoutePath['/']
+    path: getRouteMain()
   },
   {
     authOnly: true,
     element: <Profile />,
-    path: `${RoutePath.profile}:id`
+    path: getRouteProfile(':id')
   },
   {
     authOnly: true,
     element: <ArticlesPage />,
-    path: RoutePath.articles
+    path: getRouteArticles('')
   },
   {
     authOnly: true,
     element: <ArticlePage />,
-    path: `${RoutePath.article_details}:id`
+    path: getRouteArticles(':id')
   }
 ]
