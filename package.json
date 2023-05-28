@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "test": "jest --config config/jest/jest.config.ts --logHeapUsage",
     "build": "webpack --config config/webpack/config.ts --env mode=production",
     "server": "node ./json-server/index.js",
@@ -130,10 +131,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint",
-      "git add"
-    ]
+    "src/**/*.{ts,tsx}": "eslint"
   },
   "dependencies": {},
   "loki": {
