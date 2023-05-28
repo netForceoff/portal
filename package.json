@@ -130,7 +130,10 @@
     }
   },
   "lint-staged": {
-    "--ext .js --ext .jsx --ext .ts --ext .tsx -c .eslintrc.js ./src": "eslint"
+    "src/**/*.{ts,tsx}": [
+      "eslint",
+      "git add"
+    ]
   },
   "dependencies": {},
   "loki": {
