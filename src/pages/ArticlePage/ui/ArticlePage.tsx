@@ -20,7 +20,7 @@ const ArticlePage: FC<IArticlePageProps> = (props) => {
   const { id } = useParams<{ id: string }>()
 
   return (
-    <section>
+    <section data-testid="ArticlePage">
         <ArticleCard id={id} />
         <ArticleRating id={id} />
         <ArticleComments id ={id} />

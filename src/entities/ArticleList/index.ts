@@ -1,7 +1,7 @@
 import { getArticleListStatus, getArticleListError, getArticleListPage, getArticleListView, getArticleListSortBy, getArticleListOrder, getArticleListSearch } from './model/selectors'
 import { getArticlesMore, initArticles } from './model/service'
 import { filterArticles } from './model/service/filter'
-import { articleListActions, articleListReducer, getArticleList } from './model/slice'
+import { articleListActions, articleListReducer, getArticleList, useArticleListActions } from './model/slice'
 import type { ArticleListSchema, IArticle, Order, SortBy } from './model/types'
 import ArticleListCompact from './ui/ArticleListCompact/ArticleListCompact'
 import ArticleListExtended from './ui/ArticleListExtended/ArticleListExtended'
@@ -32,7 +32,8 @@ export {
 
 export {
   articleListActions,
-  articleListReducer
+  articleListReducer,
+  useArticleListActions
 }
 
 export {

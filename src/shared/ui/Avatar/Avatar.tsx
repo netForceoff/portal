@@ -1,6 +1,9 @@
 import clsx from 'clsx'
 import { CSSProperties, FC, ImgHTMLAttributes, memo, useMemo } from 'react'
 
+import AppImage from '../AppImage/AppImage'
+import { Skeleton } from '../Skeleton'
+
 import styles from './Avatar.module.scss'
 
 interface IProps extends ImgHTMLAttributes<HTMLImageElement> {
@@ -17,9 +20,12 @@ const Avatar: FC<IProps> = ({ src, className, size, ...otherProps }): JSX.Elemen
     }
   }, [size])
 
+  const fallback = <Skeleton {...inlineStyles} radius={50} />
+
   return (
-        <img
+        <AppImage
             {...otherProps}
+            fallback={fallback}
             className={clsx(styles.avatar, className)}
             src={src}
             style={inlineStyles}

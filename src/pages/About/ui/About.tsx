@@ -9,7 +9,7 @@ const About = (): JSX.Element => {
 
   return (
         <Layout className={styles.test}>
-            {() => t('about')}
+            {() => <div data-testid="AboutPage">{t('about')}</div>}
         </Layout>
   )
 }

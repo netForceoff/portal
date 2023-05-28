@@ -10,7 +10,7 @@ export interface ILayoutProps {
 const Layout: FC<ILayoutProps> = (props) => {
   const { className, children } = props
   const ref = useRef<HTMLElement>(null)
-  console.log(typeof children, 'children')
+
   return (
     <section ref={ref} className={clsx(styles.layout, className)}>
         {children(ref)}

@@ -1,6 +1,6 @@
 import { getArticleError, getArticleProps, getArticleStatus } from './model/selectors'
 import { getArticle, useArticle } from './model/service'
-import { articleActions, articleReducer } from './model/slice'
+import { articleActions, articleReducer, useArticleActions } from './model/slice'
 import type { IArticle, IArticleTextBlock, IArticleCodeBlock, IArticleImageBlock, ArticleSchema } from './model/types'
 import Article, { type IArticleProps } from './ui/Article/Article'
 
@@ -30,5 +30,6 @@ export {
 
 export {
   articleActions,
-  articleReducer
+  articleReducer,
+  useArticleActions
 }

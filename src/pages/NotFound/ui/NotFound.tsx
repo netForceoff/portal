@@ -7,7 +7,7 @@ export const NotFound = (): JSX.Element => {
 
   return (
     <Layout>
-     {() => t('page.notFound')}
+     {() => <div data-testid="NotFoundPage">{t('page.notFound')}</div>}
     </Layout>
   )
 }

@@ -25,8 +25,8 @@ export const getArticle = createAsyncThunk<IArticle, string | undefined, ThunkCo
       console.error(error)
 
       return rejectWithValue({
-        title: i18n.t('errors.loading', { ns: 'article' }),
-        text: i18n.t('errors.loading', { ns: 'article' })
+        title: await i18n.t('errors.loading', { ns: 'article' }),
+        text: await i18n.t('errors.loading', { ns: 'article' })
       })
     }
   }

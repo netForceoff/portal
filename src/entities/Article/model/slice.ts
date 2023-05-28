@@ -1,10 +1,12 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit'
 
 import { articleApi } from './service'
 import { initialArticleState } from './state'
 import { ArticleSchema, IArticle } from './types'
 
-export const articleSlice = createSlice({
+import { buildSlice } from '@/app/providers/store'
+
+export const articleSlice = buildSlice({
   name: 'article',
   initialState: initialArticleState,
   reducers: {},
@@ -23,4 +25,4 @@ export const articleSlice = createSlice({
       })
   }
 })
-export const { actions: articleActions, reducer: articleReducer } = articleSlice
+export const { actions: articleActions, reducer: articleReducer, useActions: useArticleActions } = articleSlice

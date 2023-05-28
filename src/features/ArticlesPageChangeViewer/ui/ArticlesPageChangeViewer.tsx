@@ -1,8 +1,7 @@
-import { FC, useCallback } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { useAppDispatch } from '@/app/providers/store'
-import { articleListActions } from '@/entities/ArticleList'
+import { useArticleListActions } from '@/entities/ArticleList'
 import { Button } from '@/shared/ui'
 
 export interface IArticlesPageChangeViewerProps {
@@ -10,15 +9,15 @@ export interface IArticlesPageChangeViewerProps {
 }
 const ArticlesPageChangeViewer: FC<IArticlesPageChangeViewerProps> = (props) => {
   const { t } = useTranslation('articles')
-  const dispatch = useAppDispatch()
+  const { setView } = useArticleListActions()
 
   const handleClickTable = useCallback(() => {
-    dispatch(articleListActions.setView('table'))
-  }, [dispatch])
+    setView('table')
+  }, [setView])
 
   const handleLickList = useCallback(() => {
-    dispatch(articleListActions.setView('list'))
-  }, [dispatch])
+    setView('list')
+  }, [setView])
 
   return (
     <>
@@ -28,4 +27,4 @@ const ArticlesPageChangeViewer: FC<IArticlesPageChangeViewerProps> = (props) => 
   )
 }
 
-export default ArticlesPageChangeViewer
+export default memo(ArticlesPageChangeViewer)

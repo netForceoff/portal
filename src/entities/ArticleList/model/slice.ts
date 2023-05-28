@@ -1,19 +1,18 @@
 import {
   createEntityAdapter,
-  createSlice,
   PayloadAction
 } from '@reduxjs/toolkit'
 
 import { filterArticles } from './service/filter'
 import { ArticleListSchema, IArticle, Order, SortBy } from './types'
 
-import { StateSchema } from '@/app/providers/store'
+import { buildSlice, StateSchema } from '@/app/providers/store'
 
 const articleListAdapter = createEntityAdapter<IArticle>({
   selectId: (article) => article.id
 })
 
-const articleListSlice = createSlice({
+const articleListSlice = buildSlice({
   name: 'articleListSlice',
   initialState: articleListAdapter.getInitialState<ArticleListSchema>({
     status: 'received',
@@ -76,4 +75,4 @@ const articleListSlice = createSlice({
 
 export const getArticleList = articleListAdapter.getSelectors<StateSchema>((state) => state.articles || articleListAdapter.getInitialState())
 
-export const { actions: articleListActions, reducer: articleListReducer } = articleListSlice
+export const { actions: articleListActions, reducer: articleListReducer, useActions: useArticleListActions } = articleListSlice

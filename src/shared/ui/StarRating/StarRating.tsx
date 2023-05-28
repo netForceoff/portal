@@ -1,10 +1,9 @@
 import clsx from 'clsx'
 import { FC, memo, useState } from 'react'
 
+import Star from '../../assets/icons/star.svg'
 import Flex from '../Flex/Flex'
 import Icon from '../Icon/Icon'
-
-import Star from '@/shared/assets/icons/star.svg'
 
 import styles from './StarRating.module.scss'
 
