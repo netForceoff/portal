@@ -1,5 +1,3 @@
-import path from 'path'
-
 export default {
   clearMocks: true,
   coveragePathIgnorePatterns: [
@@ -19,7 +17,15 @@ export default {
     'json',
     'node'
   ],
-
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      inlineSource: true,
+      pageTitle: 'Test Report'
+    }]
+  ],
   modulePaths: [
     '<rootDir>src'
   ],
