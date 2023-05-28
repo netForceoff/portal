@@ -1,0 +1,1 @@
+{"version":3,"file":"949.css","mappings":"AAAA","sources":["webpack://project_course/./src/shared/ui/StarRating/StarRating.module.scss"],"sourcesContent":[".star {\n  color: var(--inverted-secondary-color);\n  cursor: pointer;\n}\n\n.active {\n  fill: var(--inverted-secondary-color);\n}\n\n.selected {\n  cursor: default;\n}\n"],"names":[],"sourceRoot":""}
