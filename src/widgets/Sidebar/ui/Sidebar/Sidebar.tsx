@@ -14,7 +14,7 @@ import styles from './Sidebar.module.scss'
 export interface IProps extends JSX.IntrinsicAttributes {
   className?: string
 }
-// 123123
+
 export const Sidebar: FC<IProps> = (props) => {
   const { className } = props
   const [collapsed, setCollapsed] = useState(false)
