@@ -5,7 +5,7 @@ import { IArticle } from './types'
 import { ThunkConfig } from '@/app/providers/store'
 import { rtkApi } from '@/shared/api/query'
 import i18n from '@/shared/config/i18n'
-
+console.log(123)
 export const getArticle = createAsyncThunk<IArticle, string | undefined, ThunkConfig<{ title: string, text: string }>>(
   'article/getArticle',
   async (uuid, { extra, dispatch, rejectWithValue }) => {
