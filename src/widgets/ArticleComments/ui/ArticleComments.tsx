@@ -19,7 +19,7 @@ export interface IArticleCommentsProps extends JSX.IntrinsicAttributes {
 const ArticleComments: FC<IArticleCommentsProps> = (props) => {
   const { className, id } = props
   const { t } = useTranslation('article')
-  const { isLoading } = useComments(id)
+  const { isLoading } = useComments({ id })
   const comments = useSelector(getArticleCommentsSelector.selectAll)
 
   if (isLoading) {

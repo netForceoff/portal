@@ -1,12 +1,8 @@
 import { ComponentStory } from '@storybook/react'
-import React from 'react'
-import withMock from 'storybook-addon-mock'
 
 import ArticlePage from './ArticlePage'
 
-import { THEME } from '@/entities/theme'
 import StoreDecorator from '@/shared/config/storybook/decorators/store'
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
 
 const article = {
   id: '1',
@@ -19,6 +15,23 @@ const article = {
   blocks: []
 }
 
+const comments = [
+  {
+    id: '1',
+    text: 'testComment',
+    articleId: '1',
+    userId: '1',
+    avatar: ''
+  }
+]
+
+const ratings = [
+  {
+    rate: 4,
+    feedback: 'Feedback'
+  }
+]
+
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'pages/ArticlePage',
@@ -27,25 +40,73 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' }
   },
-  decorators: [StoreDecorator({ user: { user: { id: '1', username: 'Name' } } }), withMock],
+  decorators: [StoreDecorator({ user: { user: { id: '1', username: 'Name' } } })],
   parameters: {
-    mockData: [
-      {
-        url: 'http://localhost:2000/articles/',
-        method: 'GET',
-        status: 200,
-        response: article
-      }
-    ]
+    fetchMock: {
+      overwriteRoutes: false,
+      mocks: [
+        {
+          // The "matcher" determines if this
+          // mock should respond to the current
+          // call to fetch().
+          matcher: {
+            name: 'articleComments',
+            url: 'http://localhost:2000/comments',
+            query: {
+              _expand: 'user'
+            }
+          },
+          // If the "matcher" matches the current
+          // fetch() call, the fetch response is
+          // built using this "response".
+          response: {
+            status: 200,
+            body: comments
+          }
+        },
+        {
+          // The "matcher" determines if this
+          // mock should respond to the current
+          // call to fetch().
+          matcher: {
+            name: 'articlePage',
+            url: 'http://localhost:2000/articles/'
+          },
+          // If the "matcher" matches the current
+          // fetch() call, the fetch response is
+          // built using this "response".
+          response: {
+            status: 200,
+            body: article
+          }
+        },
+        {
+          // The "matcher" determines if this
+          // mock should respond to the current
+          // call to fetch().
+          matcher: {
+            name: 'articleRatings',
+            url: 'http://localhost:2000/article-ratings',
+            query: {
+              userId: '1',
+              articleId: ''
+            }
+          },
+          // If the "matcher" matches the current
+          // fetch() call, the fetch response is
+          // built using this "response".
+          response: {
+            status: 200,
+            body: ratings
+          }
+        }
+      ]
+    }
   }
 }
 
 const Template: ComponentStory<typeof ArticlePage> = (args) => <ArticlePage {...args} />
 
-export const Light = Template.bind({})
+export const Preview = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Light.args = {}
-
-export const Dark = Template.bind({})
-
-Dark.decorators = [ThemeDecorator(THEME.DARK)]
+Preview.args = {}

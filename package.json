@@ -107,6 +107,7 @@
     "reg-cli": "^0.17.7",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
+    "storybook-addon-fetch-mock": "^1.0.1",
     "storybook-addon-mock": "^2.4.1",
     "storybook-addon-themes": "^6.1.0",
     "storybook-react-i18next": "^1.1.2",

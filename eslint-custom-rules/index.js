@@ -10,6 +10,7 @@ module.exports = {
         docs: {
           description: 'Правило для использования относительных путей в импортах'
         },
+        fixable: 'code',
         schema: [
           {
             type: 'object',

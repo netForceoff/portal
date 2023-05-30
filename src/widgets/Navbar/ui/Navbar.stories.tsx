@@ -1,5 +1,5 @@
 import { ComponentStory } from '@storybook/react'
-import React from 'react'
+import withMock from 'storybook-addon-mock'
 
 import Navbar from './Navbar'
 
@@ -14,7 +14,8 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' }
-  }
+  },
+  decorators: [withMock]
 }
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

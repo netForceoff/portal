@@ -23,7 +23,7 @@ const ArticleRating: FC<IArticleRatingProps> = (props) => {
     articleId: id || '',
     userId: user?.id || ''
   })
-
+  console.log(data, 'data')
   const [rateArticleMutation] = useRateArticle()
 
   const handleClick = useCallback((rate: number, feedback?: string) => {
