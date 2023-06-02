@@ -13,9 +13,10 @@ const Main = (): JSX.Element => {
         {/* ДИЧЬ */}
         {() => (
           <>
+            <div data-testid="MainPage" />
             {t('page.main')}
             <Rating title='Как вам статья' feedbackTitle='Оставьте отзыв о статье' rates={stars} />
-        </>
+          </>
         )}
       </Layout>
   )

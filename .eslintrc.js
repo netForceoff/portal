@@ -48,6 +48,8 @@ module.exports = {
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-invalid-void-type': 'off',
+    '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/method-signature-style': 'off',
     'import/order': ['error', {
       pathGroups: [{
         pattern: '@/**',

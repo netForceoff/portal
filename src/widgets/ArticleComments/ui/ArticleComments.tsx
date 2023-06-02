@@ -31,7 +31,7 @@ const ArticleComments: FC<IArticleCommentsProps> = (props) => {
   }
 
   return (
-    <div className={clsx(className)}>
+    <div data-testid="aticleComments" className={clsx(className)}>
         <ArticleAddingComment />
         <Comments comments={comments} />
     </div>

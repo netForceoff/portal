@@ -44,6 +44,7 @@
   "include": [
     "./config/**/*",
     "./src/**/*",
-    "./scripts/**/*"
+    "./scripts/**/*",
+    "cypress.config.ts",
   ]
 }
