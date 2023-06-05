@@ -15,7 +15,7 @@ const Input: FC<IProps> = (props): JSX.Element => {
 
   const inputProps = {
     ...otherProps,
-    ...(testId && { 'data-testid': `${testId}.Input` })
+    ...(testId && { 'data-testid': `${testId}_Input` })
   }
 
   return (

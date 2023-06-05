@@ -25,7 +25,7 @@ const ProfilePage: FC<IProps> = ({ className }) => {
         return (
           <>
             {t('profilePage')}
-            <EditableProfileCard />
+            <EditableProfileCard id={id} />
           </>
         )
       }}

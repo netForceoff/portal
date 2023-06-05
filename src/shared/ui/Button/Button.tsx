@@ -33,6 +33,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   variant?: ButtonVariant
   size?: ButtonSize
+  testId?: string
 }
 
 const Button: FC<IProps> = (props) => {
@@ -42,6 +43,7 @@ const Button: FC<IProps> = (props) => {
     className,
     children,
     size,
+    testId,
     variant,
     ...otherProps
   } = props
@@ -58,7 +60,7 @@ const Button: FC<IProps> = (props) => {
   return (
         <button
             {...otherProps}
-            data-testid="Button"
+            data-testid={testId || 'Button'}
             className={CN}
         >
             {children}

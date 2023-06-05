@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ReactNode, useCallback } from 'react'
+import { FC, ReactNode, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 
 import { getProfileState, getProfileStatus, getProfileError, getProfileReadOnly } from '../../model/selectors'
@@ -18,6 +18,10 @@ const reducers = {
   profile: profileReducer
 }
 
+interface IProps extends JSX.IntrinsicAttributes {
+  id?: string
+}
+
 const Card = withError<IProfileCardProps & {
   className?: string
   error?: { title: string, text: string }
@@ -25,7 +29,7 @@ const Card = withError<IProfileCardProps & {
 }
 >(withLoader<IProfileCardProps & { className?: string, isLoading: boolean }>(ProfileCard))
 
-const EditableProfileCard = (): JSX.Element => {
+const EditableProfileCard: FC<IProps> = ({ id }): JSX.Element => {
   const dispatch = useAppDispatch()
   const profile = useSelector(getProfileState)
   const status = useSelector(getProfileStatus)
@@ -45,7 +49,7 @@ const EditableProfileCard = (): JSX.Element => {
     dispatch(profileActions.updateProfile({ key: 'lastname', value }))
   }, [dispatch])
 
-  const renderHeader = (): ReactNode => profile ? <EditableProfileCardHeader readOnly={readOnly} /> : null
+  const renderHeader = (): ReactNode => profile ? <EditableProfileCardHeader id={id} readOnly={readOnly} /> : null
 
   return (
     <>

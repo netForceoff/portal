@@ -10,11 +10,12 @@ import { Button } from '@/shared/ui'
 import styles from './EditableProfileCardHeader.module.scss'
 
 interface IProps {
+  id?: string
   readOnly?: boolean
 }
 
 const EditableProfileCardHeader: FC<IProps> = (props): JSX.Element => {
-  const { readOnly } = props
+  const { id, readOnly } = props
   const { t } = useTranslation('profile')
   const buttonText = readOnly ? 'button.edit' : 'button.cancel'
   const dispatch = useAppDispatch()
@@ -24,20 +25,22 @@ const EditableProfileCardHeader: FC<IProps> = (props): JSX.Element => {
   }, [dispatch, readOnly])
 
   const handleClickSave = useCallback(() => {
-    dispatch(updateProfile())
-  }, [dispatch])
+    dispatch(updateProfile(id))
+  }, [id, dispatch])
 
   return (
         <div className={styles.header}>
             <Button
                 onClick={handleClick}
                 className={styles.button}
+                testId="ProfileCard__editButton"
             >
                 {t(buttonText)}
             </Button>
             {!readOnly && <Button
                 onClick={handleClickSave}
                 className={styles.button}
+                testId="ProfileCard__saveButton"
             >
                 {t('button.save')}
             </Button>
