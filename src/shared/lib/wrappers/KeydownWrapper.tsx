@@ -1,29 +1,29 @@
-import { FC, useEffect } from 'react'
+import {FC, useEffect} from 'react';
 
 interface IProps {
-  codes: string[]
-  callback: () => void
-  children: JSX.Element
+	codes: string[];
+	callback: () => void;
+	children: JSX.Element;
 }
 
 const KeydownWrapper: FC<IProps> = (props): JSX.Element => {
-  const { codes, callback, children } = props
+	const {codes, callback, children} = props;
 
-  useEffect(() => {
-    const handleKeydown = (event: KeyboardEvent): void => {
-      if (codes.includes(event.code)) {
-        callback()
-      }
-    }
+	useEffect(() => {
+		const handleKeydown = (event: KeyboardEvent): void => {
+			if (codes.includes(event.code)) {
+				callback();
+			}
+		};
 
-    window.addEventListener('keydown', handleKeydown)
+		window.addEventListener('keydown', handleKeydown);
 
-    return () => {
-      window.removeEventListener('keydown', handleKeydown)
-    }
-  }, [codes])
+		return () => {
+			window.removeEventListener('keydown', handleKeydown);
+		};
+	}, [codes]);
 
-  return children
-}
+	return children;
+};
 
-export default KeydownWrapper
+export default KeydownWrapper;

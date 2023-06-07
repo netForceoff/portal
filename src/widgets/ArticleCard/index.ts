@@ -1,5 +1,3 @@
-import ArticleCard from './ui/ArticleCard'
+import ArticleCard from './ui/ArticleCard';
 
-export {
-  ArticleCard
-}
+export {ArticleCard};

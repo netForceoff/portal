@@ -1,16 +1,16 @@
 {
-  "errors": {
-    "loading": "Произошла загрузка статьи"
-  },
-  "nothingFound": "Статья не найдена",
-  "article": {
-    "comments": {
-      "nothingFound": "Комментариев нет!"
-    }
-  },
-  "buttons": {
-    "add": "Добавить"
-  },
-  "articleRateTitle": "Оцените статью",
-  "feedbackTitle": "Оставьте свой отзыв."
+	"errors": {
+		"loading": "Произошла загрузка статьи"
+	},
+	"nothingFound": "Статья не найдена",
+	"article": {
+		"comments": {
+			"nothingFound": "Комментариев нет!"
+		}
+	},
+	"buttons": {
+		"add": "Добавить"
+	},
+	"articleRateTitle": "Оцените статью",
+	"feedbackTitle": "Оставьте свой отзыв."
 }

@@ -1,49 +1,58 @@
-import clsx from 'clsx'
-import { AnimationEvent, FC, ReactNode, useState, memo } from 'react'
-import { createPortal } from 'react-dom'
+import clsx from 'clsx';
+import {AnimationEvent, FC, ReactNode, useState, memo} from 'react';
+import {createPortal} from 'react-dom';
 
-import Overlay from '../Overlay/Overlay'
+import Overlay from '../Overlay/Overlay';
 
-import { MousedownWrapper, KeydownWrapper } from '@/shared/lib'
+import {MousedownWrapper, KeydownWrapper} from '@/shared/lib';
 
-import styles from './Modal.module.scss'
+import styles from './Modal.module.scss';
 
 interface IProps {
-  className?: string
-  children: ReactNode
-  onCloseOutside?: () => void
+	className?: string;
+	children: ReactNode;
+	onCloseOutside?: () => void;
 }
 
-const CODES = ['Escape']
+const CODES = ['Escape'];
 // TODO попробовать через Renderless подход
-const Modal: FC<IProps> = ({ className, children, onCloseOutside }): JSX.Element | null => {
-  const [useAnimationOut, setUseAnimationOut] = useState(false)
-  const contentCN = clsx(styles.content, {
-    [styles.animationOut]: useAnimationOut
-  })
+const Modal: FC<IProps> = ({
+	className,
+	children,
+	onCloseOutside,
+}): JSX.Element | null => {
+	const [useAnimationOut, setUseAnimationOut] = useState(false);
+	const contentCN = clsx(styles.content, {
+		[styles.animationOut]: useAnimationOut,
+	});
 
-  const handleAnimationEnd = (event: AnimationEvent<HTMLDivElement>): void => {
-    if (event.animationName === styles.out) {
-      onCloseOutside?.()
-    }
-  }
+	const handleAnimationEnd = (
+		event: AnimationEvent<HTMLDivElement>
+	): void => {
+		if (event.animationName === styles.out) {
+			onCloseOutside?.();
+		}
+	};
 
-  const handleCloseOutside = (): void => {
-    setUseAnimationOut(true)
-  }
+	const handleCloseOutside = (): void => {
+		setUseAnimationOut(true);
+	};
 
-  return createPortal(
-    <KeydownWrapper codes={CODES} callback={handleCloseOutside}>
-      <Overlay className={className}>
-        <MousedownWrapper callback={handleCloseOutside}>
-          <div className={contentCN} onAnimationEnd={handleAnimationEnd}>
-            {children}
-          </div>
-        </MousedownWrapper>
-      </Overlay>
-    </KeydownWrapper>,
-    document.body
-  )
-}
+	return createPortal(
+		<KeydownWrapper codes={CODES} callback={handleCloseOutside}>
+			<Overlay className={className}>
+				<MousedownWrapper callback={handleCloseOutside}>
+					<div
+						className={contentCN}
+						onAnimationEnd={handleAnimationEnd}
+					>
+						{children}
+					</div>
+				</MousedownWrapper>
+			</Overlay>
+		</KeydownWrapper>,
+		document.body
+	);
+};
 
-export default memo(Modal)
+export default memo(Modal);

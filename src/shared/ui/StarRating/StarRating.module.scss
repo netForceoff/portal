@@ -1,12 +1,12 @@
 .star {
-  color: var(--inverted-secondary-color);
-  cursor: pointer;
+	color: var(--inverted-secondary-color);
+	cursor: pointer;
 }
 
 .active {
-  fill: var(--inverted-secondary-color);
+	fill: var(--inverted-secondary-color);
 }
 
 .selected {
-  cursor: default;
+	cursor: default;
 }

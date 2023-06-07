@@ -1,28 +1,28 @@
 {
-  "changeLanguage": "Change language",
-  "links": {
-    "about": "About",
-    "main": "Main",
-    "profile": "Profile page"
-  },
-  "page": {
-    "notFound": "Page not found",
-    "error": {
-      "button": "Reload page",
-      "title": "Somthing went wrong.. Please, reaload page"
-    }
-  },
-  "sidebar": {
-    "button": "Toggle"
-  },
-  "changeLanguageShort": "Ru",
-  "LogIn": "Log in",
-  "simpleLoginForm": "Authorization form with login and password",
-  "errors": {
-    "simpleLoginForm": "Something went wrong trying to authorization"
-  },
-  "LogOut": "Log out",
-  "buttons": {
-    "showMore": "Show more"
-  }
+	"changeLanguage": "Change language",
+	"links": {
+		"about": "About",
+		"main": "Main",
+		"profile": "Profile page"
+	},
+	"page": {
+		"notFound": "Page not found",
+		"error": {
+			"button": "Reload page",
+			"title": "Somthing went wrong.. Please, reaload page"
+		}
+	},
+	"sidebar": {
+		"button": "Toggle"
+	},
+	"changeLanguageShort": "Ru",
+	"LogIn": "Log in",
+	"simpleLoginForm": "Authorization form with login and password",
+	"errors": {
+		"simpleLoginForm": "Something went wrong trying to authorization"
+	},
+	"LogOut": "Log out",
+	"buttons": {
+		"showMore": "Show more"
+	}
 }

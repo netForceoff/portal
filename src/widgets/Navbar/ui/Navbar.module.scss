@@ -1,11 +1,11 @@
-@import "../../../app/styles/variables/global.scss";
+@import '../../../app/styles/variables/global.scss';
 
 .navbar {
-  align-items: center;
-  background: var(--inverted-bg-color);
-  display: flex;
-  height: var(--navbar-height);
-  justify-content: end;
-  padding: 20px;
-  width: 100%;
+	align-items: center;
+	background: var(--inverted-bg-color);
+	display: flex;
+	height: var(--navbar-height);
+	justify-content: end;
+	padding: 20px;
+	width: 100%;
 }

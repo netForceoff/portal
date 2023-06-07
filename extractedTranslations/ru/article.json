@@ -1,15 +1,15 @@
 {
-  "article": {
-    "comments": {
-      "nothingFound": "nothingFound"
-    }
-  },
-  "articleRateTitle": "articleRateTitle",
-  "buttons": {
-    "add": "add"
-  },
-  "errors": {
-    "loading": "loading"
-  },
-  "feedbackTitle": "feedbackTitle"
+	"article": {
+		"comments": {
+			"nothingFound": "nothingFound"
+		}
+	},
+	"articleRateTitle": "articleRateTitle",
+	"buttons": {
+		"add": "add"
+	},
+	"errors": {
+		"loading": "loading"
+	},
+	"feedbackTitle": "feedbackTitle"
 }

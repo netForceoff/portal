@@ -1,15 +1,15 @@
 import clsx from 'clsx';
-import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import {FC} from 'react';
+import {useTranslation} from 'react-i18next';
+import {useSelector} from 'react-redux';
 
-import { useComments } from '../model/service';
-import { getArticleCommentsSelector } from '../model/slice';
+import {useComments} from '../model/service';
+import {getArticleCommentsSelector} from '../model/slice';
 
-import { Comments } from '@/entities/Comment';
-import { ArticleAddingComment } from '@/features/ArticleAddingComment';
-import { Text } from '@/shared/ui';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import {Comments} from '@/entities/Comment';
+import {ArticleAddingComment} from '@/features/ArticleAddingComment';
+import {Text} from '@/shared/ui';
+import {Skeleton} from '@/shared/ui/Skeleton';
 
 export interface IArticleCommentsProps extends JSX.IntrinsicAttributes {
 	className?: string;
@@ -17,9 +17,9 @@ export interface IArticleCommentsProps extends JSX.IntrinsicAttributes {
 }
 
 const ArticleComments: FC<IArticleCommentsProps> = (props) => {
-	const { className, id } = props;
-	const { t } = useTranslation('article');
-	const { isLoading } = useComments({ id });
+	const {className, id} = props;
+	const {t} = useTranslation('article');
+	const {isLoading} = useComments({id});
 	const comments = useSelector(getArticleCommentsSelector.selectAll);
 
 	if (isLoading) {

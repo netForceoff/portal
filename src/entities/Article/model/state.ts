@@ -1,5 +1,5 @@
-import { ArticleSchema } from './types'
+import {ArticleSchema} from './types';
 
 export const initialArticleState: ArticleSchema = {
-  status: 'received'
-}
+	status: 'received',
+};

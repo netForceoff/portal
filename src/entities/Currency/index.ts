@@ -1,5 +1,3 @@
-import { Currency } from './model/types'
+import {Currency} from './model/types';
 
-export {
-  Currency
-}
+export {Currency};

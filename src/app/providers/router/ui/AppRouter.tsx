@@ -1,23 +1,34 @@
-import { useCallback } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import {useCallback} from 'react';
+import {Route, Routes} from 'react-router-dom';
 
-import { routeConfig } from '../config'
+import {routeConfig} from '../config';
 
-import RequireAuth from './RequireAuth'
+import RequireAuth from './RequireAuth';
 
-import { RouteConfigProps } from '@/shared/types/router'
+import {RouteConfigProps} from '@/shared/types/router';
 
 // TODO подумать куда засунуть класс wrapper
 const Router = (): JSX.Element => {
-  const renerRoute = useCallback(({ authOnly, element, path }: RouteConfigProps): JSX.Element => {
-    return <Route key={path} path={path} element={authOnly ? <RequireAuth>{element}</RequireAuth> : element} />
-  }, [])
+	const renerRoute = useCallback(
+		({authOnly, element, path}: RouteConfigProps): JSX.Element => {
+			return (
+				<Route
+					key={path}
+					path={path}
+					element={
+						authOnly ? (
+							<RequireAuth>{element}</RequireAuth>
+						) : (
+							element
+						)
+					}
+				/>
+			);
+		},
+		[]
+	);
 
-  return (
-        <Routes>
-            {routeConfig.map(renerRoute)}
-        </Routes>
-  )
-}
+	return <Routes>{routeConfig.map(renerRoute)}</Routes>;
+};
 
-export default Router
+export default Router;

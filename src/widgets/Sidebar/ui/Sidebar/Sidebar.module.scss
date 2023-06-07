@@ -1,57 +1,57 @@
-@import "../../../../app/styles/variables/global.scss";
+@import '../../../../app/styles/variables/global.scss';
 
 .sidebar {
-  background: var(--inverted-bg-color);
-  height: calc(100vh - var(--navbar-height));
-  position: relative;
-  transition: width ease-in-out 0.3s;
-  width: 300px;
+	background: var(--inverted-bg-color);
+	height: calc(100vh - var(--navbar-height));
+	position: relative;
+	transition: width ease-in-out 0.3s;
+	width: 300px;
 }
 
 .switchers {
-  bottom: 20px;
-  display: flex;
-  left: 20px;
-  position: absolute;
+	bottom: 20px;
+	display: flex;
+	left: 20px;
+	position: absolute;
 }
 
 .collapseBtn {
-  bottom: 20px;
-  position: absolute;
-  right: -40px;
+	bottom: 20px;
+	position: absolute;
+	right: -40px;
 }
 
 .links {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .item {
-  opacity: 1;
-  transition: all 0.3s;
+	opacity: 1;
+	transition: all 0.3s;
 }
 
 .icon {
-  color: var(--inverted-secondary-color);
-  margin-right: 10px;
+	color: var(--inverted-secondary-color);
+	margin-right: 10px;
 }
 
 .collapsed {
-  width: 80px;
+	width: 80px;
 
-  .switchers {
-    flex-direction: column;
-  }
+	.switchers {
+		flex-direction: column;
+	}
 
-  .lang {
-    margin-left: 0;
-  }
+	.lang {
+		margin-left: 0;
+	}
 
-  .item {
-    height: 0;
-    opacity: 0;
-    width: 0;
-  }
+	.item {
+		height: 0;
+		opacity: 0;
+		width: 0;
+	}
 }

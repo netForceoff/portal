@@ -1,16 +1,16 @@
 {
-  "errors": {
-    "loading": "Something went wrong"
-  },
-  "nothingFound": "Article has not found",
-  "article": {
-    "comments": {
-      "nothingFound": "Comments are not"
-    }
-  },
-  "buttons": {
-    "add": "Add"
-  },
-  "articleRateTitle": "Send feedback",
-  "feedbackTitle": "Send your feedback"
+	"errors": {
+		"loading": "Something went wrong"
+	},
+	"nothingFound": "Article has not found",
+	"article": {
+		"comments": {
+			"nothingFound": "Comments are not"
+		}
+	},
+	"buttons": {
+		"add": "Add"
+	},
+	"articleRateTitle": "Send feedback",
+	"feedbackTitle": "Send your feedback"
 }

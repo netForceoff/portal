@@ -1,31 +1,34 @@
-import { FC } from 'react'
-import { useParams } from 'react-router-dom'
+import {FC} from 'react';
+import {useParams} from 'react-router-dom';
 
-import { articleReducer } from '@/entities/Article'
-import { ArticleRating } from '@/features/ArticleRating'
-import withReducers from '@/shared/lib/HOCS/withReducers'
-import { ArticleCard } from '@/widgets/ArticleCard'
-import { ArticleComments, articleCommentsReducer } from '@/widgets/ArticleComments'
+import {articleReducer} from '@/entities/Article';
+import {ArticleRating} from '@/features/ArticleRating';
+import withReducers from '@/shared/lib/HOCS/withReducers';
+import {ArticleCard} from '@/widgets/ArticleCard';
+import {
+	ArticleComments,
+	articleCommentsReducer,
+} from '@/widgets/ArticleComments';
 
 export interface IArticlePageProps extends JSX.IntrinsicAttributes {
-  className?: string
+	className?: string;
 }
 
 const reducers = {
-  article: articleReducer,
-  articleComments: articleCommentsReducer
-}
+	article: articleReducer,
+	articleComments: articleCommentsReducer,
+};
 
 const ArticlePage: FC<IArticlePageProps> = (props) => {
-  const { id } = useParams<{ id: string }>()
+	const {id} = useParams<{id: string}>();
 
-  return (
-    <section data-testid="ArticlePage">
-        <ArticleCard id={id} />
-        <ArticleRating id={id} />
-        <ArticleComments id ={id} />
-    </section>
-  )
-}
+	return (
+		<section data-testid="ArticlePage">
+			<ArticleCard id={id} />
+			<ArticleRating id={id} />
+			<ArticleComments id={id} />
+		</section>
+	);
+};
 
-export default withReducers(ArticlePage, reducers)
+export default withReducers(ArticlePage, reducers);

@@ -1,5 +1,3 @@
-import NotificationButton from './ui/NotificationButton'
+import NotificationButton from './ui/NotificationButton';
 
-export {
-  NotificationButton
-}
+export {NotificationButton};

@@ -1,35 +1,40 @@
-import { FC, useEffect, MutableRefObject, ReactNode } from 'react'
+import {FC, useEffect, MutableRefObject, ReactNode} from 'react';
 
 export interface IInfinityScrollWrapperProps {
-  callback: () => void
-  wrapperRef: MutableRefObject<HTMLElement | null>
-  triggerRef: MutableRefObject<HTMLElement | null>
-  children: ReactNode
+	callback: () => void;
+	wrapperRef: MutableRefObject<HTMLElement | null>;
+	triggerRef: MutableRefObject<HTMLElement | null>;
+	children: ReactNode;
 }
-const InfinityScrollWrapper: FC<IInfinityScrollWrapperProps> = ({ callback, children, wrapperRef, triggerRef }) => {
-  useEffect(() => {
-    if (triggerRef.current) {
-      const options = {
-        root: wrapperRef.current,
-        rootMargin: '0px',
-        threshold: 1.0
-      }
+const InfinityScrollWrapper: FC<IInfinityScrollWrapperProps> = ({
+	callback,
+	children,
+	wrapperRef,
+	triggerRef,
+}) => {
+	useEffect(() => {
+		if (triggerRef.current) {
+			const options = {
+				root: wrapperRef.current,
+				rootMargin: '0px',
+				threshold: 1.0,
+			};
 
-      const observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          callback()
-        }
-      }, options)
+			const observer = new IntersectionObserver(([entry]) => {
+				if (entry.isIntersecting) {
+					callback();
+				}
+			}, options);
 
-      observer.observe(triggerRef.current)
+			observer.observe(triggerRef.current);
 
-      return () => {
-        triggerRef?.current && observer.unobserve(triggerRef.current)
-      }
-    }
-  }, [callback, wrapperRef, triggerRef])
+			return () => {
+				triggerRef?.current && observer.unobserve(triggerRef.current);
+			};
+		}
+	}, [callback, wrapperRef, triggerRef]);
 
-  return <>{children}</>
-}
+	return <>{children}</>;
+};
 
-export default InfinityScrollWrapper
+export default InfinityScrollWrapper;

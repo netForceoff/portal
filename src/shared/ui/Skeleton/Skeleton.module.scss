@@ -1,42 +1,47 @@
 /* stylelint-disable-next-line at-rule-no-unknown */
 @mixin shadow() {
-  box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
+	box-shadow: 0 2px 10px 0 var(--skeleton-shadow);
 }
 
 /* stylelint-disable-next-line at-rule-no-unknown */
 @mixin animate() {
-  animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  background: linear-gradient(to right, transparent 0%, var(--skeleton-color) 50%, transparent 100%);
+	animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	background: linear-gradient(
+		to right,
+		transparent 0%,
+		var(--skeleton-color) 50%,
+		transparent 100%
+	);
 }
 
 .skeleton {
-  /* stylelint-disable-next-line at-rule-no-unknown */
-  @include shadow();
+	/* stylelint-disable-next-line at-rule-no-unknown */
+	@include shadow();
 
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
 
-  &::before {
-    /* stylelint-disable-next-line at-rule-no-unknown */
-    @include animate();
+	&::before {
+		/* stylelint-disable-next-line at-rule-no-unknown */
+		@include animate();
 
-    content: "";
-    display: block;
-    height: 100%;
-    left: -150px;
-    position: absolute;
-    top: 0;
-    width: 80%;
-  }
+		content: '';
+		display: block;
+		height: 100%;
+		left: -150px;
+		position: absolute;
+		top: 0;
+		width: 80%;
+	}
 }
 
 @keyframes load {
-  from {
-    left: -150px;
-  }
+	from {
+		left: -150px;
+	}
 
-  to {
-    left: 100%;
-  }
+	to {
+		left: 100%;
+	}
 }

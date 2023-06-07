@@ -1,11 +1,13 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import {render, screen, waitFor} from '@testing-library/react';
 
-import Button from '../Button'
+import Button from '../Button';
 
 describe('Button', () => {
-  it('render Button', async () => {
-    render(<Button>Test</Button>)
+	it('render Button', async () => {
+		render(<Button>Test</Button>);
 
-    waitFor(() => { expect(screen.getAllByText('Test')).toBeInTheDocument() })
-  })
-})
+		waitFor(() => {
+			expect(screen.getAllByText('Test')).toBeInTheDocument();
+		});
+	});
+});

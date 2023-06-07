@@ -1,21 +1,21 @@
 {
-  "profilePage": "Profile page",
-  "title": {
-    "profile": "User profile"
-  },
-  "button": {
-    "edit": "Edit",
-    "cancel": "Cancel",
-    "save": "Save"
-  },
-  "fields": {
-    "surname": "Your surname",
-    "name": "Your name"
-  },
-  "error": {
-    "profile": {
-      "title": "Do not load profile data",
-      "text": "Please, reload page"
-    }
-  }
+	"profilePage": "Profile page",
+	"title": {
+		"profile": "User profile"
+	},
+	"button": {
+		"edit": "Edit",
+		"cancel": "Cancel",
+		"save": "Save"
+	},
+	"fields": {
+		"surname": "Your surname",
+		"name": "Your name"
+	},
+	"error": {
+		"profile": {
+			"title": "Do not load profile data",
+			"text": "Please, reload page"
+		}
+	}
 }

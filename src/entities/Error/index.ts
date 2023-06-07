@@ -1,5 +1,3 @@
-import Error from './ui/Error'
+import Error from './ui/Error';
 
-export {
-  Error
-}
+export {Error};

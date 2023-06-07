@@ -1,5 +1,3 @@
-import ThemeProvider from './ui/provider'
+import ThemeProvider from './ui/provider';
 
-export {
-  ThemeProvider
-}
+export {ThemeProvider};

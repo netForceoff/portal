@@ -1,7 +1,7 @@
-import { lazy } from 'react'
+import {lazy} from 'react';
 
-import { withSuspense } from '@/shared/lib'
+import {withSuspense} from '@/shared/lib';
 
-const PageError = lazy(async () => await import('./ui/PageError'))
+const PageError = lazy(async () => await import('./ui/PageError'));
 
-export default withSuspense(PageError)
+export default withSuspense(PageError);

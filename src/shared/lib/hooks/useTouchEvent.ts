@@ -1,11 +1,11 @@
 const useTouchEvent = () => {
-  const isMobile = window.matchMedia
+	const isMobile = window.matchMedia;
 
-  if (!isMobile) {
-    return false
-  }
+	if (!isMobile) {
+		return false;
+	}
 
-  return isMobile('(pointer:coarse)').matches
-}
+	return isMobile('(pointer:coarse)').matches;
+};
 
-export default useTouchEvent
+export default useTouchEvent;

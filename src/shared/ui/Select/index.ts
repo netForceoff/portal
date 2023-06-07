@@ -1,2 +1,2 @@
-import Select from './Select'
-export { Select }
+import Select from './Select';
+export {Select};

@@ -1,19 +1,33 @@
-import { FC } from 'react'
-import { useSelector } from 'react-redux'
+import {FC} from 'react';
+import {useSelector} from 'react-redux';
 
-import { ArticleListCompact, ArticleListExtended, getArticleList, getArticleListStatus, getArticleListView } from '@/entities/ArticleList'
+import {
+	ArticleListCompact,
+	ArticleListExtended,
+	getArticleList,
+	getArticleListStatus,
+	getArticleListView,
+} from '@/entities/ArticleList';
 
 export interface IArticleCardsProps {
-  className?: string
+	className?: string;
 }
 const ArticleCards: FC<IArticleCardsProps> = (props) => {
-  const status = useSelector(getArticleListStatus)
-  const articles = useSelector(getArticleList.selectAll)
-  const view = useSelector(getArticleListView)
+	const status = useSelector(getArticleListStatus);
+	const articles = useSelector(getArticleList.selectAll);
+	const view = useSelector(getArticleListView);
 
-  return view === 'table'
-    ? <ArticleListCompact loading={status === 'request'} articles={articles} />
-    : <ArticleListExtended loading={status === 'request'} articles={articles} />
-}
+	return view === 'table' ? (
+		<ArticleListCompact
+			loading={status === 'request'}
+			articles={articles}
+		/>
+	) : (
+		<ArticleListExtended
+			loading={status === 'request'}
+			articles={articles}
+		/>
+	);
+};
 
-export default ArticleCards
+export default ArticleCards;

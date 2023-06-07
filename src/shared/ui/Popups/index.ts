@@ -1,2 +1,2 @@
-import Popover from './ui/Popover/Popover'
-export { Popover }
+import Popover from './ui/Popover/Popover';
+export {Popover};

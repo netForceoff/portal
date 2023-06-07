@@ -1,28 +1,28 @@
 {
-  "changeLanguage": "Сменить язык",
-  "links": {
-    "about": "Об этом",
-    "main": "Главная",
-    "profile": "Страница профиля"
-  },
-  "page": {
-    "notFound": "Страница не найдена",
-    "error": {
-      "button": "Перезагрузить страницу",
-      "title": "Произошла ошибка, перезагрузите страницу"
-    }
-  },
-  "sidebar": {
-    "button": "Toggle"
-  },
-  "changeLanguageShort": "En",
-  "LogIn": "Войти",
-  "simpleLoginForm": "Форма авторизации с логином и паролем",
-  "errors": {
-    "simpleLoginForm": "Произошла ошибка при авторизации"
-  },
-  "LogOut": "Выйти",
-  "buttons": {
-    "showMore": "Показать еще"
-  }
+	"changeLanguage": "Сменить язык",
+	"links": {
+		"about": "Об этом",
+		"main": "Главная",
+		"profile": "Страница профиля"
+	},
+	"page": {
+		"notFound": "Страница не найдена",
+		"error": {
+			"button": "Перезагрузить страницу",
+			"title": "Произошла ошибка, перезагрузите страницу"
+		}
+	},
+	"sidebar": {
+		"button": "Toggle"
+	},
+	"changeLanguageShort": "En",
+	"LogIn": "Войти",
+	"simpleLoginForm": "Форма авторизации с логином и паролем",
+	"errors": {
+		"simpleLoginForm": "Произошла ошибка при авторизации"
+	},
+	"LogOut": "Выйти",
+	"buttons": {
+		"showMore": "Показать еще"
+	}
 }

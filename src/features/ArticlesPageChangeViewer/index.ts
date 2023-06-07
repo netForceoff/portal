@@ -1,2 +1,2 @@
-import ArticlesPageChangeViewer from './ui/ArticlesPageChangeViewer'
-export { ArticlesPageChangeViewer }
+import ArticlesPageChangeViewer from './ui/ArticlesPageChangeViewer';
+export {ArticlesPageChangeViewer};

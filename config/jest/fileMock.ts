@@ -1,1 +1,1 @@
-export default 'file-mock'
+export default 'file-mock';

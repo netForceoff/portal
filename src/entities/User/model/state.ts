@@ -1,3 +1,3 @@
-import { UserSchema } from './types'
+import {UserSchema} from './types';
 
-export const initialUserState: UserSchema = {}
+export const initialUserState: UserSchema = {};

@@ -1,3 +1,3 @@
-import { SaveScrollPositionSchema } from './types'
+import {SaveScrollPositionSchema} from './types';
 
-export const initialSaveScrollPositionState: SaveScrollPositionSchema = {}
+export const initialSaveScrollPositionState: SaveScrollPositionSchema = {};

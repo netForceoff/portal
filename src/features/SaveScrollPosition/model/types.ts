@@ -1,1 +1,1 @@
-export type SaveScrollPositionSchema = Record<string, number>
+export type SaveScrollPositionSchema = Record<string, number>;

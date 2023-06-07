@@ -1,7 +1,7 @@
-import { ArticleCommentsSchema } from './types'
+import {ArticleCommentsSchema} from './types';
 
 export const initialArticleCommentsState: ArticleCommentsSchema = {
-  status: 'received',
-  ids: [],
-  entities: {}
-}
+	status: 'received',
+	ids: [],
+	entities: {},
+};

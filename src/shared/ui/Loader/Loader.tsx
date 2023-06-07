@@ -1,11 +1,11 @@
-import { FC, memo } from 'react'
+import {FC, memo} from 'react';
 
 interface IProps {
-  className?: string
+	className?: string;
 }
 
-const Loader: FC<IProps> = ({ className }): JSX.Element => {
-  return <div className={className}>Загрузка...</div>
-}
+const Loader: FC<IProps> = ({className}): JSX.Element => {
+	return <div className={className}>Загрузка...</div>;
+};
 
-export default memo(Loader)
+export default memo(Loader);

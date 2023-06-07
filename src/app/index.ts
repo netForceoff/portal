@@ -1,5 +1,5 @@
-import App from './App'
+import App from './App';
 
-import { withSuspense } from '@/shared/lib'
+import {withSuspense} from '@/shared/lib';
 
-export default withSuspense(App)
+export default withSuspense(App);

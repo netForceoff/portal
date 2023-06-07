@@ -1,7 +1,7 @@
-import { lazy } from 'react'
+import {lazy} from 'react';
 
-import { withSuspense } from '@/shared/lib'
+import {withSuspense} from '@/shared/lib';
 
-const ProfilePage = lazy(async () => await import('./ui/ProfilePage'))
+const ProfilePage = lazy(async () => await import('./ui/ProfilePage'));
 
-export default withSuspense(ProfilePage)
+export default withSuspense(ProfilePage);

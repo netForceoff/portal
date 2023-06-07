@@ -1,12 +1,9 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "react-i18n.i18nPaths": "public/locales,src/shared/config/i18n",
-    "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
-    ],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"react-i18n.i18nPaths": "public/locales,src/shared/config/i18n",
+	"i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
 	"i18n-ally.keystyle": "nested",
-    	"eslint.validate": [
+	"eslint.validate": [
 		{
 			"language": "typescript",
 			"autoFix": true
@@ -19,7 +16,7 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	},
-	
+
 	"[typescript]": {
 		"editor.parameterHints.enabled": true,
 		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
@@ -27,12 +24,9 @@
 	"stylelint.enable": true,
 	"css.validate": true,
 	"scss.validate": true,
-	"stylelint.validate": [
-		"css",
-		"scss"
-	],
+	"stylelint.validate": ["css", "scss"],
 	"editor.codeActionsOnSave": {
-		"source.fixAll.stylelint": true,
+		"source.fixAll.stylelint": true
 	},
 	"editor.formatOnSave": true,
 	"editor.tabCompletion": "on",
@@ -42,36 +36,36 @@
 			"customVariables": [],
 			"omitParentDirectory": false,
 			"structure": [
-			  {
-				"fileName": "ui/<FTName>.tsx",
-			  },
-			  {
-				"fileName": "ui/<FTName>.stories.tsx"
-			  },
-			  {
-				"fileName": "ui/<FTName>.module.scss"
-			  },
-			  {
-				"fileName": "ui/__tests__/<FTName>.tsx"
-			  },
-			  {
-				"fileName": "model/slice.ts"
-			  },
-			  {
-				"fileName": "model/selectors.ts"
-			  },
-			  {
-				"fileName": "model/state.ts"
-			  },
-			  {
-				"fileName": "model/service.ts"
-			  },
-			  {
-				"fileName": "model/types.ts"
-			  },
-			  {
-				"fileName": "index.ts"
-			  },
+				{
+					"fileName": "ui/<FTName>.tsx"
+				},
+				{
+					"fileName": "ui/<FTName>.stories.tsx"
+				},
+				{
+					"fileName": "ui/<FTName>.module.scss"
+				},
+				{
+					"fileName": "ui/__tests__/<FTName>.tsx"
+				},
+				{
+					"fileName": "model/slice.ts"
+				},
+				{
+					"fileName": "model/selectors.ts"
+				},
+				{
+					"fileName": "model/state.ts"
+				},
+				{
+					"fileName": "model/service.ts"
+				},
+				{
+					"fileName": "model/types.ts"
+				},
+				{
+					"fileName": "index.ts"
+				}
 			]
 		},
 		{
@@ -80,20 +74,20 @@
 			"omitParentDirectory": false,
 			"structure": [
 				{
-					"fileName": "ui/<FTName>.tsx",
-				  },
-				  {
+					"fileName": "ui/<FTName>.tsx"
+				},
+				{
 					"fileName": "ui/<FTName>.stories.tsx"
-				  },
-				  {
+				},
+				{
 					"fileName": "ui/<FTName>.module.scss"
-				  },
-				  {
+				},
+				{
 					"fileName": "ui/__tests__/<FTName>.tsx"
-				  },
-				  {
+				},
+				{
 					"fileName": "index.ts"
-				  }
+				}
 			]
 		},
 		{
@@ -102,17 +96,17 @@
 			"omitParentDirectory": false,
 			"structure": [
 				{
-					"fileName": "<FTName>.tsx",
-				  },
-				  {
+					"fileName": "<FTName>.tsx"
+				},
+				{
 					"fileName": "<FTName>.stories.tsx"
-				  },
-				  {
+				},
+				{
 					"fileName": "<FTName>.module.scss"
-				  },
-				  {
+				},
+				{
 					"fileName": "__tests__/<FTName>.tsx"
-				  }
+				}
 			]
 		}
 	],
@@ -123,6 +117,6 @@
 	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
-	  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

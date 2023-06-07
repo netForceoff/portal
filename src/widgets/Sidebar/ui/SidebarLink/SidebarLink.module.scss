@@ -1,18 +1,18 @@
 .link {
-  align-items: center;
-  display: flex;
-  margin-top: 10px;
+	align-items: center;
+	display: flex;
+	margin-top: 10px;
 }
 
 .icon {
-  color: var(--inverted-secondary-color);
-  margin-right: 10px;
+	color: var(--inverted-secondary-color);
+	margin-right: 10px;
 }
 
 .collapsed {
-  .item {
-    height: 0;
-    opacity: 0;
-    width: 0;
-  }
+	.item {
+		height: 0;
+		opacity: 0;
+		width: 0;
+	}
 }

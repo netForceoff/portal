@@ -1,65 +1,65 @@
-@import "../../../app/styles/variables/global.scss";
+@import '../../../app/styles/variables/global.scss';
 
 .button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .clear {
-  background: inherit;
-  border: none;
-  margin: 0;
-  outline: none;
-  padding: 0;
+	background: inherit;
+	border: none;
+	margin: 0;
+	outline: none;
+	padding: 0;
 }
 
 .primary {
-  color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .primaryInverted {
-  color: var(--inverted-primary-color);
+	color: var(--inverted-primary-color);
 }
 
 .secondary {
-  color: var(--secondary-color);
+	color: var(--secondary-color);
 }
 
 .secondaryInverted {
-  color: var(--inverted-secondary-color);
+	color: var(--inverted-secondary-color);
 }
 
 .filled {
-  background: var(--bg-color);
-  border: none;
+	background: var(--bg-color);
+	border: none;
 }
 
 .filledInverted {
-  background: var(--inverted-bg-color);
-  border: none;
+	background: var(--inverted-bg-color);
+	border: none;
 }
 
 .square {
-  border-radius: 0;
+	border-radius: 0;
 }
 
 .round {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .m {
-  font: var(--font-m);
-  height: var(--font-line-m);
-  width: var(--font-line-m);
+	font: var(--font-m);
+	height: var(--font-line-m);
+	width: var(--font-line-m);
 }
 
 .l {
-  font: var(--font-l);
-  height: var(--font-line-l);
-  width: var(--font-line-l);
+	font: var(--font-l);
+	height: var(--font-line-l);
+	width: var(--font-line-l);
 }
 
 .xl {
-  font: var(--font-xl);
-  height: var(--font-line-xl);
-  width: var(--font-line-xl);
+	font: var(--font-xl);
+	height: var(--font-line-xl);
+	width: var(--font-line-xl);
 }

@@ -1,33 +1,38 @@
-import clsx from 'clsx'
-import { FC, memo } from 'react'
+import clsx from 'clsx';
+import {FC, memo} from 'react';
 
-import { INotification } from '../../model/types'
+import {INotification} from '../../model/types';
 
-import { Text } from '@/shared/ui/Text'
+import {Text} from '@/shared/ui/Text';
 
-import styles from './Notification.module.scss'
+import styles from './Notification.module.scss';
 
 export interface INotificationProps extends INotification {
-  className?: string
+	className?: string;
 }
 const Notification: FC<INotificationProps> = (props) => {
-  const { className, title, description, href } = props
+	const {className, title, description, href} = props;
 
-  const content = (
-    <div className={clsx(styles.notification, className)}>
-        <Text title={title} text={description} />
-    </div>
-  )
+	const content = (
+		<div className={clsx(styles.notification, className)}>
+			<Text title={title} text={description} />
+		</div>
+	);
 
-  if (href) {
-    return (
-        <a className={styles.link} href={href} target="_blank" rel="noreferrer">
-            {content}
-        </a>
-    )
-  }
+	if (href) {
+		return (
+			<a
+				className={styles.link}
+				href={href}
+				target="_blank"
+				rel="noreferrer"
+			>
+				{content}
+			</a>
+		);
+	}
 
-  return content
-}
+	return content;
+};
 
-export default memo(Notification)
+export default memo(Notification);

@@ -1,2 +1,2 @@
-import Text from './Text'
-export { Text }
+import Text from './Text';
+export {Text};

@@ -1,8 +1,8 @@
 {
-  "search": "search",
-  "sortBy": "sortBy",
-  "view": {
-    "list": "list",
-    "table": "table"
-  }
+	"search": "search",
+	"sortBy": "sortBy",
+	"view": {
+		"list": "list",
+		"table": "table"
+	}
 }

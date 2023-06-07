@@ -1,6 +1,6 @@
-import { ProfileSchema } from './types'
+import {ProfileSchema} from './types';
 
 export const initialProfileState: ProfileSchema = {
-  readonly: true,
-  status: 'received'
-}
+	readonly: true,
+	status: 'received',
+};

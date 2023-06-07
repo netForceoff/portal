@@ -1,28 +1,37 @@
-import { createSlice, SliceCaseReducers, CreateSliceOptions, bindActionCreators } from '@reduxjs/toolkit'
-import { useMemo } from 'react'
+import {
+	createSlice,
+	SliceCaseReducers,
+	CreateSliceOptions,
+	bindActionCreators,
+} from '@reduxjs/toolkit';
+import {useMemo} from 'react';
 
-import useAppDispatch from './useAppDispatch'
+import useAppDispatch from './useAppDispatch';
 
-const buildSlice = <State, CaseReducers extends SliceCaseReducers<State>, Name extends string = string>(
-  options: CreateSliceOptions<State, CaseReducers, Name>
+const buildSlice = <
+	State,
+	CaseReducers extends SliceCaseReducers<State>,
+	Name extends string = string
+>(
+	options: CreateSliceOptions<State, CaseReducers, Name>
 ) => {
-  const slice = createSlice(options)
+	const slice = createSlice(options);
 
-  const useActions = (): typeof slice.actions => {
-    const dispatch = useAppDispatch()
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    return useMemo(() => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      return bindActionCreators(slice.actions, dispatch)
-    }, [dispatch])
-  }
+	const useActions = (): typeof slice.actions => {
+		const dispatch = useAppDispatch();
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-expect-error
+		return useMemo(() => {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-expect-error
+			return bindActionCreators(slice.actions, dispatch);
+		}, [dispatch]);
+	};
 
-  return {
-    ...slice,
-    useActions
-  }
-}
+	return {
+		...slice,
+		useActions,
+	};
+};
 
-export default buildSlice
+export default buildSlice;

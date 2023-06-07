@@ -1,25 +1,27 @@
-import { type FC, useState, ReactNode } from 'react'
+import {type FC, useState, ReactNode} from 'react';
 
-import { Context, THEME } from '@/entities/theme'
-import { THEME_KEY } from '@/shared/const/localStorage'
+import {Context, THEME} from '@/entities/theme';
+import {THEME_KEY} from '@/shared/const/localStorage';
 
-const defaultTheme = localStorage.getItem(THEME_KEY) as THEME || THEME.LIGHT
+const defaultTheme = (localStorage.getItem(THEME_KEY) as THEME) || THEME.LIGHT;
 
 interface IProps {
-  children: ReactNode
+	children: ReactNode;
 }
 
-const Provider: FC<IProps> = ({ children }) => {
-  const [theme, setTheme] = useState<THEME>(defaultTheme)
+const Provider: FC<IProps> = ({children}) => {
+	const [theme, setTheme] = useState<THEME>(defaultTheme);
 
-  return (
-        <Context.Provider value={{
-          theme,
-          setTheme
-        }}>
-            {children}
-        </Context.Provider>
-  )
-}
+	return (
+		<Context.Provider
+			value={{
+				theme,
+				setTheme,
+			}}
+		>
+			{children}
+		</Context.Provider>
+	);
+};
 
-export default Provider
+export default Provider;

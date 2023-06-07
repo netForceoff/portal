@@ -1,53 +1,55 @@
-import { ComponentStory } from '@storybook/react'
-import React from 'react'
+import {ComponentStory} from '@storybook/react';
+import React from 'react';
 
-import Skeleton from './Skeleton'
+import Skeleton from './Skeleton';
 
 // TODO - надо добавить в исключения файлы декораторов
 // eslint-disable-next-line eslint-custom-rules/fsd-architecture
-import { THEME } from '@/entities/theme'
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme'
+import {THEME} from '@/entities/theme';
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme';
 
 export default {
-  title: 'shared/Skeleton',
-  component: Skeleton,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-}
+	title: 'shared/Skeleton',
+	component: Skeleton,
+	argTypes: {
+		backgroundColor: {control: 'color'},
+	},
+};
 
-const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />
+const Template: ComponentStory<typeof Skeleton> = (args) => (
+	<Skeleton {...args} />
+);
 
-export const Notmal = Template.bind({})
+export const Notmal = Template.bind({});
 
 Notmal.args = {
-  width: 150,
-  height: 150
-}
+	width: 150,
+	height: 150,
+};
 
-export const NotmalDark = Template.bind({})
+export const NotmalDark = Template.bind({});
 
 NotmalDark.args = {
-  width: 150,
-  height: 150
-}
+	width: 150,
+	height: 150,
+};
 
-NotmalDark.decorators = [ThemeDecorator(THEME.DARK)]
+NotmalDark.decorators = [ThemeDecorator(THEME.DARK)];
 
-export const Circle = Template.bind({})
+export const Circle = Template.bind({});
 
 Circle.args = {
-  width: 150,
-  height: 150,
-  radius: 50
-}
+	width: 150,
+	height: 150,
+	radius: 50,
+};
 
-export const CircleDark = Template.bind({})
+export const CircleDark = Template.bind({});
 
 CircleDark.args = {
-  width: 150,
-  height: 150,
-  radius: 50
-}
+	width: 150,
+	height: 150,
+	radius: 50,
+};
 
-CircleDark.decorators = [ThemeDecorator(THEME.DARK)]
+CircleDark.decorators = [ThemeDecorator(THEME.DARK)];

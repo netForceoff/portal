@@ -1,2 +1,2 @@
-import Code from './Code'
-export { Code }
+import Code from './Code';
+export {Code};

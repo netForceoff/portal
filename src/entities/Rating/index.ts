@@ -1,7 +1,5 @@
-import Rating from './ui/Rating'
+import Rating from './ui/Rating';
 
-export {
-  Rating
-}
+export {Rating};
 
-export type { IRating } from './model/types'
+export type {IRating} from './model/types';

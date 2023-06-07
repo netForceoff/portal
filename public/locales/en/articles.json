@@ -1,8 +1,8 @@
 {
-  "view": {
-    "table": "Table",
-    "list": "List"
-  },
-  "sortBy": "Sort by",
-  "search": "Search"
+	"view": {
+		"table": "Table",
+		"list": "List"
+	},
+	"sortBy": "Sort by",
+	"search": "Search"
 }

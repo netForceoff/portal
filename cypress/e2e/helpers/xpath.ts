@@ -1,5 +1,3 @@
-const selectByTestId = (testId: string) => `[data-testid="${testId}"]`
+const selectByTestId = (testId: string) => `[data-testid="${testId}"]`;
 
-export {
-  selectByTestId
-}
+export {selectByTestId};

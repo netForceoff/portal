@@ -1,29 +1,28 @@
-import './styles/index.scss'
-import { useLayoutEffect } from 'react'
+import './styles/index.scss';
+import {useLayoutEffect} from 'react';
 
-import AppRouter from './providers/router'
+import AppRouter from './providers/router';
 
-import { useTheme } from '@/entities/theme'
-import { Navbar } from '@/widgets/Navbar'
-import { Sidebar } from '@/widgets/Sidebar'
+import {useTheme} from '@/entities/theme';
+import {Navbar} from '@/widgets/Navbar';
+import {Sidebar} from '@/widgets/Sidebar';
 
 export const App = (): JSX.Element => {
-  const { theme } = useTheme()
+	const {theme} = useTheme();
 
-  useLayoutEffect(() => {
-    document.body.className = theme
-  }, [theme])
+	useLayoutEffect(() => {
+		document.body.className = theme;
+	}, [theme]);
 
-  return (
-        <>
-            <Navbar />
-            <div className="content">
-                <Sidebar />
-                <AppRouter />
-            </div>
-        </>
+	return (
+		<>
+			<Navbar />
+			<div className="content">
+				<Sidebar />
+				<AppRouter />
+			</div>
+		</>
+	);
+};
 
-  )
-}
-
-export default App
+export default App;

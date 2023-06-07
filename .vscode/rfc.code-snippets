@@ -1,30 +1,30 @@
 {
 	"React Functional Component": {
-	  "prefix": "rfc",
-	  "body": [
-		"import clsx from 'clsx'",
-		"import {FC} from \"react\"",
-		"import { useTranslation } from \"react-i18next\"",
-		"import styles from \"./$TM_FILENAME_BASE.module.scss\"",
-		"",
-		"export interface $I$TM_FILENAME_BASE$Props {",
-		"className?: string",
-		"}",
-		"const $TM_FILENAME_BASE: FC<$I$TM_FILENAME_BASE$Props> = (props) => {",
-		"const { className } = props",
-		"const { t } = useTranslation()",
-		"",
-		"  return (",
-		"    <div className={clsx(styles.$TM_FILENAME_BASE, className)}>",
-		"      $2",
-		"    </div>",
-		"  )",
-		"};",
-		"",
-		"export default $TM_FILENAME_BASE;",
-		""
-	  ],
-	  "description": "React Functional Component"
+		"prefix": "rfc",
+		"body": [
+			"import clsx from 'clsx'",
+			"import {FC} from \"react\"",
+			"import { useTranslation } from \"react-i18next\"",
+			"import styles from \"./$TM_FILENAME_BASE.module.scss\"",
+			"",
+			"export interface $I$TM_FILENAME_BASE$Props {",
+			"className?: string",
+			"}",
+			"const $TM_FILENAME_BASE: FC<$I$TM_FILENAME_BASE$Props> = (props) => {",
+			"const { className } = props",
+			"const { t } = useTranslation()",
+			"",
+			"  return (",
+			"    <div className={clsx(styles.$TM_FILENAME_BASE, className)}>",
+			"      $2",
+			"    </div>",
+			"  )",
+			"};",
+			"",
+			"export default $TM_FILENAME_BASE;",
+			""
+		],
+		"description": "React Functional Component"
 	},
 	"Redux Slice": {
 		"prefix": "sl",
@@ -33,10 +33,10 @@
 			"import { initial${1:name}State } from './state'",
 			"",
 			"export const ${1:name}Slice = createSlice({",
-  			"name: '${1:name}',",
-  			"initialState: initial${1:name}State,",
-  			"reducers: {},",
-  			"extraReducers: (builder) => {",
+			"name: '${1:name}',",
+			"initialState: initial${1:name}State,",
+			"reducers: {},",
+			"extraReducers: (builder) => {",
 			"",
 			"}",
 			"})",
@@ -57,11 +57,11 @@
 			"return function HOC${1:name} (props: P) {",
 			"return (",
 			"<Component {...props} />",
-  			")",
-  			"}",
-  			"}",
+			")",
+			"}",
+			"}",
 			"",
 			"export default with${1:name}"
 		]
 	}
-  }
+}

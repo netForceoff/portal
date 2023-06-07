@@ -1,19 +1,19 @@
-import { FC } from 'react'
+import {FC} from 'react';
 
-import LoginForm from '../LoginForm'
+import LoginForm from '../LoginForm';
 
-import { Modal } from '@/shared/ui/Modal'
+import {Modal} from '@/shared/ui/Modal';
 
 interface IProps {
-  onCloseOutside: () => void
+	onCloseOutside: () => void;
 }
 
-const LoginModal: FC<IProps> = ({ onCloseOutside }): JSX.Element => {
-  return (
-    <Modal onCloseOutside={onCloseOutside}>
-        <LoginForm />
-    </Modal>
-  )
-}
+const LoginModal: FC<IProps> = ({onCloseOutside}): JSX.Element => {
+	return (
+		<Modal onCloseOutside={onCloseOutside}>
+			<LoginForm />
+		</Modal>
+	);
+};
 
-export default LoginModal
+export default LoginModal;
