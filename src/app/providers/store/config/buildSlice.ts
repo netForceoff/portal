@@ -16,7 +16,7 @@ const buildSlice = <
 	options: CreateSliceOptions<State, CaseReducers, Name>
 ) => {
 	const slice = createSlice(options);
-
+	console.log()
 	const useActions = (): typeof slice.actions => {
 		const dispatch = useAppDispatch();
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
