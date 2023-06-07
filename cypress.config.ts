@@ -1,5 +1,7 @@
 import { defineConfig } from 'cypress'
 
+import webpackConfig from './config/webpack/config'
+// TODO понять почему не работает webpackconfig
 export default defineConfig({
   e2e: {
     setupNodeEvents (on, config) {
@@ -11,7 +13,8 @@ export default defineConfig({
   component: {
     devServer: {
       framework: 'react',
-      bundler: 'webpack'
+      bundler: 'webpack',
+      webpackConfig
     }
   }
 })

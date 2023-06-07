@@ -35,9 +35,9 @@ const plugins = (options: BuildOptions): WebpackPluginInstance[] => {
     plugins.push(
       new HotModuleReplacementPlugin(),
       new ReactRefreshWebpackPlugin({ overlay: false }),
-      new BundleAnalyzerPlugin({
-        openAnalyzer: false
-      }),
+      // new BundleAnalyzerPlugin({
+      //   openAnalyzer: false
+      // }),
       new CircularDependencyPlugin({
         exclude: /node_modules/,
         failOnError: true

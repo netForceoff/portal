@@ -32,8 +32,9 @@
 		"scss"
 	],
 	"editor.codeActionsOnSave": {
-		"source.fixAll.stylelint": true
+		"source.fixAll.stylelint": true,
 	},
+	"editor.formatOnSave": true,
 	"editor.tabCompletion": "on",
 	"folderTemplates.structures": [
 		{
@@ -119,5 +120,9 @@
 		"activityBar.background": "#1B2E48",
 		"titleBar.activeBackground": "#264165",
 		"titleBar.activeForeground": "#F9FAFD"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+	  "editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

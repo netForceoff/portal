@@ -9,7 +9,8 @@ module.exports = {
     'standard-with-typescript',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'prettier'
   ],
   globals: {
     __IS_DEV__: true

@@ -6,7 +6,7 @@ import configBuilder from './builders/config'
 import { type Env, Mode } from './types/config'
 
 export default (env: Env): Configuration => {
-  const mode = env.mode || Mode.DEVELOPMENT
+  const mode = env?.mode || Mode.DEVELOPMENT
   const isDev = mode === Mode.DEVELOPMENT
   const isProd = mode === Mode.PRODUCTION
 
@@ -27,6 +27,6 @@ export default (env: Env): Configuration => {
       build: resolve(__dirname, '../../build'),
       src: resolve(__dirname, '../../src')
     },
-    port: env.port || 3000
+    port: env?.port || 3000
   })
 }
