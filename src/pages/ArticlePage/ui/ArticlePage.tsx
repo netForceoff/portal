@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom';
 import {articleReducer} from '@/entities/Article';
 import {ArticleRating} from '@/features/ArticleRating';
 import withReducers from '@/shared/lib/HOCS/withReducers';
+import {toggleFeatures} from '@/shared/lib/features/toggleFeatures';
 import {ArticleCard} from '@/widgets/ArticleCard';
 import {
 	ArticleComments,
@@ -22,9 +23,15 @@ const reducers = {
 const ArticlePage: FC<IArticlePageProps> = (props) => {
 	const {id} = useParams<{id: string}>();
 
+	const articleCard = toggleFeatures({
+		name: 'isArticleEnabled',
+		on: () => <ArticleCard id={id} />,
+		off: () => <div>123123</div>,
+	});
+
 	return (
 		<section data-testid="ArticlePage">
-			<ArticleCard id={id} />
+			{articleCard}
 			<ArticleRating id={id} />
 			<ArticleComments id={id} />
 		</section>

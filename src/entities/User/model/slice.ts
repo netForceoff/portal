@@ -4,6 +4,7 @@ import {initialUserState} from './state';
 import type {User} from './types';
 
 import {USER_KEY} from '@/shared/const/localStorage';
+import {setFeatureFlags} from '@/shared/lib/features';
 
 export const userSlice = createSlice({
 	name: 'user',
@@ -16,7 +17,9 @@ export const userSlice = createSlice({
 			const user = localStorage.getItem(USER_KEY);
 
 			if (user) {
-				state.user = JSON.parse(user);
+				const data = JSON.parse(user) as User;
+				state.user = data;
+				setFeatureFlags(data.features);
 			}
 		},
 		removeUser: (state) => {

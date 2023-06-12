@@ -110,11 +110,6 @@
 			]
 		}
 	],
-	"workbench.colorCustomizations": {
-		"activityBar.background": "#1B2E48",
-		"titleBar.activeBackground": "#264165",
-		"titleBar.activeForeground": "#F9FAFD"
-	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
