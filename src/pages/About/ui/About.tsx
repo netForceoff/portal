@@ -6,7 +6,7 @@ import styles from './About.module.scss';
 
 const About = (): JSX.Element => {
 	const {t} = useTranslation('about');
-
+	console.log('123');
 	return (
 		<Layout className={styles.test}>
 			{() => <div data-testid="AboutPage">{t('about')}</div>}
