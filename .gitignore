@@ -1,6 +1,6 @@
-/build
-node_modules
+frontend/build
+frontend/node_modules
 .idea
-/.loki/report.html
-/.loki/report.json
-/reports/unit
+frontend/.loki/report.html
+frontend/.loki/report.json
+frontend/reports/unit
